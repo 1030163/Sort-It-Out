@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class PackageLocation : MonoBehaviour
 {
-    public bool isPackage;
+    [Header("Package Information")]
+    public bool isAnyPackage;
+    public bool isCorrectPackage;
     public string packageName;
+
+    [Header("Package That Goes Here?")]
+    public string intendedPackageName;
+
+    [Header("Graphics")]
+    public bool showOutline;
     // Start is called before the first frame update
     void Start()
     {
-
+        if (!showOutline)
+        {
+            MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
+            foreach (MeshRenderer renderer in meshRenderers)
+            {
+                renderer.enabled = false;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -22,8 +37,16 @@ public class PackageLocation : MonoBehaviour
     {
         if (other.CompareTag("Package"))
         {
-            isPackage = true;
+            isAnyPackage = true;
             packageName = other.gameObject.name;
+            if (packageName == intendedPackageName)
+            {
+                isCorrectPackage = true;
+            }
+            else
+            {
+                isCorrectPackage = false;
+            }
         }
     }
 
@@ -31,7 +54,7 @@ public class PackageLocation : MonoBehaviour
     {
         if (other.CompareTag("Package") && other.gameObject.name == packageName)
         {
-            isPackage = false;
+            isAnyPackage = false;
             packageName = "";
         }
     }
