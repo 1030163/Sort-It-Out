@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class UpChecker : MonoBehaviour
 {
-    public GameObject thePointer;
-    public Vector3 rotationLimit = new Vector3(0f, 0f, 0f);
+    [Header("Up Sticker Outputs")]
+    public bool isUpright;
+    [Header("Up Sticker Restraints")]
+    public float rotationLimit = 15f;
 
-    public bool xCheck;
-    public bool zCheck;
+    GameObject thePointer;
+
+    bool xCheck;
+    bool zCheck;
     // Start is called before the first frame update
     void Start()
     {
-
+        thePointer = transform.Find("UpPointer").gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Clamp(Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.x, 0f), -15f, 15f) == Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.x, 0f))
+        if (Mathf.Clamp(Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.x, 0f), -rotationLimit, rotationLimit) == Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.x, 0f))
         {
             xCheck = true;
         }
@@ -26,7 +30,7 @@ public class UpChecker : MonoBehaviour
         {
             xCheck = false;
         }
-        if (Mathf.Clamp(Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.z, 0f), -15f, 15f) == Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.z, 0f))
+        if (Mathf.Clamp(Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.z, 0f), -rotationLimit, rotationLimit) == Mathf.DeltaAngle(thePointer.transform.rotation.eulerAngles.z, 0f))
         {
             zCheck = true;
         }
@@ -37,12 +41,12 @@ public class UpChecker : MonoBehaviour
 
         if (xCheck && zCheck)
         {
-            Debug.Log("safe");
+            isUpright = true;
 
         }
         else
         {
-            Debug.Log("Unsafe");
+            isUpright = false;
 
         }
     }
