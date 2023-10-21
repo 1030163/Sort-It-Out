@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PackageLocation : MonoBehaviour
 {
+<<<<<<< HEAD
     [Header("Package Information")]
     public bool isAnyPackage;
     public bool isCorrectPackage;
@@ -25,6 +26,14 @@ public class PackageLocation : MonoBehaviour
                 renderer.enabled = false;
             }
         }
+=======
+    public bool isPackage;
+    public string packageName;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+>>>>>>> Systems
     }
 
     // Update is called once per frame
@@ -37,6 +46,7 @@ public class PackageLocation : MonoBehaviour
     {
         if (other.CompareTag("Package"))
         {
+<<<<<<< HEAD
             isAnyPackage = true;
             packageName = other.gameObject.name;
             if (packageName == intendedPackageName)
@@ -47,6 +57,10 @@ public class PackageLocation : MonoBehaviour
             {
                 isCorrectPackage = false;
             }
+=======
+            isPackage = true;
+            packageName = other.gameObject.name;
+>>>>>>> Systems
         }
     }
 
@@ -54,7 +68,11 @@ public class PackageLocation : MonoBehaviour
     {
         if (other.CompareTag("Package") && other.gameObject.name == packageName)
         {
+<<<<<<< HEAD
             isAnyPackage = false;
+=======
+            isPackage = false;
+>>>>>>> Systems
             packageName = "";
         }
     }
