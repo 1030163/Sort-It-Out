@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 489766156396780817}
   - component: {fileID: 8635243396511069125}
   m_Layer: 0
-  m_Name: Pointer
+  m_Name: UpPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,10 +114,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3378894497052532819}
+  - component: {fileID: 4714617804296139123}
   - component: {fileID: 3309144008158204310}
   - component: {fileID: 6016762583108330420}
   - component: {fileID: 4516317388132722078}
-  - component: {fileID: 4714617804296139123}
   m_Layer: 0
   m_Name: ThisWayUpSticker
   m_TagString: Untagged
@@ -141,6 +141,20 @@ Transform:
   - {fileID: 8232360722976233832}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4714617804296139123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8887883737039689874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fecd6fbcbb42c48add1e5bda2ff9ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUpright: 0
+  rotationLimit: 15
 --- !u!33 &3309144008158204310
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -212,19 +226,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4714617804296139123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8887883737039689874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06fecd6fbcbb42c48add1e5bda2ff9ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thePointer: {fileID: 2540797203853723323}
-  rotationLimit: {x: 0, y: 0, z: 0}
-  xCheck: 0
-  zCheck: 0
