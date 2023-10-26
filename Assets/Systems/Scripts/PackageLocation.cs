@@ -14,6 +14,10 @@ public class PackageLocation : MonoBehaviour
 
     [Header("Graphics")]
     public bool showOutline;
+
+    [Header("Successful Delivery")]
+    public string printOnSuccess;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +54,7 @@ public class PackageLocation : MonoBehaviour
 
             if (isCorrectPackage)
             {
-                print("You Did it!! Woo!! PAckage delivered!!!!!!!");
+                print(printOnSuccess);
             }
         }
     }
