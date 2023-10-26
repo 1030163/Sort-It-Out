@@ -47,6 +47,11 @@ public class PackageLocation : MonoBehaviour
             {
                 isCorrectPackage = false;
             }
+
+            if (isCorrectPackage)
+            {
+                print("You Did it!! Woo!! PAckage delivered!!!!!!!");
+            }
         }
     }
 
