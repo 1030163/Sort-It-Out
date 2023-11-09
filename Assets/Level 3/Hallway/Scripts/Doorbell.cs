@@ -13,7 +13,7 @@ public class Doorbell : MonoBehaviour
         interactionText.gameObject.SetActive(true);
         if (packageDelivery.isCorrectPackage)
         {
-            WaitCoroutine();
+            WaitCoroutine(5f);
             door.SetActive(true);
 
         }
@@ -23,7 +23,7 @@ public class Doorbell : MonoBehaviour
     {
         if (packageDelivery.isCorrectPackage)
         {
-            WaitCoroutine();
+            WaitCoroutine(5f);
             door.SetActive(true);
 
         }
@@ -36,12 +36,12 @@ public class Doorbell : MonoBehaviour
 
     public void RingDoorbell ()
     {
-        WaitCoroutine();
+        WaitCoroutine(2f);
         door.SetActive(false);
     }
 
-    IEnumerator WaitCoroutine()
+    IEnumerator WaitCoroutine(float time)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(time);
     }
 }
