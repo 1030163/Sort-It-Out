@@ -871,16 +871,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eead4cf28bb8794f85b99f4533e8c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultShakeSounds: []
-  theChecking:
-  - howManyShakesToTrigger: 12
-    whatHappens: KABOOM
-    soundAffect: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  - howManyShakesToTrigger: 46
-    whatHappens: KABOOM
-    soundAffect: {fileID: 8300000, guid: f958be6125386c6418531e4a47afa61a, type: 3}
+  defaultShakeSounds:
+  - {fileID: 8300000, guid: f958be6125386c6418531e4a47afa61a, type: 3}
+  - {fileID: 8300000, guid: f1704e8f86b02bd4cbd63013103ed5e0, type: 3}
+  - {fileID: 8300000, guid: f4e81edb613d0294095d3391721dc584, type: 3}
+  shakeEventsList:
+  - howManyShakesToTrigger: 20
+    whatHappens: test
+    soundAffect: {fileID: 8300000, guid: c9f684206629bad438c2369411998b04, type: 3}
+  - howManyShakesToTrigger: 40
+    whatHappens: tes2
+    soundAffect: {fileID: 8300000, guid: 340d9b31c66dadf48845fc8577be168f, type: 3}
   shakeDist: 4
   whenToUpdate: 0.2
+  playingMain: 0
+  playingDefault: 0
 --- !u!54 &1650689457
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 using static UnityEngine.Rendering.DebugUI;
 
 
@@ -37,6 +38,11 @@ public class ShakeableObject : MonoBehaviour
 
     private int curShakeEventItem;
 
+    [SerializeField]
+    private bool playingMain;
+    [SerializeField]
+    private bool playingDefault;
+
     void Start()
     {
         lastPosition = transform.position;
@@ -64,10 +70,18 @@ public class ShakeableObject : MonoBehaviour
                 shakeWeight++;
                 for (int i = 0; i < shakeEventsList.Length; i++)
                 {
-                    if (shakeEventsList[i].howManyShakesToTrigger == shakeWeight)
+                    curShakeEventItem = i;
+                    if (defaultShakeSounds.Length > 0 && !playingDefault && !playingMain)
                     {
-                        curShakeEventItem = i;
+                        DefaultShakeEvent();
+                    }
+                    if (shakeEventsList.Length > 0 && shakeEventsList[i].howManyShakesToTrigger == shakeWeight)
+                    {
+
+
+
                         CurrentShakeEvent(shakeEventsList[curShakeEventItem].soundAffect);
+
                         return;
                     }
                 }
@@ -83,7 +97,33 @@ public class ShakeableObject : MonoBehaviour
     {
         print("" + shakeEventsList[curShakeEventItem].whatHappens);
         GetComponent<AudioSource>().clip = playMe;
+        playingMain = true;
         GetComponent<AudioSource>().Play();
+        StartCoroutine(MainSoundCountdown(GetComponent<AudioSource>().clip.length));
+    }
+
+    void DefaultShakeEvent()
+    {
+        GetComponent<AudioSource>().clip = defaultShakeSounds[Random.Range(0, defaultShakeSounds.Length)];
+        playingDefault = true;
+        print("Check");
+        GetComponent<AudioSource>().Play();
+        StartCoroutine(DefaultSoundCountdown(GetComponent<AudioSource>().clip.length));
+    }
+
+
+
+    IEnumerator MainSoundCountdown(float soundLength)
+    {
+        playingMain = true;
+        yield return new WaitForSeconds(soundLength);
+        playingMain = false;
+    }
+    IEnumerator DefaultSoundCountdown(float soundLength)
+    {
+        playingDefault = true;
+        yield return new WaitForSeconds(soundLength);
+        playingDefault = false;
     }
 
 
