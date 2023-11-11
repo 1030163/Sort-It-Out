@@ -8,7 +8,7 @@ public class NonVrCharacterController : MonoBehaviour
     public float moveSpeed = 5.0f;
     public Transform playerCamera; // Reference to the camera transform
 
-    private float verticalRotation = 0;
+    private float verticalRotation;
     private CharacterController characterController;
 
     void Start()
@@ -45,5 +45,6 @@ public class NonVrCharacterController : MonoBehaviour
 
         Vector3 moveDirection = transform.TransformDirection(new Vector3(horizontalMove, 0, verticalMove));
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+        characterController.Move(-transform.up * 1f);
     }
 }
