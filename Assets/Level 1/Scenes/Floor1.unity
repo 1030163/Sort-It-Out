@@ -9155,9 +9155,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc46e72c52e74ff4c93d71ab74f1d54e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1d3eee4469af97442ae27a33e9181f43, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.099
+  m_Volume: 0.145
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9284,6 +9284,27 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &903254016
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903254006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 0.46508095, z: 0.5}
+  m_Center: {x: 0, y: 0.23254047, z: 0.0000012218952}
 --- !u!1 &911727982
 GameObject:
   m_ObjectHideFlags: 0
@@ -10905,8 +10926,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   packageHoldPoint: {fileID: 2133098225}
   interactDistance: 2
-  maxAngleUp: -60
-  maxAngleDown: -60
+  maxAngleUp: 60
+  maxAngleDown: 60
   holdPointVerticalOffset: 1
 --- !u!4 &994195962 stripped
 Transform:
@@ -11010,7 +11031,7 @@ PrefabInstance:
     - target: {fileID: 6031478287278857195, guid: 50ca54e87a515eb43a93ca3a3aa67331,
         type: 3}
       propertyPath: showOutline
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6031478287278857195, guid: 50ca54e87a515eb43a93ca3a3aa67331,
         type: 3}
@@ -17592,7 +17613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1299846362916210, guid: de1c3bc41abbbc942a2e555db34fac24, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1299846362916210, guid: de1c3bc41abbbc942a2e555db34fac24, type: 3}
       propertyPath: m_TagString
@@ -17666,6 +17687,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 903254015}
+    - targetCorrespondingSourceObject: {fileID: 1299846362916210, guid: de1c3bc41abbbc942a2e555db34fac24,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 903254016}
   m_SourcePrefab: {fileID: 100100000, guid: de1c3bc41abbbc942a2e555db34fac24, type: 3}
 --- !u!1 &1694889841 stripped
 GameObject:
@@ -22145,7 +22170,7 @@ Transform:
   m_GameObject: {fileID: 2133098224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: -0, y: 0.409, z: 1.814}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
