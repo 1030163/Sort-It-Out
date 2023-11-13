@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
 using static UnityEngine.Rendering.DebugUI;
 
 
@@ -10,7 +9,7 @@ public class ShakeEvent
 {
     [Tooltip("How long the player has to shake the object before the event triggers and the audio is player.")]
     public int howManyShakesToTrigger;  //RENAME TO MAKE OBVIOUS 'Amount of shakes to make noise'  //every shake should mak enoise
-    [Tooltip("This text box is just for debugging, so you can see it being triggerred without your headphones on.")]
+    [Tooltip("This field lets you name each \'shake event\', so you can trigger events and see it being triggerred without your headphones on.")]
     public string whatHappens;
     [Tooltip("The sound you would like to play when this event takes place.")]
     public AudioClip soundAffect;
@@ -30,7 +29,6 @@ public class ShakeableObject : MonoBehaviour
     [Tooltip("This the interval of how often it checks the movement that's taken place, every 0.2 seconds by default.")]
     public float whenToUpdate = 0.2f;
 
-    private int shakeWeight;
 
     private Vector3 lastPosition;
     private Quaternion lastRotation;
@@ -42,6 +40,13 @@ public class ShakeableObject : MonoBehaviour
     private bool playingMain;
     [SerializeField]
     private bool playingDefault;
+
+    //Outputs
+    [Header("Output values!")]
+    [Tooltip("This is the current / most recent Shake Event to be called")]
+    public string currentShakeEvent;
+    [Tooltip("This is the number of time the object has been shaken")]
+    public int shakeCounter;
 
     void Start()
     {
@@ -67,7 +72,7 @@ public class ShakeableObject : MonoBehaviour
 
             if (speed > shakeDist || angularSpeed > shakeDist)
             {
-                shakeWeight++;
+                shakeCounter++;
                 for (int i = 0; i < shakeEventsList.Length; i++)
                 {
                     curShakeEventItem = i;
@@ -75,7 +80,7 @@ public class ShakeableObject : MonoBehaviour
                     {
                         DefaultShakeEvent();
                     }
-                    if (shakeEventsList.Length > 0 && shakeEventsList[i].howManyShakesToTrigger == shakeWeight)
+                    if (shakeEventsList.Length > 0 && shakeEventsList[i].howManyShakesToTrigger == shakeCounter)
                     {
 
 
@@ -99,6 +104,11 @@ public class ShakeableObject : MonoBehaviour
         GetComponent<AudioSource>().clip = playMe;
         playingMain = true;
         GetComponent<AudioSource>().Play();
+        currentShakeEvent = shakeEventsList[curShakeEventItem].whatHappens;
+        if (GetComponent<FragileObject>())
+        {
+            GetComponent<FragileObject>().ShakeCheck();
+        }
         StartCoroutine(MainSoundCountdown(GetComponent<AudioSource>().clip.length));
     }
 
