@@ -1,32 +1,49 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
-using System.Collections;
 
-public class PrintDialogue : MonoBehaviour
-{
-    private TextMeshPro speechBubbleText;
+public class PrintDialogue : MonoBehaviour {
+
+    [SerializeField] private GameObject confirmButton;
+    [SerializeField] private DialogueResponseButtonHandler responseHandler;
+
+    [Header("Text Speed Variables")]
     [SerializeField] private int textSpeed;
     [SerializeField] private float textDelay;
 
-    private void Awake()
-    {
+    private TextMeshPro speechBubbleText;
+
+    private void Awake() {
         speechBubbleText = GetComponent<TextMeshPro>();
     }
 
-    public void InitDialogueText(NPCDialogue npcDialogue)
-    {
+    public void InitDialogueText(NPCDialogue npcDialogue) {
         char[] charactersInDialogue = npcDialogue.dialogue.ToCharArray();
 
-        StartCoroutine(PrintDialogueText(charactersInDialogue, npcDialogue.dialogue));
+        confirmButton.SetActive(false);
+
+        StopAllCoroutines();
+        StartCoroutine(PrintDialogueText(charactersInDialogue, npcDialogue));
     }
 
-    private IEnumerator PrintDialogueText(char[] charactersToPrint, string dialogue)
-    {
-        for (int i = 0; i < charactersToPrint.Length + 1; i++)
-        {
-            speechBubbleText.text = dialogue.Substring(0, i);
+    private IEnumerator PrintDialogueText(char[] charactersToPrint, NPCDialogue npcDialogue) {
+        for (int i = 0; i < charactersToPrint.Length + 1; i++) {
+            speechBubbleText.text = npcDialogue.dialogue.Substring(0, i);
 
             yield return new WaitForSeconds(textDelay / textSpeed);
         }
+
+        EndOfDialogue(npcDialogue);
+    }
+
+    private void EndOfDialogue(NPCDialogue npcDialogue) {
+        bool needsResponse = npcDialogue.dialogueResponse.Length > 0;
+
+        if (!needsResponse) {
+            confirmButton.SetActive(true);
+            return;
+        }
+
+        responseHandler.EnableResponseButtons(npcDialogue);
     }
 }
