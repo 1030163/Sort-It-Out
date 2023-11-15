@@ -14,6 +14,7 @@ public class PackageLocation : MonoBehaviour
 
     [Header("Graphics")]
     public bool showOutline;
+    public bool packageDisappears;
 
     [Header("Successful Delivery")]
     public string printOnSuccess;
@@ -46,6 +47,10 @@ public class PackageLocation : MonoBehaviour
             if (packageName == intendedPackageName)
             {
                 isCorrectPackage = true;
+                if (packageDisappears)
+                {
+                    other.gameObject.SetActive(false);
+                }
             }
             else
             {

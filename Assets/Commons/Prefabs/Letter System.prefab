@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 3199804470078401352}
   - {fileID: 4391066264908778736}
+  - {fileID: 5297129002320398082}
   - {fileID: 8745403894424633551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -50,7 +51,7 @@ GameObject:
   - component: {fileID: 600870029636871835}
   m_Layer: 0
   m_Name: Letter
-  m_TagString: Delivery
+  m_TagString: Letter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,11 +65,11 @@ Transform:
   m_GameObject: {fileID: 529109467012216598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06500006, y: 0.5550001, z: 0.208}
-  m_LocalScale: {x: 0.275, y: 0.01, z: 0.44}
+  m_LocalPosition: {x: 0.89434934, y: 1.0945652, z: -0.15775335}
+  m_LocalScale: {x: 0.11000001, y: 0.01, z: 0.22}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4391066264908778736}
+  m_Father: {fileID: 4271796602803240977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1830335678570564391
 MeshFilter:
@@ -424,8 +425,7 @@ Transform:
   m_LocalPosition: {x: 0.8683493, y: 0.539565, z: -0.26175332}
   m_LocalScale: {x: 0.4, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5297129002320398082}
+  m_Children: []
   m_Father: {fileID: 4271796602803240977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1879237405909071858
