@@ -27,7 +27,7 @@ public class TrueInstructions : MonoBehaviour
         float elapsed = 0.0f;
         float distance = Vector3.Distance(Location1, Location2);
         float currentSpeed = 0.0f;
-
+        InstructionsObject.GetComponent<AudioSource>().Play();
         while (elapsed < smoothTime)
         {
             elapsed += Time.deltaTime;
@@ -49,7 +49,7 @@ public class TrueInstructions : MonoBehaviour
 
             yield return null;
         }
-
+        
         InstructionsObject.transform.localPosition = Location2; // Ensure the object is exactly at Location2
     }
 
