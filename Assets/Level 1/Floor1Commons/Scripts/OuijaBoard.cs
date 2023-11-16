@@ -14,11 +14,21 @@ public class OuijaBoard : MonoBehaviour
     public float speed = 1.0f;
     public float smoothTime = 0.3f;
 
+    private bool isActivated = false;
+
     private Vector3 velocity = Vector3.zero;
 
     void Start()
     {
-        StartCoroutine(MovePuck());
+        isActivated = false;
+    }
+    private void OnTriggerEnter(Collider Player)
+    {
+        if(isActivated == false)
+        {
+            StartCoroutine(MovePuck());
+            isActivated = true;
+        } 
     }
 
     IEnumerator MovePuck()

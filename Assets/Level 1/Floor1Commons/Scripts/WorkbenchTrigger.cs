@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class WorkbenchTrigger : MonoBehaviour
 {
+    private bool triggeredOnce = false;
+    public void Start()
+    {
+        triggeredOnce = false;
+    }
     public void OnTriggerExit(Collider Player)
     {
-        HermitGameManager.instance.StartInstructionsUnderDoor();
+        if (triggeredOnce == false)
+        {
+            HermitGameManager.instance.StartInstructionsUnderDoor();
+            triggeredOnce = true;
+        }
+        
     }
 }

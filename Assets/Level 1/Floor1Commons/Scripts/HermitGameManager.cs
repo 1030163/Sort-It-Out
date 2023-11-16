@@ -8,6 +8,9 @@ public class HermitGameManager : MonoBehaviour
     public GameObject WorkbenchTrigger;
     public GameObject TrueInstructions;
 
+    public GameObject SpareRoomDoor;
+    public GameObject SurvRoomDoor;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -23,5 +26,15 @@ public class HermitGameManager : MonoBehaviour
     public void StartInstructionsUnderDoor()
     {
         TrueInstructions.GetComponent<TrueInstructions>().InstructionsUnderDoor();
+    }
+
+    public void RadioPackageDelivered()
+    {
+        SpareRoomDoor.SetActive(false);
+    }
+
+    public void BothPackagesCorrectlyDelivered()
+    {
+        SurvRoomDoor.SetActive(false);
     }
 }
