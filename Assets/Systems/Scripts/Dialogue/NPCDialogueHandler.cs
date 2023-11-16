@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class NPCDialogueHandler : MonoBehaviour {
 
-    [SerializeField] private DialogueTree[] dialogueTrees;
-    [SerializeField] private NPCDialogue[] singularDialogue;
+    public DialogueTree[] dialogueTrees;
+    public NPCDialogue[] singularDialogue;
     [SerializeField] private PrintDialogue dialogueBox;
-    [SerializeField] private GameObject speechBubble;
+    [SerializeField] private GameObject speechBubbleSprite;
 
     private DialogueTree currentTree;
     private int treeCurrentIndex;
@@ -22,13 +22,13 @@ public class NPCDialogueHandler : MonoBehaviour {
 
     public void InitSingularDialogue(NPCDialogue dialogue) {
         currentTree = null;
-        speechBubble.SetActive(true);
+        speechBubbleSprite.SetActive(true);
         dialogueBox.InitDialogueText(dialogue);
     }
 
     public void InitDialogueTree(DialogueTree dialogueTree) {
         currentTree = dialogueTree;
-        speechBubble.SetActive(true);
+        speechBubbleSprite.SetActive(true);
         dialogueBox.InitDialogueText(currentTree.dialogueTree[0]);
     }
 
@@ -46,11 +46,11 @@ public class NPCDialogueHandler : MonoBehaviour {
             }
 
             print("You've reached the end of the dialogue tree!");
-            speechBubble.SetActive(false);
+            speechBubbleSprite.SetActive(false);
             return;
         }
 
-        print("You've reached the end of the dialogue !");
-        speechBubble.SetActive(false);
+        print("You've reached the end of the dialogue!");
+        speechBubbleSprite.SetActive(false);
     }
 }
