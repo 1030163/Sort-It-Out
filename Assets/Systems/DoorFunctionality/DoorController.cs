@@ -5,23 +5,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class DoorController : MonoBehaviour
 {
-    [Header("Door Rotation")]
-    public float openAngle = 90f;
-    public float rotationSpeed = 2f;
-
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
-
-
-
     private bool isOpen = false;
 
     public bool hasPermission = true;
+    private Animator animator;
 
     void Start()
     {
-        closedRotation = transform.rotation;
-        openRotation = Quaternion.Euler(0, openAngle, 0) * closedRotation;
+        animator = GetComponent<Animator>();
     }
 
     private void OnSelectEntered(XRBaseInteractor interactor)
@@ -33,20 +24,30 @@ public class DoorController : MonoBehaviour
         }
     }
 
+    private void RotateDoor(float targetAngle)
+    {
+        
+    }
+
     private void ToggleDoorState()
     {
-        isOpen = !isOpen;
+        if (hasPermission)
+        {
+            if (!isOpen)
+            {
+                isOpen = true;
+                animator.SetTrigger("DoorMove");
+                animator.SetBool("IsOpen", true);
+            }
+            else
+            {
+                isOpen = false;
+                animator.SetTrigger("DoorMove");
+                animator.SetBool("IsOpen", false);
+            }
+        }
 
-        if (isOpen)
-        {
-            Debug.Log("Door Opened");
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, openRotation, rotationSpeed * Time.deltaTime);
-        }
-        else
-        {
-            Debug.Log("Door Closed");
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, closedRotation, rotationSpeed * Time.deltaTime);
-        }
+
 
     }
 
@@ -56,6 +57,16 @@ public class DoorController : MonoBehaviour
         {
             ToggleDoorState();
         }
+
+
+        //if (isOpen)
+        //{
+        //    RotateDoor(openAngle);
+        //}
+        //else
+        //{
+        //    RotateDoor(0f);
+        //}
     }
 
 }
