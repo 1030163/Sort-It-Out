@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class NPCDialogueHandler : MonoBehaviour {
 
-    [SerializeField] private DialogueTree[] dialogueTrees;
-    [SerializeField] private NPCDialogue[] singularDialogue;
+    public DialogueTree[] dialogueTrees;
+    public NPCDialogue[] singularDialogue;
     [SerializeField] private PrintDialogue dialogueBox;
     [SerializeField] private GameObject speechBubble;
 
