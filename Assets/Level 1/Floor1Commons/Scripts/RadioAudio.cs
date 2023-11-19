@@ -8,43 +8,74 @@ public class RadioAudio : MonoBehaviour
     public float maxChangeDistance = 10f; // Maximum distance at which the audio changes start happening
     public float pitchMin = 0.5f; // Minimum pitch value
     public float pitchMax = 2.0f; // Maximum pitch value
+    public float playDuration = 0.25f;
 
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    //public AudioSource manScreaming;
     private float initialPitch; // To remember the initial pitch of the audio source
+
+    public bool isDelivered = false;
+    public bool isInsideApart = false;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        //audioSource = GetComponent<AudioSource>();
         initialPitch = audioSource.pitch; // Store the initial pitch
     }
 
     void Update()
     {
-        // Calculate the distance between this GameObject and the target
-        float distanceToTarget = Vector3.Distance(transform.position, targetObject.transform.position);
-
-        // Check if the target is within the maxChangeDistance
-        if (distanceToTarget <= maxChangeDistance)
+        if (isDelivered == false && isInsideApart == true)
         {
-            // Scale the pitch based on the distance
-            float pitch = Mathf.Lerp(pitchMax, pitchMin, distanceToTarget / maxChangeDistance);
-            audioSource.pitch = pitch;
+            // Calculate the distance between this GameObject and the target
+            float distanceToTarget = Vector3.Distance(transform.position, targetObject.transform.position);
 
-            // Optionally interrupt the audio randomly
-            if (!audioSource.isPlaying || Random.value > 0.95f) // 5% chance to interrupt each frame
+            // Determine if the object is within the range to change pitch and potentially interrupt
+            if (distanceToTarget <= maxChangeDistance)
             {
-                // This would stop and start the audio to interrupt it. Adjust as needed.
-                audioSource.Stop();
-                audioSource.Play();
+                // Scale the chance of interruption based on distance (lower chance when closer)
+                // This formula reduces the interruption frequency more significantly as you get closer
+                float interruptionChance = Mathf.Pow(distanceToTarget / maxChangeDistance, 2);
+
+                // Scale the pitch based on the distance (closer to initial pitch when near the target)
+                float pitch = Mathf.Lerp(initialPitch, pitchMax, distanceToTarget / maxChangeDistance);
+                audioSource.pitch = pitch;
+
+                // Interrupt the audio based on the calculated chance
+                if (!audioSource.isPlaying || Random.value < interruptionChance)
+                {
+                    audioSource.Stop();
+                    audioSource.Play();
+                }
+            }
+            else
+            {
+                // Ensure no interruptions and reset pitch when the target is outside the maxChangeDistance
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
+
+                if (audioSource.pitch != initialPitch)
+                {
+                    audioSource.pitch = initialPitch;
+                }
             }
         }
-        else
-        {
-            // Reset pitch to initialPitch when the target is outside the maxChangeDistance
-            if (audioSource.pitch != initialPitch)
-            {
-                audioSource.pitch = initialPitch;
-            }
-        }
+    }
+
+    IEnumerator PlayAudioForDuration(AudioSource audioSource, float duration)
+    {
+        if (audioSource == null) yield break; // Exit if no audio source is provided
+
+        audioSource.Play();
+        yield return new WaitForSeconds(duration);
+        audioSource.Stop();
+    }
+
+    public void Delivered()
+    {
+        audioSource.Stop();
+        isDelivered = true;
     }
 }

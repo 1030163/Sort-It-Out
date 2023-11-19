@@ -16,10 +16,12 @@ public class BenPackageDetection : MonoBehaviour
         {
             if (!checkPackageName || other.gameObject.name == packageName)
             {
+                Debug.Log("About to call function: " + executeOnCorrectDelivery);
                 executeOnCorrectDelivery.Invoke();
             }
             else
             {
+                Debug.Log("About to call function: " + executeOnIncorrectDelivery);
                 executeOnIncorrectDelivery.Invoke();
             }
         }
