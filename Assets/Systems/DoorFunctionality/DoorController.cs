@@ -16,7 +16,7 @@ public class DoorController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void OnSelectEntered(XRBaseInteractor interactor)
+    public void OnSelectEntered(XRBaseInteractor interactor)
     {
         // Check if the interaction is from a poke
         if (interactor is XRPokeInteractor)
