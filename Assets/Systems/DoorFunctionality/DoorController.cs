@@ -5,6 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class DoorController : MonoBehaviour
 {
+    public bool openInside;
     private bool isOpen = false;
 
     public bool hasPermission = true;
@@ -38,6 +39,15 @@ public class DoorController : MonoBehaviour
                 isOpen = true;
                 animator.SetTrigger("DoorMove");
                 animator.SetBool("IsOpen", true);
+
+                if (openInside)
+                {
+                    animator.SetBool("isInside", true);
+                }
+                else
+                {
+                    animator.SetBool("isInside", false);
+                }
             }
             else
             {
