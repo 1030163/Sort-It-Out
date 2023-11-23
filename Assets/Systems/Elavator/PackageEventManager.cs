@@ -26,12 +26,12 @@ public class PackageEventManager : MonoBehaviour
     {
         if (PackageEvents.packageEvents != null)
         {
-            PackageEvents.packageEvents.OnFloor1Day1Package1 += OnFloor1Day1Package1;
-            PackageEvents.packageEvents.OnFloor1Day1Package2 += OnFloor1Day1Package2;
-            PackageEvents.packageEvents.OnFloor2Day1Package1 += OnFloor2Day1Package1;
-            PackageEvents.packageEvents.OnFloor2Day1Package2 += OnFloor2Day1Package2;
-            PackageEvents.packageEvents.OnFloor3Day1Package1 += OnFloor3Day1Package1;
-            PackageEvents.packageEvents.OnFloor3Day1Package2 += OnFloor3Day1Package2;
+            PackageEvents.packageEvents.OnF1D1P1 += OnF1D1P1;
+            PackageEvents.packageEvents.OnF1D1P2 += OnF1D1P2;
+            PackageEvents.packageEvents.OnF2D1P1 += OnF2D1P1;
+            PackageEvents.packageEvents.OnF2D1P2 += OnF2D1P2;
+            PackageEvents.packageEvents.OnF3D1P1 += OnF3D1P1;
+            PackageEvents.packageEvents.OnF3D1P2 += OnF3D1P2;
 
         }
         else
@@ -59,7 +59,7 @@ public class PackageEventManager : MonoBehaviour
             Debug.Log("All packages for Day 1 successfully delivered");
         }
     }
-    private void OnFloor1Day1Package1()
+    private void OnF1D1P1()
     {
         //Code of what happens when event triggered go here.
         //checks off the package in checklist
@@ -69,35 +69,35 @@ public class PackageEventManager : MonoBehaviour
         Debug.Log("Floor 1 Package 1 delivered");
     }
 
-    private void OnFloor1Day1Package2()
+    private void OnF1D1P2()
     {
         day1PackageChecklist[1] = true;
 
         Debug.Log("Floor 1 Package 2 delivered");
     }
 
-    private void OnFloor2Day1Package1()
+    private void OnF2D1P1()
     {
         day1PackageChecklist[2] = true;
 
         Debug.Log("Floor 2 Package 1 delivered");
     }
 
-    private void OnFloor2Day1Package2()
+    private void OnF2D1P2()
     {
         day1PackageChecklist[3] = true;
 
         Debug.Log("Floor 2 Package 2 delivered");
     }
 
-    private void OnFloor3Day1Package1()
+    private void OnF3D1P1()
     {
         day1PackageChecklist[4] = true;
 
         Debug.Log("Floor 3 Package 1 delivered");
     }
 
-    private void OnFloor3Day1Package2()
+    private void OnF3D1P2()
     {
         day1PackageChecklist[5] = true;
 
