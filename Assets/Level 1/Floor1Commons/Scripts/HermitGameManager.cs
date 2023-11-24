@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class HermitGameManager : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class HermitGameManager : MonoBehaviour
     public GameObject TrueInstructions;
 
     public GameObject SpareRoomDoor;
+    
     public GameObject SurvRoomDoor;
+    public AudioSource SurvWardrobe;
+    public GameObject SurvRoomLight;
 
     private void Awake()
     {
@@ -25,16 +29,30 @@ public class HermitGameManager : MonoBehaviour
 
     public void StartInstructionsUnderDoor()
     {
+        Debug.Log("Funtion: StartInstructionsUnderDoor() called");
         TrueInstructions.GetComponent<TrueInstructions>().InstructionsUnderDoor();
     }
 
     public void RadioPackageDelivered()
     {
-        SpareRoomDoor.SetActive(false);
+        Debug.Log("Funtion: RadioPackageDelivered() called");
+        //SpareRoomDoor.GetComponent<ModifiedDoorController>().hasPermission = true;
+        SpareRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
+        //SpareRoomDoor.GetComponent<ModifiedDoorController>().hasPermission = false;
     }
 
     public void BothPackagesCorrectlyDelivered()
     {
-        SurvRoomDoor.SetActive(false);
+        Debug.Log("Funtion: BothPackagesCorrectlyDelivered() called");
+        SurvRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
+        SurvRoomLight.SetActive(false);
+        StartCoroutine(PlaySlamSound(SurvWardrobe));
+    }
+
+    IEnumerator PlaySlamSound(AudioSource audioSource)
+    {
+        if (audioSource == null) yield break; // Exit if no audio source is provided
+        yield return new WaitForSeconds(1);
+        audioSource.Play();
     }
 }

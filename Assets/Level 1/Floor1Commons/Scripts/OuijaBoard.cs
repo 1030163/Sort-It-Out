@@ -18,9 +18,11 @@ public class OuijaBoard : MonoBehaviour
 
     private Vector3 velocity = Vector3.zero;
 
+    private AudioSource audioSource;
     void Start()
     {
         isActivated = false;
+        audioSource = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter(Collider Player)
     {
@@ -59,13 +61,14 @@ public class OuijaBoard : MonoBehaviour
 
     IEnumerator MoveTowardsPosition(Vector3 targetPosition)
     {
+        audioSource.Play();
         // Continue looping until the position is approximately reached.
         while (Vector3.Distance(Puck.transform.localPosition, targetPosition) > 0.01f)
         {
             Puck.transform.localPosition = Vector3.SmoothDamp(Puck.transform.localPosition, targetPosition, ref velocity, smoothTime, speed, Time.deltaTime);
             yield return null; // Wait for the next frame
         }
-
+        audioSource.Stop();
         // Directly set the position to ensure it is exactly at the target location after stopping.
         Puck.transform.localPosition = targetPosition;
     }
