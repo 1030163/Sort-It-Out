@@ -6,15 +6,22 @@ public class PrintDialogue : MonoBehaviour {
 
     [SerializeField] private GameObject confirmButton;
     [SerializeField] private DialogueResponseButtonHandler responseHandler;
+    [SerializeField] private AudioClip dialogueAudio;
+    [SerializeField] private int charactersBetweenAudio;
 
     [Header("Text Speed Variables")]
     [SerializeField] private int textSpeed;
     [SerializeField] private float textDelay;
 
     private TextMeshPro speechBubbleText;
+    private AudioSource audioSource;
+
+    [SerializeField] private float minPitch = 0.9f;
+    [SerializeField] private float maxPitch = 1.2f;
 
     private void Awake() {
         speechBubbleText = GetComponent<TextMeshPro>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void InitDialogueText(NPCDialogue npcDialogue) {
@@ -29,6 +36,10 @@ public class PrintDialogue : MonoBehaviour {
     private IEnumerator PrintDialogueText(char[] charactersToPrint, NPCDialogue npcDialogue) {
         for (int i = 0; i < charactersToPrint.Length + 1; i++) {
             speechBubbleText.text = npcDialogue.dialogue.Substring(0, i);
+
+            if (i % charactersBetweenAudio == 0) {
+                PlayDialogueAudio(dialogueAudio);
+            }
 
             yield return new WaitForSeconds(textDelay / textSpeed);
         }
@@ -45,5 +56,15 @@ public class PrintDialogue : MonoBehaviour {
         }
 
         responseHandler.EnableResponseButtons(npcDialogue);
+    }
+
+    private void PlayDialogueAudio(AudioClip audioClip) {
+        audioSource.pitch = RandomiseAudioPitch();
+        audioSource.PlayOneShot(audioClip);
+
+    }
+
+    private float RandomiseAudioPitch() {
+        return Random.Range(minPitch, maxPitch);
     }
 }
