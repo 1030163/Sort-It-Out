@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ModifiedDoorController : MonoBehaviour
 {
     private bool isOpen = false;
+    public bool openInside;
 
     public bool hasPermission = true;
     private Animator animator;
@@ -41,6 +42,15 @@ public class ModifiedDoorController : MonoBehaviour
                 isOpen = true;
                 animator.SetTrigger("DoorMove");
                 animator.SetBool("IsOpen", true);
+
+                if (openInside)
+                {
+                    animator.SetBool("isInside", true);
+                }
+                else
+                {
+                    animator.SetBool("isInside", false);
+                }
             }
             else
             {
@@ -64,6 +74,14 @@ public class ModifiedDoorController : MonoBehaviour
                 
                 animator.SetBool("IsOpen", true);
                 scriptedActionComplete = true;
+                if (openInside)
+                {
+                    animator.SetBool("isInside", true);
+                }
+                else
+                {
+                    animator.SetBool("isInside", false);
+                }
             }
             else
             {
