@@ -45219,6 +45219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Remade Player VR
       objectReference: {fileID: 0}
+    - target: {fileID: 4673678421078504064, guid: d650c2b97e4ef324e9fd98567ad7906a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7658421757631533878, guid: d650c2b97e4ef324e9fd98567ad7906a,
         type: 3}
       propertyPath: m_IsActive
@@ -53256,7 +53261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!143 &1571077922
 CharacterController:
   m_ObjectHideFlags: 0
@@ -57021,7 +57026,7 @@ PrefabInstance:
     - target: {fileID: 7313654230448209575, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7696548424635294048, guid: 895f6f3c2d334633b5800312285058d2,
         type: 3}
