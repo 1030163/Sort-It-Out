@@ -22,6 +22,8 @@ public class PackageLocation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isCorrectPackage = false;
+
         if (!showOutline)
         {
             MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
@@ -35,7 +37,43 @@ public class PackageLocation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checks string against package name and checks it off the list
 
+        if (intendedPackageName == "F1D1P1" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F1D1P1Delivered();
+            this.gameObject.SetActive(false);
+        }
+
+        if (intendedPackageName == "F1D1P2" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F1D1P2Delivered();
+            this.gameObject.SetActive(false);
+        }
+
+        if (intendedPackageName == "F2D1P1" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F2D1P1Delivered();
+            this.gameObject.SetActive(false);
+        }
+
+        if (intendedPackageName == "F2D1P2" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F2D1P2Delivered();
+            this.gameObject.SetActive(false);
+        }
+
+        if (intendedPackageName == "F3D1P1" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F3D1P1Delivered();
+            this.gameObject.SetActive(false);
+        }
+
+        if (intendedPackageName == "F3D1P2" && isCorrectPackage)
+        {
+            PackageEvents.packageEvents.F3D1P2Delivered();
+            this.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -50,6 +88,8 @@ public class PackageLocation : MonoBehaviour
                 if (packageDisappears)
                 {
                     other.gameObject.SetActive(false);
+
+
                 }
             }
             else

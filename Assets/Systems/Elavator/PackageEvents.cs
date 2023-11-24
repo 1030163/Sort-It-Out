@@ -16,57 +16,57 @@ public class PackageEvents : MonoBehaviour
 
     }
 
-    public event Action OnFloor1Day1Package1;
-    public void Floor1Day1Package1Delivered()
+    public event Action OnF1D1P1;
+    public void F1D1P1Delivered()
     {
-        if (OnFloor1Day1Package1 != null)
+        if (OnF1D1P1 != null)
         {
-            OnFloor1Day1Package1();
+            OnF1D1P1();
         }
     }
 
-    public event Action OnFloor1Day1Package2;
-    public void Floor1Day1Package2Delivered()
+    public event Action OnF1D1P2;
+    public void F1D1P2Delivered()
     {
-        if (OnFloor1Day1Package2 != null)
+        if (OnF1D1P2 != null)
         {
-            OnFloor1Day1Package2();
+            OnF1D1P2();
         }
     }
 
-    public event Action OnFloor2Day1Package1;
-    public void Floor2Day1Package1Delivered()
+    public event Action OnF2D1P1;
+    public void F2D1P1Delivered()
     {
-        if (OnFloor2Day1Package1 != null)
+        if (OnF2D1P1 != null)
         {
-            OnFloor2Day1Package1();
+            OnF2D1P1();
         }
     }
 
-    public event Action OnFloor2Day1Package2;
-    public void Floor2Day1Package2Delivered()
+    public event Action OnF2D1P2;
+    public void F2D1P2Delivered()
     {
-        if (OnFloor2Day1Package2 != null)
+        if (OnF2D1P2 != null)
         {
-            OnFloor2Day1Package2();
+            OnF2D1P2();
         }
     }
 
-    public event Action OnFloor3Day1Package1;
-    public void Floor3Day1Package1Delivered()
+    public event Action OnF3D1P1;
+    public void F3D1P1Delivered()
     {
-        if (OnFloor3Day1Package1 != null)
+        if (OnF3D1P1 != null)
         {
-            OnFloor3Day1Package1();
+            OnF3D1P1();
         }
     }
 
-    public event Action OnFloor3Day1Package2;
-    public void Floor3Day1Package2Delivered()
+    public event Action OnF3D1P2;
+    public void F3D1P2Delivered()
     {
-        if (OnFloor3Day1Package2 != null)
+        if (OnF3D1P2 != null)
         {
-            OnFloor3Day1Package2();
+            OnF3D1P2();
         }
     }
 
