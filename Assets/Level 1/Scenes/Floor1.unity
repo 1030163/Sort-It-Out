@@ -204,6 +204,79 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1253282647}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &35248756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1416652193341116735, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_Name
+      value: Remade Player XR Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.972
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.438123
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5028520419633456825, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022439863250078159, guid: 9077cae765fd15d408984f746789de18,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.906
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9077cae765fd15d408984f746789de18, type: 3}
 --- !u!43 &41073683
 Mesh:
   m_ObjectHideFlags: 0
@@ -5534,6 +5607,8 @@ MonoBehaviour:
   TrueInstructions: {fileID: 666702072}
   SpareRoomDoor: {fileID: 2081402566}
   SurvRoomDoor: {fileID: 2072434877}
+  SurvWardrobe: {fileID: 0}
+  SurvRoomLight: {fileID: 0}
 --- !u!4 &382049205
 Transform:
   m_ObjectHideFlags: 0
@@ -11979,6 +12054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Ghost: {fileID: 857634035}
+  RadioPackage: {fileID: 0}
   Location1: {x: 3.194, y: 0.765, z: -7.766}
   Location2: {x: 2.677, y: 0.765, z: -2.039}
   Location3: {x: -2.904, y: 0.765, z: -9.658}
@@ -12903,6 +12979,10 @@ MonoBehaviour:
   maxChangeDistance: 20
   pitchMin: 0.5
   pitchMax: 2
+  playDuration: 0.25
+  audioSource: {fileID: 0}
+  isDelivered: 0
+  isInsideApart: 0
 --- !u!54 &903254015
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22463,74 +22543,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1560797641}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1563840107
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -7.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2936435151884467104, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4673678421078504064, guid: d650c2b97e4ef324e9fd98567ad7906a,
-        type: 3}
-      propertyPath: m_Name
-      value: Remade Player VR
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d650c2b97e4ef324e9fd98567ad7906a, type: 3}
 --- !u!1001 &1570448780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29834,4 +29846,4 @@ SceneRoots:
   - {fileID: 1689080614}
   - {fileID: 968141291}
   - {fileID: 41424657}
-  - {fileID: 1563840107}
+  - {fileID: 35248756}

@@ -18,30 +18,34 @@ public class TrolleyManager : MonoBehaviour
 
     private void Start()
     {
-        if (packageEventManager.day1PackageChecklist[0])
+        if (packageEventManager != null)
         {
-            package1.SetActive(false);
+            if (packageEventManager.day1PackageChecklist[0])
+            {
+                package1.SetActive(false);
+            }
+            if (packageEventManager.day1PackageChecklist[1])
+            {
+                package2.SetActive(false);
+            }
+            if (packageEventManager.day1PackageChecklist[2])
+            {
+                package3.SetActive(false);
+            }
+            if (packageEventManager.day1PackageChecklist[3])
+            {
+                package4.SetActive(false);
+            }
+            if (packageEventManager.day1PackageChecklist[4])
+            {
+                package5.SetActive(false);
+            }
+            if (packageEventManager.day1PackageChecklist[5])
+            {
+                package6.SetActive(false);
+            }
         }
-        if (packageEventManager.day1PackageChecklist[1])
-        {
-            package2.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[2])
-        {
-            package3.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[3])
-        {
-            package4.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[4])
-        {
-            package5.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[5])
-        {
-            package6.SetActive(false);
-        }
+
     }
 
     // Update is called once per frame
