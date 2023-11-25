@@ -6,7 +6,7 @@ public class PrintDialogue : MonoBehaviour {
 
     [SerializeField] private GameObject confirmButton;
     [SerializeField] private DialogueResponseButtonHandler responseHandler;
-    [SerializeField] private AudioClip dialogueAudio;
+    [SerializeField] private AudioClip[] dialogueAudio;
     [SerializeField] private int charactersBetweenAudio;
 
     [Header("Text Speed Variables")]
@@ -38,7 +38,7 @@ public class PrintDialogue : MonoBehaviour {
             speechBubbleText.text = npcDialogue.dialogue.Substring(0, i);
 
             if (i % charactersBetweenAudio == 0) {
-                PlayDialogueAudio(dialogueAudio);
+                PlayDialogueAudio(RandomiseAudioClip());
             }
 
             yield return new WaitForSeconds(textDelay / textSpeed);
@@ -66,5 +66,10 @@ public class PrintDialogue : MonoBehaviour {
 
     private float RandomiseAudioPitch() {
         return Random.Range(minPitch, maxPitch);
+    }
+
+    private AudioClip RandomiseAudioClip() {
+        int r = Random.Range(0, dialogueAudio.Length);
+        return dialogueAudio[r];
     }
 }

@@ -13,6 +13,11 @@ public class NPCDialogueHandler : MonoBehaviour {
     private void Update() {
         if (Input.GetKeyDown(KeyCode.P)) {
             InitDialogueTree(dialogueTrees[0]);
+            
+        }
+
+        else if (Input.GetKeyDown(KeyCode.L)) {
+            InitSingularDialogue(singularDialogue[1]);
         }
 
         else if (Input.GetKeyDown(KeyCode.O)) {
