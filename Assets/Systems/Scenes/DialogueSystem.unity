@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 196518467}
   - component: {fileID: 196518466}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ceiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,11 +565,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpeechBubblePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8251651730064846095, guid: 951a3ff9db3efba4699226ef0d110c59,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 4635933377064159970, guid: 951a3ff9db3efba4699226ef0d110c59, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7966886888473624885, guid: 951a3ff9db3efba4699226ef0d110c59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7205509910241108388, guid: 951a3ff9db3efba4699226ef0d110c59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 951a3ff9db3efba4699226ef0d110c59, type: 3}
 --- !u!4 &884397321 stripped
 Transform:
@@ -1233,11 +1246,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 954487724}
-    - target: {fileID: 5876412168280056795, guid: 951a3ff9db3efba4699226ef0d110c59,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8132322266133171964, guid: 951a3ff9db3efba4699226ef0d110c59,
         type: 3}
       propertyPath: m_Name
@@ -1246,7 +1254,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7966886888473624885, guid: 951a3ff9db3efba4699226ef0d110c59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7205509910241108388, guid: 951a3ff9db3efba4699226ef0d110c59,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 951a3ff9db3efba4699226ef0d110c59, type: 3}
 --- !u!114 &3470834463339550222 stripped
 MonoBehaviour:
@@ -1265,8 +1281,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2133381541}
+  - {fileID: 196518469}
   - {fileID: 518641167}
   - {fileID: 954487721}
   - {fileID: 1576723210}
-  - {fileID: 196518469}
   - {fileID: 72772278}
