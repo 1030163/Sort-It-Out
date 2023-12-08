@@ -57,7 +57,7 @@ public class TrueInstructions : MonoBehaviour
     {
         if (Player.CompareTag("Player"))
         {
-            GetComponent<NPCDialogueHandler>().InitDialogueTree(GetComponent<NPCDialogueHandler>().dialogueTrees[0]);
+            GetComponent<DialogueHandler>().InitDialogueTree(GetComponent<NPC>().dialogueTrees[0]);
         }
     }
 
@@ -65,7 +65,7 @@ public class TrueInstructions : MonoBehaviour
     {
         if (Player.CompareTag("Player"))
         {
-            GetComponent<NPCDialogueHandler>().InitSingularDialogue(GetComponent<NPCDialogueHandler>().dialogueTrees[0].dialogueTree[1]);
+            GetComponent<DialogueHandler>().InitSingularDialogue(GetComponent<NPC>().dialogueTrees[0].dialogueTree[1], "Note");
         }
     }
 

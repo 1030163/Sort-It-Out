@@ -4,28 +4,28 @@ using TMPro;
 
 public class PrintDialogue : MonoBehaviour {
 
-    [SerializeField] private GameObject confirmButton;
-    [SerializeField] private DialogueResponseButtonHandler responseHandler;
+    public GameObject confirmButton;
+    [SerializeField] private DialogueHandler dialogueHandler;
+    
+    [SerializeField] private TextMeshProUGUI NPCNameText;
     [SerializeField] private AudioClip[] dialogueAudio;
     [SerializeField] private int charactersBetweenAudio;
-
-    [Header("Text Speed Variables")]
     [SerializeField] private int textSpeed;
     [SerializeField] private float textDelay;
 
-    private TextMeshPro speechBubbleText;
+    private TextMeshProUGUI dialogueText;
     private AudioSource audioSource;
-
-    [SerializeField] private float minPitch = 0.9f;
-    [SerializeField] private float maxPitch = 1.2f;
+    private const float minPitch = 0.9f;
+    private const float maxPitch = 1.1f;
 
     private void Awake() {
-        speechBubbleText = GetComponent<TextMeshPro>();
+        dialogueText = GetComponent<TextMeshProUGUI>();
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void InitDialogueText(NPCDialogue npcDialogue) {
+    public void InitDialogueText(NPCDialogue npcDialogue, string NPCName) {
         char[] charactersInDialogue = npcDialogue.dialogue.ToCharArray();
+        NPCNameText.text = NPCName;
 
         confirmButton.SetActive(false);
 
@@ -35,7 +35,7 @@ public class PrintDialogue : MonoBehaviour {
 
     private IEnumerator PrintDialogueText(char[] charactersToPrint, NPCDialogue npcDialogue) {
         for (int i = 0; i < charactersToPrint.Length + 1; i++) {
-            speechBubbleText.text = npcDialogue.dialogue.Substring(0, i);
+            dialogueText.text = npcDialogue.dialogue.Substring(0, i);
 
             if (i % charactersBetweenAudio == 0) {
                 PlayDialogueAudio(RandomiseAudioClip());
@@ -55,7 +55,7 @@ public class PrintDialogue : MonoBehaviour {
             return;
         }
 
-        responseHandler.EnableResponseButtons(npcDialogue);
+        dialogueHandler.EnableResponseButtons(npcDialogue);
     }
 
     private void PlayDialogueAudio(AudioClip audioClip) {
