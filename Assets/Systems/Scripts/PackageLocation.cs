@@ -19,6 +19,9 @@ public class PackageLocation : MonoBehaviour
     [Header("Successful Delivery")]
     public string printOnSuccess;
 
+
+    private bool alreadyDissapearing = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,11 +88,19 @@ public class PackageLocation : MonoBehaviour
             if (packageName == intendedPackageName)
             {
                 isCorrectPackage = true;
-                if (packageDisappears)
+                if (packageDisappears && !alreadyDissapearing)
                 {
-                    other.gameObject.SetActive(false);
+                    alreadyDissapearing = true;
 
+                    //Remove package after 1 second
+                    StartCoroutine(PackageSetActive(other.gameObject));
 
+                    //sound effect and emmittor
+                    GameObject celebratePrefab = Resources.Load<GameObject>("CelebrateDelivery");                    
+                    GameObject celebrate = Instantiate(celebratePrefab, transform.position + new Vector3(0, -0.5f, 0), transform.rotation * celebratePrefab.transform.rotation);
+
+                    //remove effect when not needed
+                    Destroy(celebrate, 20f);
                 }
             }
             else
@@ -102,6 +113,14 @@ public class PackageLocation : MonoBehaviour
                 print(printOnSuccess);
             }
         }
+    }
+
+    //Wait to turn off package
+    public IEnumerator PackageSetActive(GameObject turnOffPackage)
+    {
+        yield return new WaitForSeconds(1);
+        turnOffPackage.SetActive(false);
+        yield return null;
     }
 
     private void OnTriggerExit(Collider other)
