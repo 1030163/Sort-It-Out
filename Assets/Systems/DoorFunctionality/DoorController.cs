@@ -11,26 +11,30 @@ public class DoorController : MonoBehaviour
     public bool hasPermission = true;
     private Animator animator;
 
+    private GameObject player;
+    private bool playerInRange = false;
+
+    private bool doorAnimating = false;
+    private BoxCollider bx;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        bx = GetComponentInParent<BoxCollider>();
     }
 
-    public void OnSelectEntered(XRBaseInteractor interactor)
+
+
+    private IEnumerator WaitForDoorOpen()
     {
-        // Check if the interaction is from a poke
-        if (interactor is XRPokeInteractor)
-        {
-            ToggleDoorState();
-        }
+        doorAnimating = true;
+        ToggleDoorState();
+        yield return new WaitForSeconds(1);
+        doorAnimating = false;
     }
 
-    private void RotateDoor(float targetAngle)
-    {
-        
-    }
-
-    private void ToggleDoorState()
+    public void ToggleDoorState()
     {
         if (hasPermission)
         {
@@ -56,27 +60,34 @@ public class DoorController : MonoBehaviour
                 animator.SetBool("IsOpen", false);
             }
         }
-
-
-
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (player.GetComponent<PlayerDoorRaycast>().doorFound)
         {
-            ToggleDoorState();
+            if (Input.GetKeyDown(KeyCode.E) && !doorAnimating && playerInRange)
+            {
+                StartCoroutine(WaitForDoorOpen());
+            }
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player In Range");
+            playerInRange = true;
+        }
+    }
 
-        //if (isOpen)
-        //{
-        //    RotateDoor(openAngle);
-        //}
-        //else
-        //{
-        //    RotateDoor(0f);
-        //}
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+        }
     }
 
 }
