@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class CameraRaycastNEW : MonoBehaviour {
+public class CameraRaycastNEW : MonoBehaviour
+{
 
     [SerializeField] private Transform packageHoldPoint;
     [SerializeField] private int interactDistance;
@@ -12,8 +13,14 @@ public class CameraRaycastNEW : MonoBehaviour {
     [SerializeField] private float correctionForce = 1f; // The force/speed with which to correct the object when held
 
     private GameObject heldObject;
-    private bool isHoldingObject = false;
+    [SerializeField] private bool isHoldingObject = false;
     private Vector3 defaultHoldPointPosition;
+
+
+    public bool rotationHappening = false; //Bool for rmb down / currently rotating
+    private Vector3 mousePosMovement = Vector3.zero;
+    private Vector3 mousePrevmovement = Vector3.zero;
+
 
     private void Start()
     {
@@ -24,6 +31,48 @@ public class CameraRaycastNEW : MonoBehaviour {
     {
         Debug.DrawRay(transform.position, transform.forward * interactDistance, Color.red);
 
+
+        if (Input.GetMouseButtonDown(1) && isHoldingObject)
+        {
+            rotationHappening = true;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            rotationHappening = false;
+        }
+
+
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            if (isHoldingObject)
+            {
+                if (Input.GetMouseButtonDown(0) && isHoldingObject)
+                {
+                    // Before releasing the object, reset the Rigidbody's velocity.
+                    Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+                    if (rb != null)
+                    {
+                        /*  rb.isKinematic = false;
+                          rb.velocity = Vector3.zero;                              //Butchered by Woody
+                          rb.angularVelocity = Vector3.zero;*/
+                        rb.useGravity = true;
+                    }
+                    isHoldingObject = false;
+                    heldObject = null;
+                }
+            }
+            else
+            {
+                SendRaycast();
+            }
+
+        }
+
+    }
+
+    private void FixedUpdate()
+    {
         if (heldObject)
         {
             // Get the pitch of the camera/player view and convert it to a range between -180 and 180
@@ -52,35 +101,26 @@ public class CameraRaycastNEW : MonoBehaviour {
             // Move the held object's position to the packageHoldPoint position via Rigidbody Physics                                                           //Edited by Woody J. Wyche 1024800
             // Using LERP                                                                            
             //float t = Mathf.SmoothStep(0, 1, Time.deltaTime * correctionForce);
-            
-            
+
+
             Vector3 moveToHeldPos = Vector3.Lerp(heldObject.transform.position, packageHoldPoint.position, Time.deltaTime * correctionForce);
-            
+
             
 
-            heldObject.GetComponent<Rigidbody>().MovePosition(moveToHeldPos);                                                                                 
+            heldObject.GetComponent<Rigidbody>().MovePosition(moveToHeldPos);
+
+
         }
 
-        if (Input.GetMouseButtonDown(0))
+
+        if (rotationHappening)
         {
-            SendRaycast();
-        }
-
-        if (Input.GetMouseButtonDown(1) && isHoldingObject)
-        {
-            // Before releasing the object, reset the Rigidbody's velocity.
-            Rigidbody rb = heldObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-              /*  rb.isKinematic = false;
-                rb.velocity = Vector3.zero;                              //Butchered by Woody
-                rb.angularVelocity = Vector3.zero;*/
-                rb.useGravity = true;
-
-            }
-
-            isHoldingObject = false;
-            heldObject = null;
+            mousePosMovement = Input.mousePosition - mousePrevmovement;
+            print("mouse variance is "+mousePosMovement);
+            heldObject.transform.Rotate(transform.up, -Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
+            heldObject.transform.Rotate(Camera.main.transform.right, Vector3.Dot(mousePosMovement, Camera.main.transform.up), Space.World);
+            mousePrevmovement = Input.mousePosition;
+//            print(Vector3.Dot(mousePosMovement, Camera.main.transform.up));
         }
     }
 
