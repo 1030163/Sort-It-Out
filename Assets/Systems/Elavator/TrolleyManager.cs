@@ -5,12 +5,13 @@ using UnityEngine;
 public class TrolleyManager : MonoBehaviour
 {
     PackageEventManager packageEventManager;
-    [SerializeField] GameObject package1;
-    [SerializeField] GameObject package2;
-    [SerializeField] GameObject package3;
-    [SerializeField] GameObject package4;
-    [SerializeField] GameObject package5;
-    [SerializeField] GameObject package6;
+    [SerializeField] GameObject[] day1Packages;
+    [SerializeField] GameObject[] day2Packages;
+    [SerializeField] Transform attachPoint;
+    bool isDay1;
+    bool isAttached;
+    List<GameObject> packagesInTrolley;
+
     void Awake()
     {
         packageEventManager = FindObjectOfType<PackageEventManager>();
@@ -18,35 +19,20 @@ public class TrolleyManager : MonoBehaviour
 
     private void Start()
     {
-        if (packageEventManager.day1PackageChecklist[0])
+
+        //if (packageToInstantiate != null && packageSpawnPoint != null)
         {
-            package1.SetActive(false);
+        //    Instantiate(prefabToInstantiate, packageSpawnPoint.position, packageSpawnPoint.rotation);
         }
-        if (packageEventManager.day1PackageChecklist[1])
-        {
-            package2.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[2])
-        {
-            package3.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[3])
-        {
-            package4.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[4])
-        {
-            package5.SetActive(false);
-        }
-        if (packageEventManager.day1PackageChecklist[5])
-        {
-            package6.SetActive(false);
-        }
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //if player is in trigger
+    //player left clicks
+    //add package to trolley list
+    //place package in trolley
+
+
+    //if package is in trolley, on floor start, spawn the package
+
 }
