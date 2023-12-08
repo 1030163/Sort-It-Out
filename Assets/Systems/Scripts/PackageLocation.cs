@@ -97,7 +97,7 @@ public class PackageLocation : MonoBehaviour
 
                     //sound effect and emmittor
                     GameObject celebratePrefab = Resources.Load<GameObject>("CelebrateDelivery");                    
-                    GameObject celebrate = Instantiate(celebratePrefab, transform.position + new Vector3(0, -0.5f, 0), transform.rotation * celebratePrefab.transform.rotation);
+                    GameObject celebrate = Instantiate(celebratePrefab, transform.position + transform.lossyScale.y * new Vector3(0, -0.3f, 0), transform.rotation * celebratePrefab.transform.rotation);
 
                     //remove effect when not needed
                     Destroy(celebrate, 20f);
