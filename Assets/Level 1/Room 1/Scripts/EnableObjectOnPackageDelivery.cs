@@ -13,12 +13,12 @@ public class EnableObjectOnPackageDelivery : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (isCatCollarPackage && other.gameObject.name == "CatCollar_Collider") {
             catCollar.SetActive(true);
-            dialogueHandler.InitSingularDialogue(npc.singularDialogue[2], "Mildred Brown"); // The Old Lady will thank you for delivering the Cat Collar
+            dialogueHandler.InitSingularDialogue(npc.singularDialogue[2], "Mildred Brown", VOICE_TYPE.Feminine); // The Old Lady will thank you for delivering the Cat Collar
         }
 
         else if (!isCatCollarPackage && other.gameObject.name == "CatFood_Collider") {
             catFood.SetActive(true);
-            dialogueHandler.InitSingularDialogue(npc.singularDialogue[3], "Mildred Brown"); // The Old Lady will thank you for delivering the Cat Food
+            dialogueHandler.InitSingularDialogue(npc.singularDialogue[3], "Mildred Brown", VOICE_TYPE.Feminine); // The Old Lady will thank you for delivering the Cat Food
         }
     }
 }

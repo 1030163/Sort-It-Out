@@ -2,35 +2,40 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueHandler : MonoBehaviour {
+
     [SerializeField] private PrintDialogue dialoguePrinter;
-    [SerializeField] private GameObject dialogueBoxSprite;
-    [SerializeField] private GameObject[] responseButtons;
     [SerializeField] private Animator dialogueBoxAnimator;
+    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject[] responseButtons;
 
     private DialogueTree currentTree;
     private int treeCurrentIndex;
 
     private string NPCTalking;
+    private VOICE_TYPE NPCVoiceType;
 
-    private void Update()
-    {
-        if (dialoguePrinter.confirmButton.activeSelf && Input.GetKeyDown(KeyCode.E))
-        {
+    private void Update() {
+        if (dialoguePrinter.confirmButton.activeSelf && Input.GetKeyDown(KeyCode.E)) {
             OnConfirmButtonPressed();
         }
     }
 
-    public void InitSingularDialogue(NPCDialogue dialogue, string NPCName) {
+    public void InitSingularDialogue(NPCDialogue dialogue, string NPCName, VOICE_TYPE voiceType) {
         NPCTalking = NPCName;
+        NPCVoiceType = voiceType;
+
         currentTree = null;
-        dialogueBoxSprite.SetActive(true);
-        dialoguePrinter.InitDialogueText(dialogue, NPCTalking);
+        dialogueBox.SetActive(true);
+        dialoguePrinter.InitDialogueText(dialogue, NPCTalking, voiceType);
     }
 
-    public void InitDialogueTree(DialogueTree dialogueTree) {
+    public void InitDialogueTree(DialogueTree dialogueTree, string NPCName, VOICE_TYPE voiceType) {
+        NPCTalking = NPCName;
+        NPCVoiceType = voiceType;
+
         currentTree = dialogueTree;
-        dialogueBoxSprite.SetActive(true);
-        //dialoguePrinter.InitDialogueText(currentTree.dialogueTree[0]);
+        dialogueBox.SetActive(true);
+        dialoguePrinter.InitDialogueText(currentTree.dialogueTree[0], NPCName, voiceType);
     }
 
     // Is called when the E key is pressed at the end of dialogue
@@ -42,48 +47,44 @@ public class DialogueHandler : MonoBehaviour {
 
             if (!atEndOfTree) {
                 treeCurrentIndex++;
-                //dialoguePrinter.InitDialogueText(currentTree.dialogueTree[treeCurrentIndex]);
+                dialoguePrinter.InitDialogueText(currentTree.dialogueTree[treeCurrentIndex], NPCTalking, NPCVoiceType);
                 return;
             }
 
             print("You've reached the end of the dialogue tree!");
-            dialogueBoxSprite.SetActive(false);
+            dialogueBox.SetActive(false);
             return;
         }
 
         print("You've reached the end of the dialogue!");
-        dialogueBoxSprite.SetActive(false);
+        dialogueBox.SetActive(false);
     }
 
+    #region RESPONSE_FUNCTIONS
 
-    // Response Button Functions
-    public void EnableResponseButtons(NPCDialogue dialogue)
-    {
+    public void EnableResponseButtons(NPCDialogue dialogue) {
         int amountToDisplay = dialogue.dialogueResponse.Length;
 
         dialogueBoxAnimator.SetInteger("IsRaising", -1);
 
-        for (int i = 0; i < amountToDisplay; i++)
-        {
+        for (int i = 0; i < amountToDisplay; i++) {
             responseButtons[i].SetActive(true);
             InitResponseButton(dialogue, i);
         }
+
+        ToggleCursorState(true);
     }
 
-    public void DisableResponseButtons()
-    {
-        for (int i = 0; i < responseButtons.Length; i++)
-        {
+    public void DisableResponseButtons() {
+        for (int i = 0; i < responseButtons.Length; i++) {
             responseButtons[i].SetActive(false);
         }
     }
 
-    private void InitResponseButton(NPCDialogue dialogue, int i)
-    {
+    private void InitResponseButton(NPCDialogue dialogue, int i) {
         responseButtons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = dialogue.dialogueResponse[i].response;
 
-        if (dialogue.dialogueResponse[i].responseTree)
-        {
+        if (dialogue.dialogueResponse[i].responseTree) {
             responseButtons[i].GetComponent<Button>().onClick.AddListener(delegate {
                 RunDialogueTreeOnResponse(dialogue.dialogueResponse[i].responseTree);
             });
@@ -96,17 +97,32 @@ public class DialogueHandler : MonoBehaviour {
         });
     }
 
-    private void RunDialogueTreeOnResponse(DialogueTree dialogueTree)
-    {
-        DisableResponseButtons();
-        dialogueBoxAnimator.SetInteger("IsRaising", 1);
-        InitDialogueTree(dialogueTree);
+    private void RunDialogueTreeOnResponse(DialogueTree dialogueTree) {
+        LowerDialogueBox();
+        InitDialogueTree(dialogueTree, NPCTalking, NPCVoiceType);
     }
 
-    private void RunSingularDialogueOnResponse(NPCDialogue singularDialogue)
-    {
+    private void RunSingularDialogueOnResponse(NPCDialogue singularDialogue) {
+        LowerDialogueBox();
+        InitSingularDialogue(singularDialogue, NPCTalking, NPCVoiceType);
+    }
+
+    #endregion
+
+    public void LowerDialogueBox() {
         DisableResponseButtons();
         dialogueBoxAnimator.SetInteger("IsRaising", 1);
-        InitSingularDialogue(singularDialogue, NPCTalking);
+        ToggleCursorState(false);
+    }
+
+    private void ToggleCursorState(bool willToggleOn) {
+        if (willToggleOn) {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            return;
+        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
