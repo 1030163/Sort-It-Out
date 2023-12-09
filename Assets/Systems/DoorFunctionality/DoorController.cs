@@ -19,11 +19,16 @@ public class DoorController : MonoBehaviour
     //private float raycastDistance = 1f;
     public bool doorFound;
 
-
+    [SerializeField] private bool lockedDoor;
     public bool automaticDoor;
 
     void Start()
     {
+        if (!lockedDoor)
+        {
+            tag = "Door";
+        }
+        
         animator = GetComponent<Animator>();
         //player = GameObject.FindGameObjectWithTag("Player");
         bx = GetComponentInChildren<BoxCollider>();

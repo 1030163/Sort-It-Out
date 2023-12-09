@@ -18,6 +18,15 @@ public class DoorRaycast : MonoBehaviour
 
     private const string interactableTag = "Door";
 
+    private void Start()
+    {
+        //Adds a crosshair to the scene and references it
+        //max was 'ere
+        GameObject crosshairCanvas = Resources.Load<GameObject>("CrosshairCanvas");
+        GameObject inScene = Instantiate(crosshairCanvas);
+        crosshair = inScene.transform.GetChild(0).GetComponent<Image>();
+    }
+
     private void Update()
     {
         RaycastHit hit;
@@ -25,11 +34,14 @@ public class DoorRaycast : MonoBehaviour
 
         int mask = 1 << LayerMask.NameToLayer(excludeLayername) | layerMaskInteract.value;
 
-        if(Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
+        
+
+        if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
         {
-            if(hit.collider.CompareTag(interactableTag))
+
+            if (hit.collider.CompareTag(interactableTag))
             {
-                if(!doOnce)
+                if (!doOnce)
                 {
                     doorControl = hit.collider.gameObject.GetComponent<DoorController>();
                     CrosshairChange(true);
@@ -42,6 +54,16 @@ public class DoorRaycast : MonoBehaviour
                     doorControl.DoorStateChange();
                 }
             }
+            //needed this case because if you hit anything it wouldn't turn off the crosshair
+            //max was 'ere
+            else
+            {
+                if (isCrossHairActive)
+                {
+                    CrosshairChange(false);
+                    doOnce = false;
+                }
+            }
         }
         else
         {
@@ -51,6 +73,9 @@ public class DoorRaycast : MonoBehaviour
                 doOnce = false;
             }
         }
+
+       
+
     }
 
     void CrosshairChange(bool on)
