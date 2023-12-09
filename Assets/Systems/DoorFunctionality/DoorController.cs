@@ -10,20 +10,32 @@ public class DoorController : MonoBehaviour
     public bool hasPermission = true;
     private Animator animator;
 
-    private GameObject player;
-    private bool playerInRange = false;
+    //private GameObject player;
+    //private bool playerInRange = false;
 
     private bool doorAnimating = false;
     private BoxCollider bx;
 
+    //private float raycastDistance = 1f;
+    public bool doorFound;
+
+
+    public bool automaticDoor;
+
     void Start()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        bx = GetComponentInParent<BoxCollider>();
+        //player = GameObject.FindGameObjectWithTag("Player");
+        bx = GetComponentInChildren<BoxCollider>();
     }
 
-
+    public void DoorStateChange()
+    {
+        if (!doorAnimating)
+        {
+            StartCoroutine(WaitForDoorOpen());
+        }
+    }
 
     private IEnumerator WaitForDoorOpen()
     {
@@ -61,41 +73,89 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void AutomaticDoor()
     {
-        //Adding case statements so I don't get butloads of errors
-        //max was 'ere
-        if (player.GetComponent<PlayerDoorRaycast>() == null)
+        if (!isOpen)
         {
-            player.AddComponent<PlayerDoorRaycast>();
-            Debug.Log("player controller missing PlayerDoorRaycast component, so I've attached one");
-            return;
-        }
+            isOpen = true;
+            animator.SetTrigger("DoorMove");
+            animator.SetBool("IsOpen", true);
 
-        if (player.GetComponent<PlayerDoorRaycast>().doorFound)
-        {
-            if (Input.GetKeyDown(KeyCode.E) && !doorAnimating && playerInRange)
+            if (openInside)
             {
-                StartCoroutine(WaitForDoorOpen());
+                animator.SetBool("isInside", true);
+            }
+            else
+            {
+                animator.SetBool("isInside", false);
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        else
         {
-            Debug.Log("Player In Range");
-            playerInRange = true;
+            isOpen = false;
+            animator.SetTrigger("DoorMove");
+            animator.SetBool("IsOpen", false);
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        if (Input.GetKeyDown(KeyCode.V) && automaticDoor)
         {
-            playerInRange = false;
+            AutomaticDoor();
         }
+        //if (doorFound)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.E) && !doorAnimating)
+        //    {
+        //        StartCoroutine(WaitForDoorOpen());
+        //    }
+        //}
+        //CheckForDoor();
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log("Collision detected");
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        Debug.Log("Player In Range");
+    //        playerInRange = true;
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        playerInRange = false;
+    //    }
+    //}
+
+
+    //void CheckForDoor()
+    //{
+    //    Vector3 playerPosition = player.transform.position;
+    //    Vector3 playerForward = player.transform.forward;
+
+    //    Ray ray = new Ray(playerPosition, playerForward);
+
+    //    if (Physics.Raycast(ray, out RaycastHit hit, raycastDistance))
+    //    {
+    //        if (hit.collider.CompareTag("Door"))
+    //        {
+    //            doorFound = true;
+    //        }
+    //        else
+    //        {
+    //            doorFound = false;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        doorFound = false;
+    //    }
+    //}
+
 
 }
