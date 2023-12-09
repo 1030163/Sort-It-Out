@@ -15,6 +15,14 @@ public class DialogueHandler : MonoBehaviour {
     private VOICE_TYPE NPCVoiceType;
 
     private void Update() {
+        //more case statements cos shit don't work
+        //max was 'ere
+        if (dialoguePrinter == null)
+        {
+            Debug.Log("Update this component: " + gameObject.name + " it is missing some dialogue handler stuff");
+            return;
+        }
+
         if (dialoguePrinter.confirmButton.activeSelf && Input.GetKeyDown(KeyCode.E)) {
             OnConfirmButtonPressed();
         }

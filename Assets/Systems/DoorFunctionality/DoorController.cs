@@ -63,6 +63,15 @@ public class DoorController : MonoBehaviour
 
     private void Update()
     {
+        //Adding case statements so I don't get butloads of errors
+        //max was 'ere
+        if (player.GetComponent<PlayerDoorRaycast>() == null)
+        {
+            player.AddComponent<PlayerDoorRaycast>();
+            Debug.Log("player controller missing PlayerDoorRaycast component, so I've attached one");
+            return;
+        }
+
         if (player.GetComponent<PlayerDoorRaycast>().doorFound)
         {
             if (Input.GetKeyDown(KeyCode.E) && !doorAnimating && playerInRange)

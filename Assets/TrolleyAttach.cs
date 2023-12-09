@@ -48,7 +48,9 @@ public class TrolleyAttach : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("player"))
+        //my dude, capitilization please
+        //max was 'ere
+        if (other.CompareTag("Player"))
         {
             attachPoint = other.transform;
         }
