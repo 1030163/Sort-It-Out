@@ -34,6 +34,11 @@ public class CameraRaycastNEW : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward * interactDistance, Color.red);
 
+        if (!isHoldingObject)
+        {
+            ConstRaycast();
+        }
+
 
         if (Input.GetMouseButtonDown(1) && isHoldingObject)
         {
@@ -47,7 +52,7 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             rotationHappening = false;
             parentPlayer.GetComponent<NonVrCharacterControllerNEW>().canRotate = true;
-        Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
 
@@ -114,7 +119,7 @@ public class CameraRaycastNEW : MonoBehaviour
 
             Vector3 moveToHeldPos = Vector3.Lerp(heldObject.transform.position, packageHoldPoint.position, Time.deltaTime * correctionForce);
 
-            
+
 
             heldObject.GetComponent<Rigidbody>().MovePosition(moveToHeldPos);
 
@@ -125,11 +130,11 @@ public class CameraRaycastNEW : MonoBehaviour
         if (rotationHappening)
         {
             mousePosMovement = Input.mousePosition - mousePrevmovement;
-            print("mouse variance is "+mousePosMovement);
+            print("mouse variance is " + mousePosMovement);
             heldObject.transform.Rotate(transform.up, Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
             heldObject.transform.Rotate(Camera.main.transform.right, Vector3.Dot(mousePosMovement, Camera.main.transform.up), Space.World);
             mousePrevmovement = Input.mousePosition;
-//            print(Vector3.Dot(mousePosMovement, Camera.main.transform.up));
+            //            print(Vector3.Dot(mousePosMovement, Camera.main.transform.up));
         }
     }
 
@@ -143,6 +148,7 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 isHoldingObject = true;
                 heldObject = hit.collider.gameObject;
+                UiPromptForQ("Package");
 
                 // Make the object's Rigidbody kinematic to remove it from physics simulation
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
@@ -152,8 +158,53 @@ public class CameraRaycastNEW : MonoBehaviour
                     rb.useGravity = false;
                 }
             }
+
         }
     }
+    private void ConstRaycast()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance))
+        {
+            if (hit.collider.CompareTag("Package"))
+            {
+                UiPromptForQ("Package");
+
+            }
+            else if (hit.collider.CompareTag("Letter"))
+            {
+                UiPromptForQ("Letter");
+
+            }
+            else if (hit.collider.GetComponent<InspectTag>())
+            {
+                UiPromptForQ(hit.collider.GetComponent<InspectTag>().chosenInspectableItem.ToString());
+            }
+            else
+            {
+                CloseQPrompt();
+            }
+        }
+    }
+
+    public void UiPromptForQ(string promptType)    //This segment shows the UI prompt when Looked at Specifying based on what
+    {                                             // Object Player is looking at, Letter, Package, Elevator Button
+        print(promptType + "Inspect");
+
+
+       /* if (Input.GetKeyDown(KeyCode.Q))              //Suggestion to connect to Inspect UI
+        {
+            //Launch  Inspect Window (promptType)
+        }*/
+    }
+
+    public void CloseQPrompt()                      //This segment should close the UI prompt when not looking at Inspectable Object 
+    {                                             
+        print("Nothing to Inspect");
+    }
+
+
 
 
     //Cam's original script if I break everything :)
