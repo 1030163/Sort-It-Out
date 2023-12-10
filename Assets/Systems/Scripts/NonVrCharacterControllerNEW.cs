@@ -8,8 +8,13 @@ public class NonVrCharacterControllerNEW : MonoBehaviour
     public float moveSpeed = 5.0f;
     public Transform playerCamera; // Reference to the camera transform
 
+
+    public bool canRotate = true;      //Added by Woody J.W 1024800.   Easiest method to freeze camera rotation when needed
+
     private float verticalRotation;
     private CharacterController characterController;
+
+
 
     void Start()
     {
@@ -31,14 +36,17 @@ public class NonVrCharacterControllerNEW : MonoBehaviour
             return;
         }
 
+
+
         // Mouse input for camera rotation
         float horizontalRotation = Input.GetAxis("Mouse X") * mouseSensitivity;
         verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         verticalRotation = Mathf.Clamp(verticalRotation, -90, 90);
-
-        transform.Rotate(0, horizontalRotation, 0);
-        playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
-
+        if (canRotate)                                      //Woody here! Just adding a simple bool check over the rotation portion of this script!
+        {                                                  //Basically to super easily freeze Camera Rotation when doing somehting else with the mouse (Such as rotating an object)
+            transform.Rotate(0, horizontalRotation, 0);
+            playerCamera.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
+        }
         // Character movement
         float horizontalMove = Input.GetAxis("Horizontal");
         float verticalMove = Input.GetAxis("Vertical");
@@ -46,5 +54,6 @@ public class NonVrCharacterControllerNEW : MonoBehaviour
         Vector3 moveDirection = transform.TransformDirection(new Vector3(horizontalMove, 0, verticalMove));
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
         characterController.Move(-transform.up * 1f);
+
     }
 }

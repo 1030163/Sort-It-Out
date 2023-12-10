@@ -22,6 +22,9 @@ public class CameraRaycastNEW : MonoBehaviour
     private Vector3 mousePrevmovement = Vector3.zero;
 
 
+    [SerializeField] private GameObject parentPlayer;   //Reference to the player object with the Movement script on it.   Using this method to ensure funtionality if any changes occur to player hierarchal structure
+
+
     private void Start()
     {
         defaultHoldPointPosition = packageHoldPoint.localPosition;
@@ -35,10 +38,16 @@ public class CameraRaycastNEW : MonoBehaviour
         if (Input.GetMouseButtonDown(1) && isHoldingObject)
         {
             rotationHappening = true;
+            parentPlayer.GetComponent<NonVrCharacterControllerNEW>().canRotate = false;
+
+            Cursor.lockState = CursorLockMode.None;
+
         }
         else if (Input.GetMouseButtonUp(1))
         {
             rotationHappening = false;
+            parentPlayer.GetComponent<NonVrCharacterControllerNEW>().canRotate = true;
+        Cursor.lockState = CursorLockMode.Locked;
         }
 
 
@@ -117,7 +126,7 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             mousePosMovement = Input.mousePosition - mousePrevmovement;
             print("mouse variance is "+mousePosMovement);
-            heldObject.transform.Rotate(transform.up, -Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
+            heldObject.transform.Rotate(transform.up, Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
             heldObject.transform.Rotate(Camera.main.transform.right, Vector3.Dot(mousePosMovement, Camera.main.transform.up), Space.World);
             mousePrevmovement = Input.mousePosition;
 //            print(Vector3.Dot(mousePosMovement, Camera.main.transform.up));

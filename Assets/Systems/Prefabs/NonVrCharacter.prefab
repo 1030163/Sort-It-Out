@@ -156,6 +156,9 @@ MonoBehaviour:
   maxAngleDown: 60
   holdPointVerticalOffset: 1
   correctionForce: 12
+  isHoldingObject: 0
+  rotationHappening: 0
+  parentPlayer: {fileID: 1824669861112491385}
 --- !u!1 &1824669861112491385
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +286,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   moveSpeed: 3
   playerCamera: {fileID: 1245400810042718751}
+  canRotate: 1
 --- !u!143 &7313482074919712582
 CharacterController:
   m_ObjectHideFlags: 0
