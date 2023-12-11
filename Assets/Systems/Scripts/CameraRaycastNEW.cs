@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class CameraRaycastNEW : MonoBehaviour
 {
@@ -90,10 +91,12 @@ public class CameraRaycastNEW : MonoBehaviour
                     ThrowObject();
                 }
                 heldObject = null;
+
             }
             else
             {
                 SendRaycast();
+                
             }
 
             throwPower = 0;
@@ -165,7 +168,7 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 isHoldingObject = true;
                 heldObject = hit.collider.gameObject;
-                UiPromptForQ("Package");
+                //UiPromptForQ("Package");
 
                 // Make the object's Rigidbody kinematic to remove it from physics simulation
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
@@ -186,31 +189,31 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             if (hit.collider.CompareTag("Package"))
             {
-                UiPromptForQ("Package");
-                UIManager.controlPromptActive = true;
-                UIManager.controlNumber = 2;
-                UIManager.controlNumber = 3;
-                UIManager.controlNumber = 4;
+                //UiPromptForQ("Package");
+
+
 
             }
             else if (hit.collider.CompareTag("Letter"))
             {
                 UiPromptForQ("Letter");
-                UIManager.controlPromptActive = true;
-                UIManager.controlNumber = 4;
+
             }
             else if (hit.collider.GetComponent<InspectTag>())
             {
                 UiPromptForQ(hit.collider.GetComponent<InspectTag>().chosenInspectableItem.ToString());
-                UIManager.controlPromptActive = true;
-                UIManager.controlNumber = 4;
+
             }
             else
             {
                 CloseQPrompt();
-                UIManager.controlPromptActive = false;
-                UIManager.controlNumber = 0;
+
             }
+           
+        }
+        else
+        {
+
         }
     }
 

@@ -50,21 +50,29 @@ public class ControlPrompts : MonoBehaviour
                         promptText.text = promptStringArray[1];
                         promptImage.sprite = promptImageArray[1];
                         break;
+                    case 3:
+                        promptText.text = promptStringArray[2];
+                        promptImage.sprite = promptImageArray[2];
+                        rotateImage.gameObject.SetActive(true);
+                        rotateText.gameObject.SetActive(true);
+                        break;
                     default:
                         promptImage.gameObject.SetActive(false);
                         promptText.text = "";
+
                         break;
                 }
             }
 
+            if (!UIManager.objectHeld)
+            {
+                rotateImage.gameObject.SetActive(false);
+                rotateText.gameObject.SetActive(false);
+            }
+
+
         }
-        else if (UIManager.objectHeld)
-        {
-            promptText.text = promptStringArray[2];
-            promptImage.sprite = promptImageArray[2];
-            rotateImage.gameObject.SetActive(true);
-            rotateText.gameObject.SetActive(true);
-        }
+        
         else
         {
             promptImage.gameObject.SetActive(false);
