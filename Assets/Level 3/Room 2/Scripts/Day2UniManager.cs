@@ -7,8 +7,8 @@ public class Day2UniManager : MonoBehaviour
 {
     [SerializeField] GameObject npc1; //Sam at door
     [SerializeField] GameObject npc2; //Sam in room
-    [SerializeField] NPCDialogueHandler npc1DialogueHandler;
-    [SerializeField] NPCDialogueHandler npc2DialogueHandler;
+    //[SerializeField] NPCDialogueHandler npc1DialogueHandler;
+    //[SerializeField] NPCDialogueHandler npc2DialogueHandler;
     [SerializeField] Doorbell doorbell;
     [SerializeField] PackageLocation package1Location; //package
 
@@ -25,13 +25,13 @@ public class Day2UniManager : MonoBehaviour
     {
         if (doorbell.isDoorOpen && dialogue1Init == false)
         {
-            npc1DialogueHandler.InitSingularDialogue(npc1DialogueHandler.singularDialogue[0]); // 1.Sam answers the door
+            //npc1DialogueHandler.InitSingularDialogue(npc1DialogueHandler.singularDialogue[0]); // 1.Sam answers the door
             dialogue1Init= true;
         }
 
         if (package1Location.isCorrectPackage)
         {
-            npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[1]); // 3.Sam cheers
+            //npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[1]); // 3.Sam cheers
             dialogue2Init = true;
         }
 
@@ -41,7 +41,7 @@ public class Day2UniManager : MonoBehaviour
     {
         npc1.SetActive(false); 
         npc2.SetActive(true);
-        npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[0]); // 2.Sam shows the basketball hoop
+        //npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[0]); // 2.Sam shows the basketball hoop
     }
     
 }
