@@ -66,7 +66,7 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             throwPower += Time.deltaTime * throwChargeMultiplier;
             throwPower = Mathf.Clamp(throwPower, 0, maxThrowPower);
-            print("Power up");
+           // print("Power up");
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -147,7 +147,7 @@ public class CameraRaycastNEW : MonoBehaviour
         if (rotationHappening)
         {
             mousePosMovement = Input.mousePosition - mousePrevmovement;
-            print("mouse variance is " + mousePosMovement);
+            //print("mouse variance is " + mousePosMovement);
             heldObject.transform.Rotate(transform.up, Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
             heldObject.transform.Rotate(Camera.main.transform.right, Vector3.Dot(mousePosMovement, Camera.main.transform.up), Space.World);
             mousePrevmovement = Input.mousePosition;
@@ -187,20 +187,29 @@ public class CameraRaycastNEW : MonoBehaviour
             if (hit.collider.CompareTag("Package"))
             {
                 UiPromptForQ("Package");
+                UIManager.controlPromptActive = true;
+                UIManager.controlNumber = 2;
+                UIManager.controlNumber = 3;
+                UIManager.controlNumber = 4;
 
             }
             else if (hit.collider.CompareTag("Letter"))
             {
                 UiPromptForQ("Letter");
-
+                UIManager.controlPromptActive = true;
+                UIManager.controlNumber = 4;
             }
             else if (hit.collider.GetComponent<InspectTag>())
             {
                 UiPromptForQ(hit.collider.GetComponent<InspectTag>().chosenInspectableItem.ToString());
+                UIManager.controlPromptActive = true;
+                UIManager.controlNumber = 4;
             }
             else
             {
                 CloseQPrompt();
+                UIManager.controlPromptActive = false;
+                UIManager.controlNumber = 0;
             }
         }
     }
@@ -218,7 +227,7 @@ public class CameraRaycastNEW : MonoBehaviour
 
     public void CloseQPrompt()                      //This segment should close the UI prompt when not looking at Inspectable Object 
     {
-        print("Nothing to Inspect");
+        //print("Nothing to Inspect");
     }
 
     public void ThrowObject()
