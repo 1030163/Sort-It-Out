@@ -159,6 +159,9 @@ MonoBehaviour:
   isHoldingObject: 0
   rotationHappening: 0
   parentPlayer: {fileID: 1824669861112491385}
+  throwPower: 0
+  maxThrowPower: 10
+  throwChargeMultiplier: 10
 --- !u!1 &1824669861112491385
 GameObject:
   m_ObjectHideFlags: 0

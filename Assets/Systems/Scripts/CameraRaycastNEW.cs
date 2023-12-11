@@ -24,6 +24,12 @@ public class CameraRaycastNEW : MonoBehaviour
 
     [SerializeField] private GameObject parentPlayer;   //Reference to the player object with the Movement script on it.   Using this method to ensure funtionality if any changes occur to player hierarchal structure
 
+    [Header("Object Throwing Variables")]
+    private float throwPower;
+    [SerializeField, Tooltip("Maximum power behind throw")]
+    private float maxThrowPower;
+    [SerializeField, Tooltip("A multiplier for how fast the throw charges to full, if this is the same as maxThrowPower then it will charge to full in 1.00 second")]
+    private float throwChargeMultiplier;
 
     private void Start()
     {
@@ -56,30 +62,41 @@ public class CameraRaycastNEW : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
+        {
+            throwPower += Time.deltaTime * throwChargeMultiplier;
+            throwPower = Mathf.Clamp(throwPower, 0, maxThrowPower);
+            print("Power up");
+        }
+
+        if (Input.GetMouseButtonUp(0))
         {
 
             if (isHoldingObject)
             {
-                if (Input.GetMouseButtonDown(0) && isHoldingObject)
+
+                // Before releasing the object, reset the Rigidbody's velocity.
+                Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+                if (rb != null)
                 {
-                    // Before releasing the object, reset the Rigidbody's velocity.
-                    Rigidbody rb = heldObject.GetComponent<Rigidbody>();
-                    if (rb != null)
-                    {
-                        /*  rb.isKinematic = false;
-                          rb.velocity = Vector3.zero;                              //Butchered by Woody
-                          rb.angularVelocity = Vector3.zero;*/
-                        rb.useGravity = true;
-                    }
-                    isHoldingObject = false;
-                    heldObject = null;
+                    /*  rb.isKinematic = false;
+                      rb.velocity = Vector3.zero;                              //Butchered by Woody
+                      rb.angularVelocity = Vector3.zero;*/
+                    rb.useGravity = true;
                 }
+                isHoldingObject = false;
+                if (throwPower > 5)
+                {
+                    ThrowObject();
+                }
+                heldObject = null;
             }
             else
             {
                 SendRaycast();
             }
+
+            throwPower = 0;
 
         }
 
@@ -193,16 +210,24 @@ public class CameraRaycastNEW : MonoBehaviour
         print(promptType + "Inspect");
 
 
-       /* if (Input.GetKeyDown(KeyCode.Q))              //Suggestion to connect to Inspect UI
-        {
-            //Launch  Inspect Window (promptType)
-        }*/
+        /* if (Input.GetKeyDown(KeyCode.Q))              //Suggestion to connect to Inspect UI
+         {
+             //Launch  Inspect Window (promptType)
+         }*/
     }
 
     public void CloseQPrompt()                      //This segment should close the UI prompt when not looking at Inspectable Object 
-    {                                             
+    {
         print("Nothing to Inspect");
     }
+
+    public void ThrowObject()
+    {
+        heldObject.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
+
+        throwPower = 0.0f;
+    }
+
 
 
 
