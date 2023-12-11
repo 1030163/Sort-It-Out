@@ -9,6 +9,7 @@ public class InspectTag : MonoBehaviour
     {                               //If you would like to add new options please list them within this Enum
         Letter,
         Buttons,
+        Elevator_Button,
         Doorbell,
         Other
     }

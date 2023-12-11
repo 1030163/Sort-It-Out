@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1596016525883794634}
   - component: {fileID: 8399846562401182657}
   - component: {fileID: 4746213891331413958}
+  - component: {fileID: 1344536994369671344}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -159,9 +160,26 @@ MonoBehaviour:
   isHoldingObject: 0
   rotationHappening: 0
   parentPlayer: {fileID: 1824669861112491385}
-  throwPower: 0
   maxThrowPower: 10
   throwChargeMultiplier: 10
+--- !u!114 &1344536994369671344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478193128397553420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b833f4928b9fa4c91773879bef8ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 4096
+  excludeLayername: 
+  openDoorKey: 101
+  crosshair: {fileID: 0}
 --- !u!1 &1824669861112491385
 GameObject:
   m_ObjectHideFlags: 0
