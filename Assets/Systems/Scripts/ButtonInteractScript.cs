@@ -22,12 +22,10 @@ public class ButtonInteractScript : MonoBehaviour
         {
             theParticleEffect.Play();
             WhenPressed();
-            print("Working?");
         }
         else
         {
             theParticleEffect.Stop();
-            print("Why isn't this working, it's so damn simple");
         }
     }
 
