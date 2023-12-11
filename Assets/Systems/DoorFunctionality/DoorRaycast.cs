@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DoorRaycast : MonoBehaviour
 {
-    [SerializeField] private int rayLength = 5;
+    private float rayLength = 1.5f;
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayername = null;
 
@@ -53,6 +53,8 @@ public class DoorRaycast : MonoBehaviour
                 {
                     doorControl.DoorStateChange();
                 }
+                UIManager.controlPromptActive = true;
+                UIManager.controlNumber = 1;
             }
             //needed this case because if you hit anything it wouldn't turn off the crosshair
             //max was 'ere
@@ -63,6 +65,8 @@ public class DoorRaycast : MonoBehaviour
                     CrosshairChange(false);
                     doOnce = false;
                 }
+                
+
             }
         }
         else
@@ -72,6 +76,9 @@ public class DoorRaycast : MonoBehaviour
                 CrosshairChange(false);
                 doOnce = false;
             }
+
+            UIManager.controlPromptActive = false;
+            UIManager.controlNumber = 0;
         }
 
        
