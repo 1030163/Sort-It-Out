@@ -5,8 +5,7 @@ using UnityEngine.Rendering;
 
 public class Day2FamilyManager : MonoBehaviour
 {
-    [SerializeField] GameObject npc1;//MrsFlowers at door
-    [SerializeField] GameObject npc2; //MrsFlowers at kitchen
+    [SerializeField] GameObject npc; //MrsFlowers at kitchen
     //[SerializeField] NPCDialogueHandler npc1DialogueHandler; 
     //[SerializeField] NPCDialogueHandler npc2DialogueHandler; 
     [SerializeField] Doorbell doorbell;
@@ -48,8 +47,7 @@ public class Day2FamilyManager : MonoBehaviour
 
     public void Dialogue1Confirm()
     {
-        npc1.SetActive(false); 
-        npc2.SetActive(true);
+        npc.SetActive(true);
        // npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[0]); // 2.Mrs Flowers tells player to put package on the table
     }
     

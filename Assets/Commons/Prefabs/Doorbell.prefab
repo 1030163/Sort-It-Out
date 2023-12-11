@@ -68,7 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitTime: 2
   interactionText: {fileID: 2255996741493120122}
-  doorGameObject: {fileID: 0}
+  doorController: {fileID: 0}
   doorbellSound: {fileID: 8300000, guid: 1c3c86979bf82e34391a58f9bee8f231, type: 3}
   isDoorOpen: 0
 --- !u!1 &6423584410273954619
@@ -97,7 +97,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6423584410273954619}
   m_LocalRotation: {x: 0, y: 0.9976306, z: 0, w: 0.068798915}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,7 +105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 172.11, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.1, y: 0.21}
+  m_AnchoredPosition: {x: -5.14, y: 0.24}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2373349789082941002
@@ -358,91 +358,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8645571115290064032}
     m_Modifications:
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_AllowGazeAssistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_AllowGazeInteraction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1415142171985498117}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RingDoorbell
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: RingDoorbell
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Doorbell, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Doorbell, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2101699094128894600, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2101699094128894600, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2101699094128894600, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2101699094128894600, guid: 004019e5f61aee54d9f4888337889ec8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -493,21 +408,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7522446150564938621, guid: 004019e5f61aee54d9f4888337889ec8,
-        type: 3}
-      propertyPath: m_AffordanceStateProvider
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8893908698596720719, guid: 004019e5f61aee54d9f4888337889ec8,
         type: 3}
       propertyPath: m_Name
       value: Push Button
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 805618284902815232, guid: 004019e5f61aee54d9f4888337889ec8, type: 3}
-    - {fileID: 9124980453534943932, guid: 004019e5f61aee54d9f4888337889ec8, type: 3}
-    - {fileID: 2994114202506148135, guid: 004019e5f61aee54d9f4888337889ec8, type: 3}
-    - {fileID: 4412388976488336303, guid: 004019e5f61aee54d9f4888337889ec8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

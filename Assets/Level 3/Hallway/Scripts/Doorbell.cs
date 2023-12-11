@@ -11,7 +11,7 @@ public class Doorbell : MonoBehaviour
 
     [Header("References")]
     [SerializeField] TextMeshPro interactionText;
-    [SerializeField] GameObject doorGameObject;
+    [SerializeField] DoorController doorController;
     [SerializeField] AudioClip doorbellSound;
     private AudioSource audioSource;
     public bool isDoorOpen;
@@ -67,8 +67,9 @@ public class Doorbell : MonoBehaviour
         // Check if the player is still in the interaction zone before opening the door
         if (interactionText.gameObject.activeSelf)
         {
-            doorGameObject.SetActive(false);
-            isDoorOpen= true;
+            doorController.hasPermission = true;
+            doorController.DoorStateChange();
+            isDoorOpen = true;
         }
     }
 
