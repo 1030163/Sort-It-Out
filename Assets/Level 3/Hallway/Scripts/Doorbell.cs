@@ -12,15 +12,16 @@ public class Doorbell : MonoBehaviour
     [SerializeField] GameObject mrsFlower;
     [SerializeField] Vector3 mrsFlowerNewPosition = new Vector3(39.0f, 0.0f, 50.5f);
 
+    [SerializeField] GameObject theButton;   //Adding a simple ref to the actual Push Button    -Woody
 
     private void OnTriggerEnter(Collider other)
     {
+        theButton.GetComponent<ButtonInteractScript>().isPressable = true;    //Let's the Simple Button Push script know the Player is nearby     -Woody
         interactionText.gameObject.SetActive(true);
         if (packageDelivery.isCorrectPackage)
         {
             WaitCoroutine(5f);
             door.SetActive(true);
-
         }
 
         MoveMrsFlower();
@@ -49,6 +50,8 @@ public class Doorbell : MonoBehaviour
     {
         interactionText.gameObject.SetActive(false);
         MoveMrsFlower();
+        theButton.GetComponent<ButtonInteractScript>().isPressable = true;    //Let's the Simple Button Push script know the Player is no longer nearby     -Woody
+
     }
 
     public void RingDoorbell ()
