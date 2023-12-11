@@ -52,21 +52,4 @@ public class TrueInstructions : MonoBehaviour
         
         InstructionsObject.transform.localPosition = Location2; // Ensure the object is exactly at Location2
     }
-
-    private void OnTriggerEnter(Collider Player)
-    {
-        if (Player.CompareTag("Player"))
-        {
-            GetComponent<NPCDialogueHandler>().InitDialogueTree(GetComponent<NPCDialogueHandler>().dialogueTrees[0]);
-        }
-    }
-
-    private void OnTriggerExit(Collider Player)
-    {
-        if (Player.CompareTag("Player"))
-        {
-            GetComponent<NPCDialogueHandler>().InitSingularDialogue(GetComponent<NPCDialogueHandler>().dialogueTrees[0].dialogueTree[1]);
-        }
-    }
-
 }
