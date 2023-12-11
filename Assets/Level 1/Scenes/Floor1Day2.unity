@@ -1814,7 +1814,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 74e40685430daa24eb423e7b04b65845, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.103
+  m_Volume: 0.049
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7537,171 +7537,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 240863745}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &241159600
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-8391526(Clone)(Clone)
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 30
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 20
-    localAABB:
-      m_Center: {x: -0.00000043213367, y: 0.00000041350722, z: -0.0000007748604}
-      m_Extent: {x: 0.19343448, y: 0.005291015, z: 0.30044603}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00100011001200110013001200
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 20
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 960
-    _typelessdata: cd1346beb863ad3b2ad499be000000000000803f000000000000000000000000000080bf000080bff6d4803f82dca33ecd1346beb863ad3bf6d3993e000000000000803f00000000fc8a5d3300000000000080bf000080bf9cd090bd82dca33e9313463eb863ad3b2ad499be000000000000803f00000000fc8a5d3300000000000080bf000080bff6d4803f5428313f9313463eb863ad3bf6d3993e000000000000803f00000000fc8add3300000000000080bf000080bf9cd090bd5528313fcd1346bec85cadbb2ad499be000080bf00000000000000000000000000000000000080bf000080bfd0954e3f1845a63dcd1346bec85cadbbf6d3993e000080bf00000000000000000000000000000000000080bf000080bf0007533e1845a63dcd1346beb863ad3b2ad499be000080bf00000000000000000000000000000000000080bf000080bfd0954e3f20f1bb3dcd1346beb863ad3bf6d3993e000080bf00000000000000000000000000000000000080bf000080bf0007533e20f1bb3d9213463ec85cadbb2ad499be0000000000000000000080bf0000803f0000000000000000000080bf98844c3f9495d93dcd1346bec85cadbb2ad499be0000000000000000000080bf0000803f0000000000000000000080bf80f5d23e9495d93d9313463eb863ad3b2ad499be0000000000000000000080bf0000803f0000000000000000000080bf98844c3f9c41ef3dcd1346beb863ad3b2ad499be0000000000000000000080bf0000803f0000000000000000000080bf80f5d23e9c41ef3dcd1346bec85cadbbf6d3993e00000000000000000000803f000080bf0000000000000000000080bf90c11c3f70d15d3e9213463ec85cadbbf6d3993e00000000000000000000803f000080bf0000000000000000000080bfe2de663e70d15d3ecd1346beb863ad3bf6d3993e00000000000000000000803f000080bf0000000000000000000080bf90c11c3f74a7683e9313463eb863ad3bf6d3993e00000000000000000000803f000080bf0000000000000000000080bfe1de663e74a7683e9213463ec85cadbbf6d3993e0000803fe9ffbcb50000000000000000000000000000803f000080bf98447a3f86b27f3d9213463ec85cadbb2ad499be0000803fe9ffbcb50000000000000000000000000000803f000080bf10e1c03e86b27f3d9313463eb863ad3bf6d3993e0000803fe9ffbcb50000000000000000000000000000803f000080bf98447a3f4b85953d9313463eb863ad3b2ad499be0000803fe9ffbcb50000000000000000000000000000803f000080bf10e1c03e4b85953d
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: -0.00000043213367, y: 0.00000041350722, z: -0.0000007748604}
-    m_Extent: {x: 0.19343448, y: 0.005291015, z: 0.30044603}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 0.58015054
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1001 &242053848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9316,6 +9151,7 @@ GameObject:
   - component: {fileID: 331173545}
   - component: {fileID: 331173544}
   - component: {fileID: 331173543}
+  - component: {fileID: 331173548}
   - component: {fileID: 331173540}
   - component: {fileID: 331173539}
   m_Layer: 0
@@ -9335,9 +9171,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: ff7da1ad45d15b049b9cc0c981067346, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.764
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9449,7 +9285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331173538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b506f737221dd042b39a918002330c1, type: 3}
   m_Name: 
@@ -9543,6 +9379,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 422838038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &331173548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331173538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959b1daf1a10ca641a5095fa1cca2afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openInside: 0
+  hasPermission: 0
+  doorFound: 0
+  lockedDoor: 0
+  automaticDoor: 0
 --- !u!1001 &337007216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20117,7 +19970,7 @@ GameObject:
   - component: {fileID: 666702083}
   m_Layer: 0
   m_Name: TrueInstructions
-  m_TagString: Untagged
+  m_TagString: Package
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20270,7 +20123,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 241159600}
+  m_Mesh: {fileID: 1040079777}
 --- !u!33 &666702077
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -20560,7 +20413,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -46013,7 +45866,7 @@ PrefabInstance:
     - target: {fileID: 2229415491352932215, guid: 8b96e70d55462954a99c694feabc0d2c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.214
+      value: -3.846
       objectReference: {fileID: 0}
     - target: {fileID: 2229415491352932215, guid: 8b96e70d55462954a99c694feabc0d2c,
         type: 3}
@@ -46023,7 +45876,7 @@ PrefabInstance:
     - target: {fileID: 2229415491352932215, guid: 8b96e70d55462954a99c694feabc0d2c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.979
+      value: -10.902
       objectReference: {fileID: 0}
     - target: {fileID: 2229415491352932215, guid: 8b96e70d55462954a99c694feabc0d2c,
         type: 3}
@@ -49054,6 +48907,33 @@ MonoBehaviour:
   packageKey: 323
   openDoorKey: 101
   crosshair: {fileID: 0}
+--- !u!1 &1392486423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67973461f04a18642904762fbdfcbeb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2016147929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1392486424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392486423}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.7560525, y: 0.023162786, z: 7.112472}
+  m_Center: {x: 0.7902067, y: 0.02590218, z: 0.0023519993}
 --- !u!1001 &1401770298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50548,7 +50428,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f1704e8f86b02bd4cbd63013103ed5e0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.213
+  m_Volume: 0.051
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -74455,6 +74335,10 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 949276231}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67973461f04a18642904762fbdfcbeb1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1392486424}
     - targetCorrespondingSourceObject: {fileID: -5970216698261893960, guid: 67973461f04a18642904762fbdfcbeb1,
         type: 3}
       insertIndex: -1
@@ -77382,6 +77266,7 @@ GameObject:
   - component: {fileID: 1589106600095583063}
   - component: {fileID: 6654191086364203674}
   - component: {fileID: 6654191086364203676}
+  - component: {fileID: 6654191086364203677}
   - component: {fileID: 6348726356453095593}
   - component: {fileID: 6654191086364203675}
   m_Layer: 0
@@ -77571,9 +77456,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: ff7da1ad45d15b049b9cc0c981067346, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.513
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -77664,7 +77549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2791088043721672714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b506f737221dd042b39a918002330c1, type: 3}
   m_Name: 
@@ -77672,6 +77557,23 @@ MonoBehaviour:
   openInside: 1
   hasPermission: 0
   audioSource: {fileID: 6654191086364203675}
+--- !u!114 &6654191086364203677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791088043721672714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959b1daf1a10ca641a5095fa1cca2afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openInside: 1
+  hasPermission: 0
+  doorFound: 0
+  lockedDoor: 0
+  automaticDoor: 0
 --- !u!64 &7636562539284198553
 MeshCollider:
   m_ObjectHideFlags: 0
