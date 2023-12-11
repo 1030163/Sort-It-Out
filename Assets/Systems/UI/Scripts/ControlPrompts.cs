@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.UI;
 
 public class ControlPrompts : MonoBehaviour
@@ -10,6 +11,9 @@ public class ControlPrompts : MonoBehaviour
     [SerializeField] private TextMeshProUGUI promptText;
     [SerializeField] private Image promptImage;
 
+    [SerializeField] private Image rotateImage;
+    [SerializeField] private TextMeshProUGUI rotateText;
+
     [SerializeField] private string[] promptStringArray;
     [SerializeField] private Sprite[] promptImageArray;
     // Start is called before the first frame update
@@ -17,6 +21,9 @@ public class ControlPrompts : MonoBehaviour
     {
         promptImage.gameObject.SetActive(false);
         promptText.text = "";
+
+        rotateImage.gameObject.SetActive(false);
+        rotateText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,27 +50,26 @@ public class ControlPrompts : MonoBehaviour
                         promptText.text = promptStringArray[1];
                         promptImage.sprite = promptImageArray[1];
                         break;
-                    case 3:
-                        promptText.text = promptStringArray[2];
-                        promptImage.sprite = promptImageArray[2];
-                        break;
-                    case 4:
-                        promptText.text = promptStringArray[3];
-                        promptImage.sprite = promptImageArray[3];
-                        break;
                     default:
                         promptImage.gameObject.SetActive(false);
                         promptText.text = "";
                         break;
-
                 }
             }
 
+        }
+        else if (UIManager.objectHeld)
+        {
+            promptText.text = promptStringArray[2];
+            promptImage.sprite = promptImageArray[2];
+            rotateImage.gameObject.SetActive(true);
+            rotateText.gameObject.SetActive(true);
         }
         else
         {
             promptImage.gameObject.SetActive(false);
             promptText.text = "";
         }
+        
     }
 }
