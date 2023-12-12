@@ -2,9 +2,14 @@ using UnityEngine;
 
 public class TrolleyAttach : MonoBehaviour
 {
-    [SerializeField] private Transform attachPoint;
-    private bool isAttached;   
-    private bool isPlayerHere;   
+    [SerializeField] private Transform playerTransform;   
+    private bool isPlayerHere;
+    private Quaternion initialRotation;
+
+    private void Start()
+    {
+        initialRotation = transform.rotation;
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && isPlayerHere)
@@ -12,42 +17,24 @@ public class TrolleyAttach : MonoBehaviour
             AttachTrolley();
         }
 
-        if (Input.GetMouseButtonDown(1) && isPlayerHere)
-        {
-            DetachTrolley();
-        }
-    }
-
-    private void ToggleTrolleyAttachment()
-    {
-        if (isAttached)
-        {
-            DetachTrolley();
-        }
-        else
-        {
-            AttachTrolley();
-        }
     }
 
     private void AttachTrolley()
     {
-        transform.parent = attachPoint; // Attach the object to the player
-        transform.parent.rotation = Quaternion.identity;
-        isAttached = true;
+        transform.parent.parent = playerTransform; // Attach the object to the player
+        //transform.parent.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.LookRotation(playerTransform.position - transform.position, Vector3.up) * initialRotation;
+
+        transform.parent.localPosition = new Vector3 (0,-1.2f,4f);
     }
 
-    private void DetachTrolley()
-    {
-        transform.parent.parent = null; // Detach the object from the player
-        isAttached = false;
-    }
+
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            attachPoint = other.transform;
+            playerTransform = other.transform;
             isPlayerHere = true;
         }
     }
