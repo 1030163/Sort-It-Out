@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public static bool controlPromptActive = false;
 
     public static bool objectHeld = false;
+
+    public static int inspectNumber;
     private void Awake()
     {
         if (instance != null && instance != this)
