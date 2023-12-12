@@ -33168,6 +33168,11 @@ PrefabInstance:
       propertyPath: doorController
       value: 
       objectReference: {fileID: 357904266}
+    - target: {fileID: 2255996741493120122, guid: f9cbd4ca4e26ff44e941f104cf5d5bf3,
+        type: 3}
+      propertyPath: m_text
+      value: '(E) Ring doorbell '
+      objectReference: {fileID: 0}
     - target: {fileID: 7064816913639050364, guid: f9cbd4ca4e26ff44e941f104cf5d5bf3,
         type: 3}
       propertyPath: m_Name
@@ -55708,11 +55713,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b833f4928b9fa4c91773879bef8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayLength: 5
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 4294967295
   excludeLayername: 
+  packageKey: 323
   openDoorKey: 101
   crosshair: {fileID: 0}
 --- !u!1001 &1574205045
