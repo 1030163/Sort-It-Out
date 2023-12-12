@@ -10,6 +10,7 @@ public class ElavatorMenu : MonoBehaviour
     [SerializeField] Canvas menu;
     [SerializeField] TMP_Text sceneNumberText;
     [SerializeField] TextMeshPro interactionText;
+    [SerializeField] SceneLoader sceneLoader;
     bool isMenuOn;
 
     private void Start()
@@ -23,19 +24,19 @@ public class ElavatorMenu : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.Alpha1))
             {
-                LoadNewScene(3);
+                sceneLoader.LoadNewScene(3);
             }
             if (Input.GetKeyUp(KeyCode.Alpha2))
             {
-                LoadNewScene(4);
+                sceneLoader.LoadNewScene(4);
             }
             if (Input.GetKeyUp(KeyCode.Alpha3))
             {
-                LoadNewScene(5);
+                sceneLoader.LoadNewScene(5);
             }
             if (Input.GetKeyUp(KeyCode.Alpha4))
             {
-                LoadNewScene(6);
+                sceneLoader.LoadNewScene(6);
             }
         }
 
@@ -65,10 +66,6 @@ public class ElavatorMenu : MonoBehaviour
         isMenuOn= false;
     }
 
-    public void LoadNewScene(int i)
-    {
-        SceneManager.LoadScene(i);
-    }
     private void UpdateFloorNumber()
     {
         Scene currentScene = SceneManager.GetActiveScene();

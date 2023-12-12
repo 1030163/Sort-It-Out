@@ -22,8 +22,7 @@ public class TrolleyAttach : MonoBehaviour
     private void AttachTrolley()
     {
         transform.parent.parent = playerTransform; // Attach the object to the player
-        //transform.parent.rotation = Quaternion.identity;
-        transform.rotation = Quaternion.LookRotation(playerTransform.position - transform.position, Vector3.up) * initialRotation;
+        // transform.rotation = Quaternion.LookRotation(playerTransform.position - transform.position, Vector3.up) * initialRotation;
 
         transform.parent.localPosition = new Vector3 (0,-1.2f,4f);
     }

@@ -1055,7 +1055,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 2269974145059584900}
   sceneNumberText: {fileID: 5514236886425289888}
-  interactionText: {fileID: 0}
+  interactionText: {fileID: 1410187530457093413}
+  sceneLoader: {fileID: 5449688178531612419}
 --- !u!1 &8433743688114277862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1563819790740743373
 RectTransform:
   m_ObjectHideFlags: 0
