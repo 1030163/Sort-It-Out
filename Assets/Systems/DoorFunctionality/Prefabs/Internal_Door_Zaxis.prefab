@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1664760437556595256}
   - component: {fileID: 4451991877428847613}
   - component: {fileID: 1844908604380547352}
+  - component: {fileID: 3529048111915658310}
   m_Layer: 12
   m_Name: Internal_Door_Zaxis
   m_TagString: Door
@@ -122,6 +123,7 @@ MonoBehaviour:
   openInside: 0
   hasPermission: 1
   doorFound: 0
+  lockedDoor: 0
   automaticDoor: 0
 --- !u!95 &1844908604380547352
 Animator:
@@ -144,3 +146,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3529048111915658310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297900381805742509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
