@@ -12,6 +12,8 @@ public class CameraRaycast : MonoBehaviour {
     private bool isHoldingObject = false;
     private Vector3 defaultHoldPointPosition;
 
+    private Outline packageOutline;
+
     private void Start()
     {
         defaultHoldPointPosition = packageHoldPoint.localPosition;
