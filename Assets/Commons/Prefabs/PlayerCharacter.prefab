@@ -159,6 +159,8 @@ MonoBehaviour:
   isHoldingObject: 0
   rotationHappening: 0
   parentPlayer: {fileID: 1824669861112491385}
+  maxThrowPower: 0
+  throwChargeMultiplier: 0
 --- !u!1 &1824669861112491385
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +175,7 @@ GameObject:
   - component: {fileID: 4841891708327795154}
   - component: {fileID: 7193955360030922815}
   - component: {fileID: 7313482074919712582}
+  - component: {fileID: 5600058688554181026}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -313,6 +316,25 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5600058688554181026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824669861112491385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b833f4928b9fa4c91773879bef8ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 4096
+  excludeLayername: 
+  packageKey: 323
+  openDoorKey: 101
+  crosshair: {fileID: 0}
 --- !u!1 &5966662416102722857
 GameObject:
   m_ObjectHideFlags: 0
