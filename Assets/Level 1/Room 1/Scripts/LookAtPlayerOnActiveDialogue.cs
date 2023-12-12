@@ -19,7 +19,7 @@ public class LookAtPlayerOnActiveDialogue : MonoBehaviour {
     }
 
     private void OnAnimatorIK() {
-        if(ikActive && distanceToPlayer <= 3f) {
+        if(ikActive && distanceToPlayer <= 7f) {
             animator.SetLookAtWeight(lookAtWeight += Time.deltaTime);
             animator.SetLookAtPosition(playerCamera.transform.position);
         }

@@ -1049,7 +1049,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -1062,7 +1062,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888245626}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2258,6 +2258,79 @@ MonoBehaviour:
   - {fileID: 390108986}
   - {fileID: 1041238934}
   - {fileID: 1875199353}
+--- !u!1001 &2029899905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2799497837513717490, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.1240053
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.3105736
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.58938676
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.807851
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 107.773
+      objectReference: {fileID: 0}
+    - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5296859761121232802, guid: bbf8f863e26034a448a18bede4a3995a,
+        type: 3}
+      propertyPath: m_Name
+      value: Mildred_CatFood
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bbf8f863e26034a448a18bede4a3995a, type: 3}
 --- !u!1 &2132562910
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,3 +2595,4 @@ SceneRoots:
   - {fileID: 888245632}
   - {fileID: 1106922108}
   - {fileID: 191046953}
+  - {fileID: 2029899905}
