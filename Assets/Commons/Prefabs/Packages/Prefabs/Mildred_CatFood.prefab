@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5061635756027458490}
   - component: {fileID: 3856066396719872126}
   - component: {fileID: 3176481339651630505}
+  - component: {fileID: 554301260023602030}
   m_Layer: 0
   m_Name: Mildred_CatFood
   m_TagString: Package
@@ -133,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 63.753666, y: 120.58011, z: 89.7468}
   m_Center: {x: -0.000013351444, y: -0.0000019073486, z: -0.0000038146986}
+--- !u!114 &554301260023602030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296859761121232802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 4
