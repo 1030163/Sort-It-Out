@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3757033688545153759}
   - component: {fileID: 8891835448430334596}
   - component: {fileID: 5055234422971209394}
+  - component: {fileID: 2679227134639687693}
   m_Layer: 0
   m_Name: Terrance_TechBox
   m_TagString: Package
@@ -1054,3 +1055,16 @@ MonoBehaviour:
     - {x: 0.61789227, y: 0.35456744, z: 0.7017771}
     - {x: -0.31998637, y: 0.69550765, z: -0.64333344}
     - {x: 0.6999447, y: 0.6484726, z: -0.299267}
+--- !u!114 &2679227134639687693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2670354844036152266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 10

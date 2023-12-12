@@ -452,6 +452,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382154053}
   m_CullTransparentMesh: 1
+--- !u!1 &416945678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416945679}
+  - component: {fileID: 416945681}
+  - component: {fileID: 416945680}
+  m_Layer: 5
+  m_Name: InspectPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &416945679
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416945678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 687871931}
+  m_Father: {fileID: 1091269227}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -392.1375, y: -21.9016}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &416945680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416945678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6313726}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &416945681
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416945678}
+  m_CullTransparentMesh: 1
 --- !u!1 &481021324
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,6 +726,141 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &687871930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687871931}
+  - component: {fileID: 687871933}
+  - component: {fileID: 687871932}
+  m_Layer: 5
+  m_Name: InspectText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &687871931
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687871930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 416945679}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.0603, y: -2.1151}
+  m_SizeDelta: {x: 342.8794, y: 317.8304}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &687871932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687871930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 171fe7692e9d75944b9efed2fc65d2ae, type: 2}
+  m_sharedMaterial: {fileID: -6521618146088406092, guid: 171fe7692e9d75944b9efed2fc65d2ae,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 45
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 5.5
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &687871933
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687871930}
+  m_CullTransparentMesh: 1
 --- !u!1 &820076663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1453,354 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1042393040}
   m_CullTransparentMesh: 1
+--- !u!1 &1091269223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091269227}
+  - component: {fileID: 1091269226}
+  - component: {fileID: 1091269225}
+  - component: {fileID: 1091269224}
+  - component: {fileID: 1091269228}
+  m_Layer: 5
+  m_Name: InspectCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1091269224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091269223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1091269225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091269223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1091269226
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091269223}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
+--- !u!224 &1091269227
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091269223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 416945679}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1091269228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091269223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f37ce77db03d904db26c6ca02c9facc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectStringArray:
+  - 'Eugene Rentruss
+
+    Ground Floor Office
+
+    113 Cyber Street,
+
+    Byteville,
+    1337
+
+
+    <b>Customs:</b> Stationery, Paper Supplies
+
+
+    <b>Sender:</b> Officemart
+
+
+    <b>Delivery
+    Instructions:</b> Please place anywhere you can in my office, it''s a mess in
+    there.'
+  - "The \u201CFlower\u201D Residence\r\nApartment 3B\r\n113 Cyber Street,\r\nByteville,
+    1337\n\n<b>Customs:</b> Baking Supplies\n\n<b>Sender:</b> The Kitchen Provisions
+    Store\n\n<b>Delivery Instructions:</b> Please ring the bell after placing so
+    I can bring it in, I need these supplies ASAP\n"
+  - 'Mrs Nancy Flower
+
+    Apartment 3B
+
+    113 Cyber Street,
+
+    Byteville,
+    1337
+
+
+    <b>Customs:</b> Ceramic Dinnerware
+
+
+    <b>Sender:</b> The Kitchen
+    Provisions Store
+
+
+    <b>Delivery Instructions:</b> Ring Doorbell Please
+
+'
+  - 'Mildred brown
+
+    Apartment 1A
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Pet Food
+
+
+    <b>Sender:</b> Cat Corp
+
+
+    <b>Delivery Instructions:</b> Please
+    come inside and place on the table where the cats eat, sweetheart
+
+'
+  - 'Mildred brown
+
+    Apartment 1A
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Pet Collar
+
+
+    <b>Sender:</b> Cat Corp
+
+
+    <b>Delivery Instructions:</b>
+    Could you please find my precious darling without a collar and leave the package
+    with him? Gerald loves opening packages!'
+  - 'Mildred brown
+
+    Apartment 1A
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Cremation Urn
+
+
+    <b>Sender:</b> Rose''s Funeral Parlour
+
+
+    <b>Delivery
+    Instructions:</b> Please leave at the front door, dearie'
+  - 'Sam Andre
+
+    Apartment 3A
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Nutritional Supplements
+
+
+    <b>Sender:</b> Protein Fusion Hub
+
+
+    <b>Delivery
+    Instructions:</b> Shake as hard as you can...and ring the bell please'
+  - 'Terrance Miller
+
+    Apartment 1B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Radio</b>
+
+
+    <b>From:</b>
+    <s>Nobody...</s>
+
+
+    <b>Instructions:</b> The door is unlocked - <b>DO NOT
+    TOUCH ANYTHING!</b> I can''t trust anyone to do this and will explain once you''re
+    inside. (I will know if you touched something)'
+  - 'Terrance Miller
+
+    Apartment 1B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Jewelry Items
+
+
+    <b>Sender:</b> Jewel Boutique
+
+
+    <b>Delivery Instructions:</b>
+    Please help me ease my mind - I refuse to believe she would do that to me.'
+  - 'Terrance Miller
+
+    Apartment 1B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Electrical Cables, Computer Accessories
+
+
+    <b>Sender:</b> ByteTech
+
+
+    <b>Delivery
+    Instructions:</b> Leave it at the door. I will know when you get here and will
+    grab it myself when you leave..'
+  - 'Tom Edison
+
+    Apartment 3B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Tools, Mechanical Hardware
+
+
+    <b>Sender:</b> Tools N'' Things
+
+
+    <b>Delivery
+    Instructions:</b> Please leave upright at door'
+  - 'Toney Immaculate
+
+    Apartment 2B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Stationery, Paper Organisers
+
+
+    <b>Sender:</b> OfficeMart
+
+
+    <b>Delivery
+    Instructions:</b> The package belongs <b>NEATLY</b> atop and within the confines
+    of the stand I have provided outside my hall in then complex''s hallway area.'
+  - 'Toney Immaculate
+
+    Apartment 2B
+
+    113 Cyber Street,
+
+    Byteville, 1337
+
+
+    <b>Customs:</b>
+    Tall Vase
+
+
+    <b>Sender:</b> VaseVault
+
+
+    <b>Delivery Instructions:</b>
+    Place this between my Initial vase and the TV in the main lounging area. <b>CAREFULLY</b>.
+    That is it''s location and where it belongs, I will unpack it later.'
+  inspectText: {fileID: 687871932}
+  inspectPanel: {fileID: 416945678}
 --- !u!1 &1207640518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2194,4 +2753,5 @@ SceneRoots:
   - {fileID: 981761227}
   - {fileID: 92922956}
   - {fileID: 630001543}
+  - {fileID: 1091269227}
   - {fileID: 481021328}

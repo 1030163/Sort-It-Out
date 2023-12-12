@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1050070002978120712}
   - component: {fileID: 2113638529371947661}
   - component: {fileID: 8984900056539192145}
+  - component: {fileID: -5382974777043374491}
   m_Layer: 0
   m_Name: Terrance_Radio
   m_TagString: Package
@@ -753,3 +754,16 @@ MonoBehaviour:
     - {x: 0, y: -0.5721255, z: 0.8201661}
     - {x: -0.3470815, y: -0.30470672, z: 0.88695455}
     - {x: -0.34708148, y: -0.30470672, z: 0.88695455}
+--- !u!114 &-5382974777043374491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014387553841310526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 8

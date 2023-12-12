@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3242099946664525052}
   - component: {fileID: 5144378642235261495}
   - component: {fileID: 5709540278195820333}
+  - component: {fileID: 1275815335285715418}
   m_Layer: 0
   m_Name: Mildred_Collar
   m_TagString: Package
@@ -290,3 +291,16 @@ MonoBehaviour:
     - {x: -0.69149095, y: 0.524305, z: 0.49693522}
     - {x: -0.69149095, y: -0.524305, z: 0.49693522}
     - {x: -0.69149095, y: -0.524305, z: 0.49693522}
+--- !u!114 &1275815335285715418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955596457623803651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 5
