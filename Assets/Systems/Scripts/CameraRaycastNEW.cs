@@ -192,9 +192,6 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 //UiPromptForQ("Package");
 
-                packageOutline = hit.collider.GetComponent<Outline>();
-                packageOutline.enabled = true;
-
             }
             else if (hit.collider.CompareTag("Letter"))
             {
@@ -210,6 +207,17 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 CloseQPrompt();
 
+                if (packageOutline) {
+                    packageOutline.enabled = false;
+                }
+            }
+
+            if (hit.collider.TryGetComponent(out Outline outline)) {
+                packageOutline = outline;
+                packageOutline.enabled = true;
+            }
+
+            else {
                 if (packageOutline) {
                     packageOutline.enabled = false;
                 }
