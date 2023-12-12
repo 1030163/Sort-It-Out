@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class DoorRaycast : MonoBehaviour
 {
-    [SerializeField] private int rayLength = 5;
+    private float rayLength = 1.5f;
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayername = null;
 
     private DoorController doorControl;
+    [SerializeField] private KeyCode packageKey = KeyCode.Mouse0;
 
     [SerializeField] private KeyCode openDoorKey = KeyCode.E;
     [SerializeField] private Image crosshair = null;
@@ -36,10 +37,10 @@ public class DoorRaycast : MonoBehaviour
 
         
 
-        if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
+        if (Physics.Raycast(transform.position, fwd, out hit, rayLength))
         {
 
-            if (hit.collider.CompareTag(interactableTag))
+            if (hit.collider.CompareTag("Door") || hit.collider.CompareTag("Interactable"))
             {
                 if (!doOnce)
                 {
@@ -53,6 +54,29 @@ public class DoorRaycast : MonoBehaviour
                 {
                     doorControl.DoorStateChange();
                 }
+
+                if (!UIManager.objectHeld)
+                {
+                    UIManager.controlPromptActive = true;
+                    UIManager.controlNumber = 1;
+                }
+            }
+            else if (hit.collider.CompareTag("Package") || hit.collider.CompareTag("Pickup"))
+            {
+                if (!UIManager.objectHeld)
+                {
+                    UIManager.controlPromptActive = true;
+                    UIManager.controlNumber = 2;
+                }
+                else
+                {
+                    UIManager.controlPromptActive = true;
+                    UIManager.controlNumber = 3;
+                }
+                if (Input.GetKeyDown(packageKey))
+                {
+                    UIManager.objectHeld = !UIManager.objectHeld;
+                }
             }
             //needed this case because if you hit anything it wouldn't turn off the crosshair
             //max was 'ere
@@ -63,6 +87,8 @@ public class DoorRaycast : MonoBehaviour
                     CrosshairChange(false);
                     doOnce = false;
                 }
+                
+
             }
         }
         else
@@ -72,9 +98,22 @@ public class DoorRaycast : MonoBehaviour
                 CrosshairChange(false);
                 doOnce = false;
             }
+
+            UIManager.controlPromptActive = false;
+            UIManager.controlNumber = 0;
         }
 
-       
+       //if (Physics.Raycast(transform.position, fwd, out hit, rayLength))
+       // {
+       //     if (hit.collider.CompareTag("Package"))
+       //     {
+       //         if (!UIManager.objectHeld)
+       //         {
+       //             UIManager.controlPromptActive = true;
+       //             UIManager.controlNumber = 2;
+       //         }
+       //     }
+       // }
 
     }
 

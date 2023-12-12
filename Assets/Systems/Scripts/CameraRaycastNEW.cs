@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class CameraRaycastNEW : MonoBehaviour
 {
@@ -21,9 +22,16 @@ public class CameraRaycastNEW : MonoBehaviour
     private Vector3 mousePosMovement = Vector3.zero;
     private Vector3 mousePrevmovement = Vector3.zero;
 
+    private Outline packageOutline;
 
     [SerializeField] private GameObject parentPlayer;   //Reference to the player object with the Movement script on it.   Using this method to ensure funtionality if any changes occur to player hierarchal structure
 
+    [Header("Object Throwing Variables")]
+    private float throwPower;
+    [SerializeField, Tooltip("Maximum power behind throw")]
+    private float maxThrowPower;
+    [SerializeField, Tooltip("A multiplier for how fast the throw charges to full, if this is the same as maxThrowPower then it will charge to full in 1.00 second")]
+    private float throwChargeMultiplier;
 
     private void Start()
     {
@@ -56,30 +64,43 @@ public class CameraRaycastNEW : MonoBehaviour
         }
 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
+        {
+            throwPower += Time.deltaTime * throwChargeMultiplier;
+            throwPower = Mathf.Clamp(throwPower, 0, maxThrowPower);
+           // print("Power up");
+        }
+
+        if (Input.GetMouseButtonUp(0))
         {
 
             if (isHoldingObject)
             {
-                if (Input.GetMouseButtonDown(0) && isHoldingObject)
+
+                // Before releasing the object, reset the Rigidbody's velocity.
+                Rigidbody rb = heldObject.GetComponent<Rigidbody>();
+                if (rb != null)
                 {
-                    // Before releasing the object, reset the Rigidbody's velocity.
-                    Rigidbody rb = heldObject.GetComponent<Rigidbody>();
-                    if (rb != null)
-                    {
-                        /*  rb.isKinematic = false;
-                          rb.velocity = Vector3.zero;                              //Butchered by Woody
-                          rb.angularVelocity = Vector3.zero;*/
-                        rb.useGravity = true;
-                    }
-                    isHoldingObject = false;
-                    heldObject = null;
+                    /*  rb.isKinematic = false;
+                      rb.velocity = Vector3.zero;                              //Butchered by Woody
+                      rb.angularVelocity = Vector3.zero;*/
+                    rb.useGravity = true;
                 }
+                isHoldingObject = false;
+                if (throwPower > 5)
+                {
+                    ThrowObject();
+                }
+                heldObject = null;
+
             }
             else
             {
                 SendRaycast();
+                
             }
+
+            throwPower = 0;
 
         }
 
@@ -130,7 +151,7 @@ public class CameraRaycastNEW : MonoBehaviour
         if (rotationHappening)
         {
             mousePosMovement = Input.mousePosition - mousePrevmovement;
-            print("mouse variance is " + mousePosMovement);
+            //print("mouse variance is " + mousePosMovement);
             heldObject.transform.Rotate(transform.up, Vector3.Dot(mousePosMovement, Camera.main.transform.right), Space.World);
             heldObject.transform.Rotate(Camera.main.transform.right, Vector3.Dot(mousePosMovement, Camera.main.transform.up), Space.World);
             mousePrevmovement = Input.mousePosition;
@@ -148,7 +169,7 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 isHoldingObject = true;
                 heldObject = hit.collider.gameObject;
-                UiPromptForQ("Package");
+                //UiPromptForQ("Package");
 
                 // Make the object's Rigidbody kinematic to remove it from physics simulation
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
@@ -169,7 +190,7 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             if (hit.collider.CompareTag("Package"))
             {
-                UiPromptForQ("Package");
+                //UiPromptForQ("Package");
 
             }
             else if (hit.collider.CompareTag("Letter"))
@@ -180,10 +201,33 @@ public class CameraRaycastNEW : MonoBehaviour
             else if (hit.collider.GetComponent<InspectTag>())
             {
                 UiPromptForQ(hit.collider.GetComponent<InspectTag>().chosenInspectableItem.ToString());
+
             }
             else
             {
                 CloseQPrompt();
+
+                if (packageOutline) {
+                    packageOutline.enabled = false;
+                }
+            }
+
+            if (hit.collider.TryGetComponent(out Outline outline)) {
+                packageOutline = outline;
+                packageOutline.enabled = true;
+            }
+
+            else {
+                if (packageOutline) {
+                    packageOutline.enabled = false;
+                }
+            }
+
+        }
+        else
+        {
+            if (packageOutline) {
+                packageOutline.enabled = false;
             }
         }
     }
@@ -193,16 +237,24 @@ public class CameraRaycastNEW : MonoBehaviour
         print(promptType + "Inspect");
 
 
-       /* if (Input.GetKeyDown(KeyCode.Q))              //Suggestion to connect to Inspect UI
-        {
-            //Launch  Inspect Window (promptType)
-        }*/
+        /* if (Input.GetKeyDown(KeyCode.Q))              //Suggestion to connect to Inspect UI
+         {
+             //Launch  Inspect Window (promptType)
+         }*/
     }
 
     public void CloseQPrompt()                      //This segment should close the UI prompt when not looking at Inspectable Object 
-    {                                             
-        print("Nothing to Inspect");
+    {
+        //print("Nothing to Inspect");
     }
+
+    public void ThrowObject()
+    {
+        heldObject.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
+
+        throwPower = 0.0f;
+    }
+
 
 
 
