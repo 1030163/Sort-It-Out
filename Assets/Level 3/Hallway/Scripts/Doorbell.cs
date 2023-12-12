@@ -13,7 +13,7 @@ public class Doorbell : MonoBehaviour
     [SerializeField] TextMeshPro interactionText;
     [SerializeField] DoorController doorController;
     [SerializeField] AudioClip doorbellSound;
-    private AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     public bool isDoorOpen;
 
     private void Start()
@@ -32,7 +32,7 @@ public class Doorbell : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player") && Input.GetMouseButtonDown(0))
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             RingDoorbell();
         }
