@@ -15,14 +15,6 @@ public class DialogueHandler : MonoBehaviour {
     private VOICE_TYPE NPCVoiceType;
 
     private void Update() {
-        //more case statements cos shit don't work
-        //max was 'ere
-        if (dialoguePrinter == null)
-        {
-            Debug.Log("Update this component: " + gameObject.name + " it is missing some dialogue handler stuff");
-            return;
-        }
-
         if (dialoguePrinter.confirmButton.activeSelf && Input.GetKeyDown(KeyCode.E)) {
             OnConfirmButtonPressed();
         }
@@ -42,6 +34,7 @@ public class DialogueHandler : MonoBehaviour {
         NPCVoiceType = voiceType;
 
         currentTree = dialogueTree;
+        treeCurrentIndex = 0;
         dialogueBox.SetActive(true);
         dialoguePrinter.InitDialogueText(currentTree.dialogueTree[0], NPCName, voiceType);
     }
@@ -93,16 +86,14 @@ public class DialogueHandler : MonoBehaviour {
         responseButtons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = dialogue.dialogueResponse[i].response;
 
         if (dialogue.dialogueResponse[i].responseTree) {
-            responseButtons[i].GetComponent<Button>().onClick.AddListener(delegate {
-                RunDialogueTreeOnResponse(dialogue.dialogueResponse[i].responseTree);
-            });
+            responseButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
+            responseButtons[i].GetComponent<Button>().onClick.AddListener(delegate { RunDialogueTreeOnResponse(dialogue.dialogueResponse[i].responseTree); });
 
             return;
         }
 
-        responseButtons[i].GetComponent<Button>().onClick.AddListener(delegate {
-            RunSingularDialogueOnResponse(dialogue.dialogueResponse[i].responseDialogue);
-        });
+        responseButtons[i].GetComponent<Button>().onClick.RemoveAllListeners();
+        responseButtons[i].GetComponent<Button>().onClick.AddListener(delegate { RunSingularDialogueOnResponse(dialogue.dialogueResponse[i].responseDialogue); });
     }
 
     private void RunDialogueTreeOnResponse(DialogueTree dialogueTree) {
