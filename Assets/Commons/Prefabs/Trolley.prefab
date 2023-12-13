@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 1819698258510857670}
   - component: {fileID: 743005365491329067}
   - component: {fileID: 7197304094239149503}
+  - component: {fileID: 5477075994238150078}
   m_Layer: 0
   m_Name: PackageDetector
   m_TagString: Untagged
@@ -332,6 +333,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   packagesInTrolley: []
+--- !u!114 &5477075994238150078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4336906774270035517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc943da4b513c14ea48c7526036c729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  packagePrefabs:
+  - {fileID: 1242552599764415960, guid: 547f88b23587b2f4b8fd57853d28dc31, type: 3}
+  - {fileID: 8108280307469639130, guid: b7340ecc039e536468cde15c7cfa614e, type: 3}
+  - {fileID: 8314347434019962026, guid: cc983750dc0cc2844a4cb85f39a68fdd, type: 3}
+  - {fileID: 5296859761121232802, guid: bbf8f863e26034a448a18bede4a3995a, type: 3}
+  - {fileID: 3955596457623803651, guid: d5fc32a704e8d004baca1baf05dabd6c, type: 3}
+  - {fileID: 7812178331254356771, guid: 0abbd3484646b614cbabc72abf7ca131, type: 3}
+  - {fileID: 1131633535222773794, guid: 892094e52d4bcd94dbd52c49e6d3b64f, type: 3}
+  - {fileID: 1014387553841310526, guid: 8b96e70d55462954a99c694feabc0d2c, type: 3}
+  - {fileID: 2655810528241858432, guid: 00badfc9f93cf014183115cd46177f14, type: 3}
+  - {fileID: 2670354844036152266, guid: 44116a97e3fe82646b25b4624dee6f84, type: 3}
+  - {fileID: 4309869580188445766, guid: e2c917268dc05ef4aafdb02a18019710, type: 3}
+  - {fileID: 7798261103153308835, guid: 425952bfbaf42694e9ec5fc456a4200a, type: 3}
+  - {fileID: 4809619018021642125, guid: b66bfec765257964f936b635a3b979b3, type: 3}
 --- !u!1 &4901763486585458346
 GameObject:
   m_ObjectHideFlags: 0

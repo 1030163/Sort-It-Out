@@ -5,12 +5,7 @@ using UnityEngine;
 public class TrolleyManager : MonoBehaviour
 {
     PackageEventManager packageEventManager;
-    [SerializeField] GameObject[] day1Packages;
-    [SerializeField] GameObject[] day2Packages;
-    [SerializeField] Transform attachPoint;
-    bool isDay1;
-    bool isAttached;
-    List<GameObject> packagesInTrolley;
+    [SerializeField] GameObject[] packagePrefabs;
 
     void Awake()
     {
@@ -19,20 +14,34 @@ public class TrolleyManager : MonoBehaviour
 
     private void Start()
     {
+        if (packageEventManager != null && packageEventManager.packagesToSpawn != null) 
+        {
+            for (int i = 0; i < packageEventManager.packagesToSpawn.Length; i++)
+            {
+                string packageName = packageEventManager.packagesToSpawn[i];
+                for (int j = 0; j < packagePrefabs.Length; j++)
+                {
+                    // Get the name of the prefab
+                    string prefabName = packagePrefabs[j].name;
+
+                    // Compare the names
+                    if (packageName == prefabName)
+                    {
+                        // Spawn the object prefab at j, with positions and rotations
+                        Instantiate(packagePrefabs[j], packageEventManager.packagesToSpawnPositions[i], packageEventManager.packagesToSpawnRotations[i]);
+                        break; // Assuming there's only one matching prefab for each object
+                    }
+                }
+            }
+        }
+
 
         //if (packageToInstantiate != null && packageSpawnPoint != null)
         {
+
         //    Instantiate(prefabToInstantiate, packageSpawnPoint.position, packageSpawnPoint.rotation);
         }
 
     }
-
-    //if player is in trigger
-    //player left clicks
-    //add package to trolley list
-    //place package in trolley
-
-
-    //if package is in trolley, on floor start, spawn the package
 
 }
