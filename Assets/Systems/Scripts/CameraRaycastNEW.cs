@@ -22,6 +22,7 @@ public class CameraRaycastNEW : MonoBehaviour
     private Vector3 mousePosMovement = Vector3.zero;
     private Vector3 mousePrevmovement = Vector3.zero;
 
+    private Outline packageOutline;
 
     [SerializeField] private GameObject parentPlayer;   //Reference to the player object with the Movement script on it.   Using this method to ensure funtionality if any changes occur to player hierarchal structure
 
@@ -191,8 +192,6 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 //UiPromptForQ("Package");
 
-
-
             }
             else if (hit.collider.CompareTag("Letter"))
             {
@@ -208,12 +207,28 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 CloseQPrompt();
 
+                if (packageOutline) {
+                    packageOutline.enabled = false;
+                }
             }
-           
+
+            if (hit.collider.TryGetComponent(out Outline outline)) {
+                packageOutline = outline;
+                packageOutline.enabled = true;
+            }
+
+            else {
+                if (packageOutline) {
+                    packageOutline.enabled = false;
+                }
+            }
+
         }
         else
         {
-
+            if (packageOutline) {
+                packageOutline.enabled = false;
+            }
         }
     }
 

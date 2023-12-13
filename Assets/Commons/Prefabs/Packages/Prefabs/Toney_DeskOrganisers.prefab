@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6254943973208321929}
   - component: {fileID: 3356841889971654931}
   - component: {fileID: 4914146376648343615}
+  - component: {fileID: 4534353395753397969}
   m_Layer: 0
   m_Name: Toney_DeskOrganisers
   m_TagString: Package
@@ -133,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 120.69595, y: 75.50229, z: 88.77484}
   m_Center: {x: 0, y: 0.0000019073486, z: 0}
+--- !u!114 &4534353395753397969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798261103153308835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 12

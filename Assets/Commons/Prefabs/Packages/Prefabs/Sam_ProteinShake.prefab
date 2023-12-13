@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6006060349273048739}
   - component: {fileID: 1967586388694642781}
   - component: {fileID: 5642222519787682696}
+  - component: {fileID: 6637878677258487490}
   m_Layer: 0
   m_Name: Sam_ProteinShake
   m_TagString: Package
@@ -133,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 42.73545, y: 81.75151, z: 42.991302}
   m_Center: {x: 0.0000038146973, y: -0.0000019073486, z: 0.0000076293945}
+--- !u!114 &6637878677258487490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131633535222773794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 7

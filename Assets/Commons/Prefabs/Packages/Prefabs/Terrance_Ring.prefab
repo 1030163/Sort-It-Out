@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9173609546578557517}
   - component: {fileID: 5684640660626907390}
   - component: {fileID: 8217756751016192551}
+  - component: {fileID: 5994009808397485107}
   m_Layer: 0
   m_Name: Terrance_Ring
   m_TagString: Package
@@ -133,3 +134,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20.426369, y: 63.15365, z: 41.812622}
   m_Center: {x: -0.000002861023, y: -0.0000009536743, z: -0.0000076293945}
+--- !u!114 &5994009808397485107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2655810528241858432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec39249e3e0e9344286515a6fcb73797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectID: 9
