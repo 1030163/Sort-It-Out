@@ -6,63 +6,78 @@ using UnityEngine.SceneManagement;
 
 public class Doorbell : MonoBehaviour
 {
-    [SerializeField] TextMeshPro interactionText;
-    [SerializeField] GameObject door;
-    [SerializeField] PackageLocation packageDelivery;
-    [SerializeField] GameObject mrsFlower;
-    [SerializeField] Vector3 mrsFlowerNewPosition = new Vector3(39.0f, 0.0f, 50.5f);
+    [Header("Changeable Values")]
+    [SerializeField] float waitTime;
 
+    [Header("References")]
+    [SerializeField] TextMeshPro interactionText;
+    [SerializeField] DoorController doorController;
+    [SerializeField] AudioClip doorbellSound;
+    [SerializeField] AudioSource audioSource;
+    public bool isDoorOpen;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>(); 
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        interactionText.gameObject.SetActive(true);
-        if (packageDelivery.isCorrectPackage)
+        if(other.CompareTag("Player"))
         {
-            WaitCoroutine(5f);
-            door.SetActive(true);
-
+            interactionText.gameObject.SetActive(true);
         }
 
-        MoveMrsFlower();
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (packageDelivery.isCorrectPackage)
+        if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            WaitCoroutine(5f);
-            door.SetActive(true);
-
+            RingDoorbell();
         }
-
-        if (SceneManager.GetActiveScene().buildIndex == 6)
-        {
-            MoveMrsFlower();
-        }
-
-        MoveMrsFlower();
-
 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        interactionText.gameObject.SetActive(false);
-        MoveMrsFlower();
+        if (other.CompareTag("Player"))
+        {
+            interactionText.gameObject.SetActive(false);
+            isDoorOpen = false;
+        }
     }
 
-    public void RingDoorbell ()
+    public void RingDoorbell()
     {
-        WaitCoroutine(2f);
-        door.SetActive(false);
+        StartCoroutine(WaitCoroutine(waitTime));
+        OpenDoor();
+        PlayDoorbellSound(); 
     }
 
-    private void MoveMrsFlower()
-    {
-        mrsFlower.transform.position = mrsFlowerNewPosition;
-    }
     IEnumerator WaitCoroutine(float time)
     {
         yield return new WaitForSeconds(time);
+
+
+    }
+
+    private void OpenDoor()
+    {
+        // Check if the player is still in the interaction zone before opening the door
+        if (interactionText.gameObject.activeSelf)
+        {
+            doorController.hasPermission = true;
+            doorController.DoorStateChange();
+            isDoorOpen = true;
+        }
+    }
+
+    private void PlayDoorbellSound()
+    {
+        if (doorbellSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(doorbellSound);
+        }
     }
 }

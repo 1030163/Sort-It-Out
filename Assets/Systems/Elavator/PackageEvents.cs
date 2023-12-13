@@ -70,4 +70,15 @@ public class PackageEvents : MonoBehaviour
         }
     }
 
+    public event Action OnSaveTrolleyPackageState;
+    public void SaveTrolleyPackageState()
+    {
+        if (OnSaveTrolleyPackageState != null)
+        {
+            OnSaveTrolleyPackageState();
+        }
+    }
+
+    
+
 }

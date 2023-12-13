@@ -10,6 +10,9 @@ public class PackageEventManager : MonoBehaviour
     public bool [] day1PackageChecklist;
     public static PackageEventManager eventManager;
     public bool day1AllTrue;
+    public string[] packagesToSpawn;
+    public Vector3[] packagesToSpawnPositions;
+    public Quaternion[] packagesToSpawnRotations;
 
 
     //handles what happens when a PackageEvent is called
@@ -32,6 +35,7 @@ public class PackageEventManager : MonoBehaviour
             PackageEvents.packageEvents.OnF2D1P2 += OnF2D1P2;
             PackageEvents.packageEvents.OnF3D1P1 += OnF3D1P1;
             PackageEvents.packageEvents.OnF3D1P2 += OnF3D1P2;
+            PackageEvents.packageEvents.OnSaveTrolleyPackageState += OnSaveTrolleyPackageState;
 
         }
         else
@@ -56,6 +60,7 @@ public class PackageEventManager : MonoBehaviour
         if (day1AllTrue)
         {
             //Day1Complete();
+            //Show next day panel to start next day
             Debug.Log("All packages for Day 1 successfully delivered");
         }
     }
@@ -102,6 +107,23 @@ public class PackageEventManager : MonoBehaviour
         day1PackageChecklist[5] = true;
 
         Debug.Log("Floor 3 Package 2 delivered");
+    }
+
+    private void OnSaveTrolleyPackageState()
+    {
+        TrolleyPackageDetector trolleyPackageDetector = FindObjectOfType<TrolleyPackageDetector>();
+        List<GameObject> trolleyPackages = trolleyPackageDetector.packagesInTrolley;
+
+        packagesToSpawn = new string[trolleyPackages.Count];
+        packagesToSpawnPositions = new Vector3[trolleyPackages.Count];
+        packagesToSpawnRotations = new Quaternion[trolleyPackages.Count];
+
+        for (int i = 0; i < trolleyPackages.Count; i++) 
+        {
+            packagesToSpawn[i] = trolleyPackages[i].gameObject.name;
+            packagesToSpawnPositions[i] = trolleyPackages[i].gameObject.transform.position;
+            packagesToSpawnRotations[i] = trolleyPackages[i].gameObject.transform.rotation; 
+        }
     }
 
 }
