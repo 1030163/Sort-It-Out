@@ -8,7 +8,7 @@ public class HermitDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider Package)
     {
-        if(Package.name == "RadioPackage")
+        if(Package.name == "RadioPackage" || Package.name == "F1D2P1")
         {
             RadioPackage.GetComponent<RadioAudio>().isInsideApart = true;
         }

@@ -15,6 +15,9 @@ public class InspectableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(objectID == 0)
+        {
+            return;
+        }
     }
 }

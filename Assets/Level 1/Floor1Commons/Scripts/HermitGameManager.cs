@@ -18,6 +18,8 @@ public class HermitGameManager : MonoBehaviour
     private bool triggeredOnce1 = false;
     private bool triggeredOnce2 = false;
 
+    public GameObject hermitBedroomDoor;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -28,6 +30,7 @@ public class HermitGameManager : MonoBehaviour
         {
             instance = this;
         }
+        hermitBedroomDoor.GetComponent<DoorController>().AutomaticDoor();
     }
 
     public void StartInstructionsUnderDoor()
