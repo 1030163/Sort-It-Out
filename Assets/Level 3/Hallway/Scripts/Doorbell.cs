@@ -77,7 +77,15 @@ public class Doorbell : MonoBehaviour
     {
         if (doorbellSound != null && audioSource != null)
         {
+            Debug.Log("Playing doorbell sound");
             audioSource.PlayOneShot(doorbellSound);
+            
         }
+        else
+        {
+            AudioSource.PlayClipAtPoint(doorbellSound, transform.position);
+        }
+        
+        
     }
 }
