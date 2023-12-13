@@ -36,6 +36,8 @@ public class CameraRaycastNEW : MonoBehaviour
     private void Start()
     {
         defaultHoldPointPosition = packageHoldPoint.localPosition;
+
+        Physics.IgnoreLayerCollision(17, 15, true);
     }
 
     private void Update()
@@ -68,7 +70,7 @@ public class CameraRaycastNEW : MonoBehaviour
         {
             throwPower += Time.deltaTime * throwChargeMultiplier;
             throwPower = Mathf.Clamp(throwPower, 0, maxThrowPower);
-           // print("Power up");
+            // print("Power up");
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -76,6 +78,7 @@ public class CameraRaycastNEW : MonoBehaviour
 
             if (isHoldingObject)
             {
+                //Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), parentPlayer.GetComponent<Collider>(), true);
 
                 // Before releasing the object, reset the Rigidbody's velocity.
                 Rigidbody rb = heldObject.GetComponent<Rigidbody>();
@@ -87,17 +90,21 @@ public class CameraRaycastNEW : MonoBehaviour
                     rb.useGravity = true;
                 }
                 isHoldingObject = false;
+                heldObject.layer = 0;
+
                 if (throwPower > 5)
                 {
                     ThrowObject();
                 }
+                // Physics.IgnoreCollision(heldObject.GetComponent<Collider>(), parentPlayer.GetComponent<Collider>(), false);
+
                 heldObject = null;
 
             }
             else
             {
                 SendRaycast();
-                
+
             }
 
             throwPower = 0;
@@ -169,6 +176,8 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 isHoldingObject = true;
                 heldObject = hit.collider.gameObject;
+                heldObject.layer = 15;
+
                 //UiPromptForQ("Package");
 
                 // Make the object's Rigidbody kinematic to remove it from physics simulation
@@ -207,18 +216,22 @@ public class CameraRaycastNEW : MonoBehaviour
             {
                 CloseQPrompt();
 
-                if (packageOutline) {
+                if (packageOutline)
+                {
                     packageOutline.enabled = false;
                 }
             }
 
-            if (hit.collider.TryGetComponent(out Outline outline)) {
+            if (hit.collider.TryGetComponent(out Outline outline))
+            {
                 packageOutline = outline;
                 packageOutline.enabled = true;
             }
 
-            else {
-                if (packageOutline) {
+            else
+            {
+                if (packageOutline)
+                {
                     packageOutline.enabled = false;
                 }
             }
@@ -226,7 +239,8 @@ public class CameraRaycastNEW : MonoBehaviour
         }
         else
         {
-            if (packageOutline) {
+            if (packageOutline)
+            {
                 packageOutline.enabled = false;
             }
         }
