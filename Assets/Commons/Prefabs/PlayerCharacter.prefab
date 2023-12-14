@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 7193955360030922815}
   - component: {fileID: 7313482074919712582}
   - component: {fileID: 5600058688554181026}
+  - component: {fileID: 4966859746392626552}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -335,6 +336,19 @@ MonoBehaviour:
   packageKey: 323
   openDoorKey: 101
   crosshair: {fileID: 0}
+--- !u!114 &4966859746392626552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824669861112491385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c2fe62572164e442ae81b971e56001a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrCont: {fileID: 7193955360030922815}
 --- !u!1 &5966662416102722857
 GameObject:
   m_ObjectHideFlags: 0

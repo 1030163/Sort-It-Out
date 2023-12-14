@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     public static bool objectHeld = false;
 
+    public static bool gamePaused = false;
+
     public static int inspectNumber;
     private void Awake()
     {
