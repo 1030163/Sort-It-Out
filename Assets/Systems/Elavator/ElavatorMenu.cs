@@ -22,7 +22,7 @@ public class ElavatorMenu : MonoBehaviour
     }
     private void Update()
     {
-        if (isMenuOn)// && packageEventManager.day1AllTrue == false)
+        if (isMenuOn && packageEventManager.day1AllTrue == false)
         {
             if (Input.GetKeyUp(KeyCode.Alpha1))
             {
@@ -39,6 +39,26 @@ public class ElavatorMenu : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Alpha4))
             {
                 sceneLoader.LoadNewScene(5);
+            }
+        }
+
+        if (isMenuOn && packageEventManager.day1AllTrue == true)
+        {
+            if (Input.GetKeyUp(KeyCode.Alpha1))
+            {
+                sceneLoader.LoadNewScene(0);
+            }
+            if (Input.GetKeyUp(KeyCode.Alpha2))
+            {
+                sceneLoader.LoadNewScene(2);
+            }
+            if (Input.GetKeyUp(KeyCode.Alpha3))
+            {
+                sceneLoader.LoadNewScene(4);
+            }
+            if (Input.GetKeyUp(KeyCode.Alpha4))
+            {
+                sceneLoader.LoadNewScene(6);
             }
         }
 

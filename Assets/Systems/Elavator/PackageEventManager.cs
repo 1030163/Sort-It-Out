@@ -4,6 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class PackageEventManager : MonoBehaviour
 {
@@ -13,6 +16,9 @@ public class PackageEventManager : MonoBehaviour
     public string[] packagesToSpawn;
     public Vector3[] packagesToSpawnPositions;
     public Quaternion[] packagesToSpawnRotations;
+    [SerializeField] Canvas day1CompleteCanvas;
+    bool day1CompleteCanvasOn;
+    bool movedToNextScene;
 
 
     //handles what happens when a PackageEvent is called
@@ -35,7 +41,7 @@ public class PackageEventManager : MonoBehaviour
             PackageEvents.packageEvents.OnF2D1P2 += OnF2D1P2;
             PackageEvents.packageEvents.OnF3D1P1 += OnF3D1P1;
             PackageEvents.packageEvents.OnF3D1P2 += OnF3D1P2;
-            PackageEvents.packageEvents.OnSaveTrolleyPackageState += OnSaveTrolleyPackageState;
+           // PackageEvents.packageEvents.OnSaveTrolleyPackageState += OnSaveTrolleyPackageState;
 
         }
         else
@@ -43,13 +49,19 @@ public class PackageEventManager : MonoBehaviour
             Debug.LogError("PackageEvents.packageEvents is null. Make sure you have an instance of PackageEvents in your scene.");
         }
 
-
+        day1CompleteCanvasOn = false;
     }
 
     private void Update()
     {
         CheckDay1Completion();
-
+        if (day1CompleteCanvasOn)
+        {
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter))
+            {
+                Day1Complete();
+            }
+        }
 
     }
 
@@ -57,10 +69,10 @@ public class PackageEventManager : MonoBehaviour
     {
         day1AllTrue = !day1PackageChecklist.Any(check => check == false);
 
-        if (day1AllTrue)
+        if (day1AllTrue && movedToNextScene == false)
         {
-            //Day1Complete();
-            //Show next day panel to start next day
+            day1CompleteCanvas.gameObject.SetActive(true);
+            day1CompleteCanvasOn = true;
             Debug.Log("All packages for Day 1 successfully delivered");
         }
     }
@@ -109,21 +121,34 @@ public class PackageEventManager : MonoBehaviour
         Debug.Log("Floor 3 Package 2 delivered");
     }
 
-    private void OnSaveTrolleyPackageState()
+   /* private void OnSaveTrolleyPackageState()
     {
+        
         TrolleyPackageDetector trolleyPackageDetector = FindObjectOfType<TrolleyPackageDetector>();
         List<GameObject> trolleyPackages = trolleyPackageDetector.packagesInTrolley;
 
-        packagesToSpawn = new string[trolleyPackages.Count];
-        packagesToSpawnPositions = new Vector3[trolleyPackages.Count];
-        packagesToSpawnRotations = new Quaternion[trolleyPackages.Count];
-
-        for (int i = 0; i < trolleyPackages.Count; i++) 
+        if (trolleyPackages != null)
         {
-            packagesToSpawn[i] = trolleyPackages[i].gameObject.name;
-            packagesToSpawnPositions[i] = trolleyPackages[i].gameObject.transform.position;
-            packagesToSpawnRotations[i] = trolleyPackages[i].gameObject.transform.rotation; 
+            packagesToSpawn = new string[trolleyPackages.Count];
+            packagesToSpawnPositions = new Vector3[trolleyPackages.Count];
+            packagesToSpawnRotations = new Quaternion[trolleyPackages.Count];
+
+            for (int i = 0; i < trolleyPackages.Count; i++)
+            {
+                packagesToSpawn[i] = trolleyPackages[i].gameObject.name;
+                packagesToSpawnPositions[i] = trolleyPackages[i].gameObject.transform.position;
+                packagesToSpawnRotations[i] = trolleyPackages[i].gameObject.transform.rotation;
+            }
         }
+
+    }*/
+
+    public void Day1Complete()
+    {
+        SceneManager.LoadScene(0);
+        day1CompleteCanvas.gameObject.SetActive(false);
+        day1CompleteCanvasOn = false;
+        movedToNextScene = true;
     }
 
 }

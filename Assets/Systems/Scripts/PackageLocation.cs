@@ -42,37 +42,37 @@ public class PackageLocation : MonoBehaviour
     {
         //Checks string against package name and checks it off the list
 
-        if (intendedPackageName == "F1D1P1" && isCorrectPackage)
+        if (intendedPackageName == "Mildred_Urn" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F1D1P1Delivered();
             this.gameObject.SetActive(false);
         }
 
-        if (intendedPackageName == "F1D1P2" && isCorrectPackage)
+        if (intendedPackageName == "Terrance_TechBox" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F1D1P2Delivered();
             this.gameObject.SetActive(false);
         }
 
-        if (intendedPackageName == "F2D1P1" && isCorrectPackage)
+        if (intendedPackageName == "Toney_Vase" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F2D1P1Delivered();
             this.gameObject.SetActive(false);
         }
 
-        if (intendedPackageName == "F2D1P2" && isCorrectPackage)
+        if (intendedPackageName == "Wesley_CleaningSupplies" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F2D1P2Delivered();
             this.gameObject.SetActive(false);
         }
 
-        if (intendedPackageName == "F3D1P1" && isCorrectPackage)
+        if (intendedPackageName == "Flowers_BakingSupplies" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F3D1P1Delivered();
             this.gameObject.SetActive(false);
         }
 
-        if (intendedPackageName == "F3D1P2" && isCorrectPackage)
+        if (intendedPackageName == "Tom_Tools" && isCorrectPackage)
         {
             PackageEvents.packageEvents.F3D1P2Delivered();
             this.gameObject.SetActive(false);

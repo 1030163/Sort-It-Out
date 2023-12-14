@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e870aaa89f3b874186e5e5d9754aa96, type: 3}
-  m_Name: SamDialogue3-2
+  m_Script: {fileID: 11500000, guid: a8c083043abd93c4097a163760a939bb, type: 3}
+  m_Name: Sam Response1
   m_EditorClassIdentifier: 
-  dialogue: What is that you have to tell me?
-  dialogueResponse:
-  - {fileID: 11400000, guid: 9742b26bb07882d47a95cd34cb0c6fa1, type: 2}
+  response: Ok
+  responseTree: {fileID: 11400000, guid: f1f280ae0b5c7b847b05608078ecd407, type: 2}
+  responseDialogue: {fileID: 0}
