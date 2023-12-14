@@ -30,7 +30,7 @@ public class HermitGameManager : MonoBehaviour
         {
             instance = this;
         }
-        hermitBedroomDoor.GetComponent<DoorController>().AutomaticDoor();
+        //hermitBedroomDoor.GetComponent<DoorController>().AutomaticDoor();
     }
 
     public void StartInstructionsUnderDoor()

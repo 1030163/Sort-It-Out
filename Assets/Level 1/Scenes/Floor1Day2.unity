@@ -33250,8 +33250,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.8802217
-  m_Center: {x: -0.6518651, y: 0, z: 0.22438657}
+  m_Radius: 1.1145852
+  m_Center: {x: -0.65186524, y: 0, z: 0.47432256}
 --- !u!114 &857634037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33267,7 +33267,7 @@ MonoBehaviour:
   Ghost: {fileID: 857634035}
   RadioPackage: {fileID: 134365869}
   Location1: {x: 3.018, y: 0.525, z: -2.348}
-  Location2: {x: 1.629, y: 0.525, z: 3.938}
+  Location2: {x: 1.992, y: 0.525, z: 2.749}
   Location3: {x: -1.559, y: 0.525, z: -2.456}
   currentGhostLocation: 
 --- !u!4 &857634038
@@ -33279,7 +33279,7 @@ Transform:
   m_GameObject: {fileID: 857634035}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.559, y: 0.525, z: -2.456}
+  m_LocalPosition: {x: 1.992, y: 0.525, z: 2.749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -79648,7 +79648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1217612303449258, guid: d70d364a4a82f6540b1d1af37cef06a4, type: 3}
       propertyPath: m_TagString
-      value: Package
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4655208355460556, guid: d70d364a4a82f6540b1d1af37cef06a4, type: 3}
       propertyPath: m_LocalScale.x

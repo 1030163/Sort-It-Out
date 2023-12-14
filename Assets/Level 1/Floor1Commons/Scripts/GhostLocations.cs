@@ -28,11 +28,13 @@ public class GhostLocations : MonoBehaviour
                     Ghost.transform.localPosition = Location2;
                     currentGhostLocation = "Location2";
                     RadioPackage.GetComponent<RadioAudio>().playDuration = 2f;
+                    Debug.Log("Ghost moved to location 2");
                     break;
                 case "Location2":
                     Ghost.transform.localPosition = Location3;
                     currentGhostLocation = "Location3";
                     RadioPackage.GetComponent<RadioAudio>().playDuration = 3.5f;
+                    Debug.Log("Ghost moved to location 3");
                     break;
                 case "Location3":
                     
