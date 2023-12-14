@@ -11,6 +11,9 @@ public class Day2UniManager : MonoBehaviour
     //[SerializeField] NPCDialogueHandler npc2DialogueHandler;
     [SerializeField] Doorbell doorbell;
     [SerializeField] PackageLocation package1Location; //package
+    [SerializeField] DialogueHandler npc1DialogueHandler;
+    [SerializeField] DialogueTree[] dialogueTree;
+    [SerializeField] NPCDialogue[] singularDialogue;
 
 
     private bool dialogue1Init;
@@ -25,23 +28,26 @@ public class Day2UniManager : MonoBehaviour
     {
         if (doorbell.isDoorOpen && dialogue1Init == false)
         {
-            //npc1DialogueHandler.InitSingularDialogue(npc1DialogueHandler.singularDialogue[0]); // 1.Sam answers the door
-            dialogue1Init= true;
+            npc1DialogueHandler.InitSingularDialogue(singularDialogue[0], "Sam Andre", VOICE_TYPE.Masculine);// 1.Sam answers the door
+            dialogue1Init = true;
         }
 
         if (package1Location.isCorrectPackage)
         {
-            //npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[1]); // 3.Sam cheers
+            npc1DialogueHandler.InitSingularDialogue(singularDialogue[2], "Sam Andre", VOICE_TYPE.Masculine); // 3.Sam cheers
             dialogue2Init = true;
         }
 
     }
 
-    public void Dialogue1Confirm()
+    public void Dialogue1Confirm1()
     {
-        npc1.SetActive(false); 
-        npc2.SetActive(true);
-        //npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[0]); // 2.Sam shows the basketball hoop
+        npc1DialogueHandler.InitSingularDialogue(singularDialogue[1], "Sam Andre", VOICE_TYPE.Masculine);// 2.Sam shows the basketball hoop - instructions - hold down left mouse button to throw
     }
-    
+
+    public void Dialogue1Confirm2()
+    {
+        npc1DialogueHandler.InitSingularDialogue(singularDialogue[3], "Sam Andre", VOICE_TYPE.Masculine);// 4. Sam laments about Mr Flowers
+    }
+
 }

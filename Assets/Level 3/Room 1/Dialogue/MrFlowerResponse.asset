@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 336bc2b67b43e0243bc3894b3dc942f3, type: 3}
-  m_Name: MrsFlowers DialogueTree1
+  m_Script: {fileID: 11500000, guid: a8c083043abd93c4097a163760a939bb, type: 3}
+  m_Name: MrFlowerResponse
   m_EditorClassIdentifier: 
-  dialogueTree:
-  - {fileID: 11400000, guid: 397795be98e63ae47a6f97ccffb403ad, type: 2}
-  - {fileID: 11400000, guid: 7ff14e2e65990604c81a37e88396649e, type: 2}
+  response: Ok
+  responseTree: {fileID: 0}
+  responseDialogue: {fileID: 0}

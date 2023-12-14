@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -652,6 +652,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 48798880}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &56213300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6031478287278857195, guid: 50ca54e87a515eb43a93ca3a3aa67331,
+    type: 3}
+  m_PrefabInstance: {fileID: 576185599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612da4169901ea645b40b677220144b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &63784628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2420,6 +2432,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 144089119}
+    - targetCorrespondingSourceObject: {fileID: 1353977574298584, guid: a690c3998952a6541bfa77d42dfe5078,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 144089122}
   m_SourcePrefab: {fileID: 100100000, guid: a690c3998952a6541bfa77d42dfe5078, type: 3}
 --- !u!1 &144089118 stripped
 GameObject:
@@ -2441,8 +2457,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueHandler: {fileID: 603253198}
   dialogueTrees: []
-  singularDialogue:
-  - {fileID: 11400000, guid: ebeef9068ec50ac489cf1bf375d41c45, type: 2}
+  singularDialogue: []
+--- !u!65 &144089122
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144089118}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 1.19, z: 0}
 --- !u!1001 &146586969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3880,6 +3916,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620b1f2344440444e933ad4f7d006d43, type: 3}
+--- !u!1 &229544091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229544093}
+  - component: {fileID: 229544092}
+  m_Layer: 0
+  m_Name: DayManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &229544092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229544091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4978519a377d9d498b81cdabd52b890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 144089118}
+  doorbell: {fileID: 501420223}
+  package1Location: {fileID: 1933412167}
+  package2Location: {fileID: 56213300}
+  npc1DialogueHandler: {fileID: 603253198}
+  dialogueTree:
+  - {fileID: 11400000, guid: cb6659f64153eef439450dc9b3f2c8e2, type: 2}
+  singularDialogue:
+  - {fileID: 11400000, guid: 8e3422adde13aa140873aacf3459c00b, type: 2}
+--- !u!4 &229544093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229544091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.027, y: 1.441, z: 51.9964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &238511234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7763,6 +7852,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &501420223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1415142171985498117, guid: f9cbd4ca4e26ff44e941f104cf5d5bf3,
+    type: 3}
+  m_PrefabInstance: {fileID: 694810734}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef4cfa9d1d7f71448a284747ba64025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &503891606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39987,6 +40088,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65900230452978468, guid: 747fa37dcf2c6d0429e2bde9f1c1a520,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48116,6 +48222,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2619370078496092536, guid: a40b05aaf62448f4d8b784a42dcf0641,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619370078496092536, guid: a40b05aaf62448f4d8b784a42dcf0641,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 53.808
+      objectReference: {fileID: 0}
     - target: {fileID: 4680320173740766349, guid: a40b05aaf62448f4d8b784a42dcf0641,
         type: 3}
       propertyPath: m_Name
@@ -64602,6 +64718,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f4263a0dbcccf4b91fcbfe2a8592f8, type: 3}
+--- !u!114 &1933412167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6031478287278857195, guid: 50ca54e87a515eb43a93ca3a3aa67331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1694724034}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612da4169901ea645b40b677220144b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1936526607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66133,6 +66261,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5785136727271430064, guid: 491f5626785c34c46b88ea67fe6ee448,
+        type: 3}
+      propertyPath: m_text
+      value: Ok
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989818817159383618, guid: 491f5626785c34c46b88ea67fe6ee448,
+        type: 3}
+      propertyPath: responseButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8280271097346887646, guid: 491f5626785c34c46b88ea67fe6ee448,
         type: 3}
       propertyPath: m_IsActive
@@ -66886,3 +67024,4 @@ SceneRoots:
   - {fileID: 867660312}
   - {fileID: 891424774}
   - {fileID: 2095013733}
+  - {fileID: 229544093}

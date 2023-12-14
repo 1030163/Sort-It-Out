@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class Day2FamilyManager : MonoBehaviour
+public class Day1FamilyManager : MonoBehaviour
 {
-    [SerializeField] GameObject npc; //MrsFlowers at kitchen
+    [SerializeField] GameObject npc; //MrFlowers at door
     //[SerializeField] NPCDialogueHandler npc1DialogueHandler; 
     //[SerializeField] NPCDialogueHandler npc2DialogueHandler; 
     [SerializeField] Doorbell doorbell;
@@ -14,6 +14,7 @@ public class Day2FamilyManager : MonoBehaviour
     [SerializeField] DialogueHandler npc1DialogueHandler;
     [SerializeField] DialogueTree[] dialogueTree;
     [SerializeField] NPCDialogue[] singularDialogue;
+
 
     private bool dialogue1Init;
     private bool dialogue2Init;
@@ -29,21 +30,22 @@ public class Day2FamilyManager : MonoBehaviour
     {
         if (doorbell.isDoorOpen && dialogue1Init == false)
         {
-            npc1DialogueHandler.InitDialogueTree(dialogueTree[0], "Nancy Flower", VOICE_TYPE.Feminine); // 1.Mr Flowers answers the door & tells player to put package on the table
-            dialogue1Init = true;
+           npc1DialogueHandler.InitSingularDialogue(singularDialogue[0], "Tim Flower", VOICE_TYPE.Masculine); // 1.Mr Flowers answers the door
+            dialogue1Init= true;
         }
 
         if (package1Location.isCorrectPackage && dialogue2Init == false)
         {
-            npc1DialogueHandler.InitSingularDialogue(singularDialogue[0], "Nancy Flower", VOICE_TYPE.Feminine); // 2.Mrs Flowers asks you to look for her phone
+            npc1DialogueHandler.InitDialogueTree(dialogueTree[0], "Tim Flower", VOICE_TYPE.Masculine); // 1.Mr Flowers answers the door
             dialogue2Init = true;
         }
 
-        if (package2Location.isCorrectPackage && dialogue3Init == false)
-        {
-            npc1DialogueHandler.InitSingularDialogue(singularDialogue[1], "Nancy Flower", VOICE_TYPE.Feminine);// 3.Mrs Flowers thanks you
-            dialogue3Init = true;
-        }
-
     }
+
+    public void Dialogue1Confirm()
+    {
+        //npc.SetActive(true);
+       // npc2DialogueHandler.InitSingularDialogue(npc2DialogueHandler.singularDialogue[0]); // 2.Mrs Flowers tells player to put package on the table
+    }
+    
 }
