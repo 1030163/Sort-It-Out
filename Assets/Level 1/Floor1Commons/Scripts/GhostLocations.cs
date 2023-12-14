@@ -11,10 +11,15 @@ public class GhostLocations : MonoBehaviour
     public Vector3 Location3;
     public string currentGhostLocation;
 
+    public GameObject PackageDeliveryLocation;
+
     void Start()
     {
+        RadioPackage = GameObject.Find("Terrance_Radio");
+        PackageDeliveryLocation = GameObject.Find("PlacePackageHereRADIO");
         currentGhostLocation = "Location1";
         Ghost.transform.localPosition = Location1;
+        PackageDeliveryLocation.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +40,7 @@ public class GhostLocations : MonoBehaviour
                     currentGhostLocation = "Location3";
                     RadioPackage.GetComponent<RadioAudio>().playDuration = 3.5f;
                     Debug.Log("Ghost moved to location 3");
+                    PackageDeliveryLocation.SetActive(true);
                     break;
                 case "Location3":
                     
