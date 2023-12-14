@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,8 @@ public class DialogueHandler : MonoBehaviour {
     private string NPCTalking;
     private VOICE_TYPE NPCVoiceType;
 
+    public bool isTalking;
+
     private void Update() {
         if (dialoguePrinter.confirmButton.activeSelf && Input.GetKeyDown(KeyCode.E)) {
             OnConfirmButtonPressed();
@@ -21,15 +24,21 @@ public class DialogueHandler : MonoBehaviour {
     }
 
     public void InitSingularDialogue(NPCDialogue dialogue, string NPCName, VOICE_TYPE voiceType) {
+        
+        
         NPCTalking = NPCName;
         NPCVoiceType = voiceType;
 
         currentTree = null;
         dialogueBox.SetActive(true);
         dialoguePrinter.InitDialogueText(dialogue, NPCTalking, voiceType);
+        isTalking = true;
+        
     }
 
     public void InitDialogueTree(DialogueTree dialogueTree, string NPCName, VOICE_TYPE voiceType) {
+        
+       
         NPCTalking = NPCName;
         NPCVoiceType = voiceType;
 
@@ -37,6 +46,7 @@ public class DialogueHandler : MonoBehaviour {
         treeCurrentIndex = 0;
         dialogueBox.SetActive(true);
         dialoguePrinter.InitDialogueText(currentTree.dialogueTree[0], NPCName, voiceType);
+        isTalking = true;
     }
 
     // Is called when the E key is pressed at the end of dialogue
@@ -49,17 +59,23 @@ public class DialogueHandler : MonoBehaviour {
             if (!atEndOfTree) {
                 treeCurrentIndex++;
                 dialoguePrinter.InitDialogueText(currentTree.dialogueTree[treeCurrentIndex], NPCTalking, NPCVoiceType);
+                isTalking = false;
                 return;
             }
 
+
             print("You've reached the end of the dialogue tree!");
             dialogueBox.SetActive(false);
+            
             return;
         }
 
+        isTalking = false;
         print("You've reached the end of the dialogue!");
         dialogueBox.SetActive(false);
+
     }
+
 
     #region RESPONSE_FUNCTIONS
 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e870aaa89f3b874186e5e5d9754aa96, type: 3}
+  m_Name: Doorman_Stashwell
+  m_EditorClassIdentifier: 
+  dialogue: 'Wesley is...a very kind and caring man, but he seems to have a bit of
+    an issue with letting things go. Anyone who spends even a little bit of time
+    with him can see that he''s a total ball of anxiety, but he never lets that get
+    in the way of his kindness. '
+  dialogueResponse:
+  - {fileID: 11400000, guid: c2962647a69c3db4c86c2ffd582aec5f, type: 2}
+  - {fileID: 11400000, guid: 8617e29449683c347b0458f760ae1192, type: 2}

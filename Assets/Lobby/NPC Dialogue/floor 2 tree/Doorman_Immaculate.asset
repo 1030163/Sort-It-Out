@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e870aaa89f3b874186e5e5d9754aa96, type: 3}
+  m_Name: Doorman_Immaculate
+  m_EditorClassIdentifier: 
+  dialogue: Ah yes, Toney Immaculate, very successful and even more organised business
+    man. He runs on a strict routine, leaves his house and apartment at the same
+    time every day, rain or shine. He's quite blunt sometimes but I think that's
+    just his way of keeping on schedule.
+  dialogueResponse:
+  - {fileID: 11400000, guid: d8d0347689c6dc8418e80c677f0286c1, type: 2}
+  - {fileID: 11400000, guid: 8617e29449683c347b0458f760ae1192, type: 2}
