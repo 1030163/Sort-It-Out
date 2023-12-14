@@ -15,6 +15,11 @@ public class HermitGameManager : MonoBehaviour
     public AudioSource SurvWardrobe;
     public GameObject SurvRoomLight;
 
+    private bool triggeredOnce1 = false;
+    private bool triggeredOnce2 = false;
+
+    public GameObject hermitBedroomDoor;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -25,6 +30,7 @@ public class HermitGameManager : MonoBehaviour
         {
             instance = this;
         }
+        //hermitBedroomDoor.GetComponent<DoorController>().AutomaticDoor();
     }
 
     public void StartInstructionsUnderDoor()
@@ -35,18 +41,33 @@ public class HermitGameManager : MonoBehaviour
 
     public void RadioPackageDelivered()
     {
-        Debug.Log("Funtion: RadioPackageDelivered() called");
-        //SpareRoomDoor.GetComponent<ModifiedDoorController>().hasPermission = true;
-        SpareRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
-        //SpareRoomDoor.GetComponent<ModifiedDoorController>().hasPermission = false;
+        
+        if (triggeredOnce1 == false)
+        {
+            Debug.Log("Funtion: RadioPackageDelivered() called");
+
+            //SpareRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
+            SpareRoomDoor.GetComponent<DoorController>().AutomaticDoor();
+            SpareRoomDoor.GetComponent<AudioSource>().Play();
+            triggeredOnce1 = true;
+        }
+
     }
 
     public void BothPackagesCorrectlyDelivered()
     {
-        Debug.Log("Funtion: BothPackagesCorrectlyDelivered() called");
-        SurvRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
-        SurvRoomLight.SetActive(false);
-        StartCoroutine(PlaySlamSound(SurvWardrobe));
+        
+        if (triggeredOnce2 == false)
+        {
+            Debug.Log("Funtion: BothPackagesCorrectlyDelivered() called");
+            //SurvRoomDoor.GetComponent<ModifiedDoorController>().ScriptedToggleDoorState();
+            SurvRoomDoor.GetComponent<DoorController>().AutomaticDoor();
+            SurvRoomDoor.GetComponent<AudioSource>().Play();
+            SurvRoomLight.SetActive(false);
+            StartCoroutine(PlaySlamSound(SurvWardrobe));
+            triggeredOnce2 = true;
+        }
+
     }
 
     IEnumerator PlaySlamSound(AudioSource audioSource)

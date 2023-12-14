@@ -19,6 +19,7 @@ public class RadioAudio : MonoBehaviour
 
     void Start()
     {
+        targetObject = GameObject.Find("Ghost");
         //audioSource = GetComponent<AudioSource>();
         initialPitch = audioSource.pitch; // Store the initial pitch
     }
