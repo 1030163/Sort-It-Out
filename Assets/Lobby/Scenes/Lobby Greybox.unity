@@ -47390,20 +47390,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 337022435981474799, guid: 660b4f83df3a1324cab8378aa160f55e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410187530457093413, guid: 660b4f83df3a1324cab8378aa160f55e,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 0.13363576
+      objectReference: {fileID: 0}
     - target: {fileID: 1563819790740743373, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.95
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1563819790740743373, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 7.43
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 1563819790740743373, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.51
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145417967750026699, guid: 660b4f83df3a1324cab8378aa160f55e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2337748102826644451, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
@@ -47420,10 +47435,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 1.32
       objectReference: {fileID: 0}
+    - target: {fileID: 3290389267074129124, guid: 660b4f83df3a1324cab8378aa160f55e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6382154328010093500, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
       propertyPath: m_Name
       value: Elavator Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236753207310826284, guid: 660b4f83df3a1324cab8378aa160f55e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8496649934214843450, guid: 660b4f83df3a1324cab8378aa160f55e,
         type: 3}
@@ -47488,11 +47513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8496649934214843450, guid: 660b4f83df3a1324cab8378aa160f55e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660b4f83df3a1324cab8378aa160f55e, type: 3}
 --- !u!1001 &1764612153
 PrefabInstance:
@@ -57421,3 +57442,5 @@ SceneRoots:
   - {fileID: 2102080280}
   - {fileID: 1764612153}
   - {fileID: 1504459447}
+  - {fileID: 157717712}
+  - {fileID: 1246698480}

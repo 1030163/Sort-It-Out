@@ -23,7 +23,7 @@ public class PackageEventManager : MonoBehaviour
             eventManager = this;
             DontDestroyOnLoad(gameObject);
         }
-
+        day1AllTrue = false;
     }
     private void Start()
     {

@@ -11,24 +11,26 @@ public class ElavatorMenu : MonoBehaviour
     [SerializeField] TMP_Text sceneNumberText;
     [SerializeField] TextMeshPro interactionText;
     [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] PackageEventManager packageEventManager;
     bool isMenuOn;
 
     private void Start()
     {
         UpdateFloorNumber();
         isMenuOn = false;
+        packageEventManager = FindObjectOfType<PackageEventManager>();
     }
     private void Update()
     {
-        if (isMenuOn)
+        if (isMenuOn)// && packageEventManager.day1AllTrue == false)
         {
             if (Input.GetKeyUp(KeyCode.Alpha1))
             {
-                sceneLoader.LoadNewScene(1);
+                sceneLoader.LoadNewScene(0);
             }
             if (Input.GetKeyUp(KeyCode.Alpha2))
             {
-                sceneLoader.LoadNewScene(2);
+                sceneLoader.LoadNewScene(1);
             }
             if (Input.GetKeyUp(KeyCode.Alpha3))
             {
@@ -36,9 +38,10 @@ public class ElavatorMenu : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Alpha4))
             {
-                sceneLoader.LoadNewScene(4);
+                sceneLoader.LoadNewScene(5);
             }
         }
+
 
     }
     private void OnTriggerStay(Collider other)
@@ -72,11 +75,11 @@ public class ElavatorMenu : MonoBehaviour
         int sceneNumber = currentScene.buildIndex;
         string sceneName = currentScene.name;
         // Update the text of the Text component
-        if (sceneNumberText != null && sceneNumber == 1)
+        if (sceneNumberText != null && sceneNumber == 0)
         {
             sceneNumberText.text = "Current Floor: Lobby";
         }
-        if (sceneNumberText != null && sceneNumber == 2)
+        if (sceneNumberText != null && sceneNumber == 1)
         {
             sceneNumberText.text = "Current Floor: Floor1";
         }
@@ -84,19 +87,19 @@ public class ElavatorMenu : MonoBehaviour
         {
             sceneNumberText.text = "Current Floor: Floor2";
         }
-        if (sceneNumberText != null && sceneNumber == 4)
+        if (sceneNumberText != null && sceneNumber == 5)
         {
             sceneNumberText.text = "Current Floor: Floor3";
         }
-        if (sceneNumberText != null && sceneNumber == 5)
+        if (sceneNumberText != null && sceneNumber == 2)
         {
             sceneNumberText.text = "Current Floor: Floor1";
         }
-        if (sceneNumberText != null && sceneNumber == 6)
+        if (sceneNumberText != null && sceneNumber == 4)
         {
             sceneNumberText.text = "Current Floor: Floor2";
         }
-        if (sceneNumberText != null && sceneNumber == 7)
+        if (sceneNumberText != null && sceneNumber == 6)
         {
             sceneNumberText.text = "Current Floor: Floor3";
         }

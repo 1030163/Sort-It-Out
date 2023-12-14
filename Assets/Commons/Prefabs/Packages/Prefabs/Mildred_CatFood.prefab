@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3856066396719872126}
   - component: {fileID: 3176481339651630505}
   - component: {fileID: 554301260023602030}
+  - component: {fileID: 8041942502976515400}
+  - component: {fileID: 7038284522219971618}
   m_Layer: 0
   m_Name: Mildred_CatFood
   m_TagString: Package
@@ -147,3 +149,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectID: 4
+--- !u!114 &8041942502976515400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296859761121232802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19766e6ddd09ffa46a45f3672ff6e2b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 0}
+  dialogueHandler: {fileID: 0}
+  catCollar: {fileID: 0}
+  catFood: {fileID: 0}
+  isCatCollarPackage: 0
+--- !u!114 &7038284522219971618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5296859761121232802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineWidth: 5
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

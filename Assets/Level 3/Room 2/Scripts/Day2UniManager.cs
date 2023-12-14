@@ -37,13 +37,12 @@ public class Day2UniManager : MonoBehaviour
         if (doorbell.isDoorOpen && dialogue1Init == false)
         {
             npc1DialogueHandler.InitSingularDialogue(singularDialogue[0], "Sam Andre", VOICE_TYPE.Masculine);// 1.Sam answers the door
+            StartCoroutine(WaitCoroutine(3));
+
             dialogue1Init = true;
         }
-        if (dialogue1Init = true && Input.GetKeyUp(KeyCode.E))
-            {
-            keyPress++;
-        }
-        if (dialogue2Init == false && keyPress == 2)
+
+        if (dialogue2Init == false & dialogue1Init)
         {
             npc1.transform.position = samNewPosition.position;
             door2.DoorStateChange();
@@ -58,6 +57,13 @@ public class Day2UniManager : MonoBehaviour
             npc1DialogueHandler.InitDialogueTree(dialogueTree[1], "Sam Andre", VOICE_TYPE.Masculine); // 3.Sam cheers and player tells about mr flowers
             dialogue3Init = true;
         }
+
+    }
+
+    IEnumerator WaitCoroutine(float time)
+    {
+        yield return new WaitForSeconds(time);
+
 
     }
 
