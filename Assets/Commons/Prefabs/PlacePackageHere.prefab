@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 5820977761318047234}
   - component: {fileID: 8799190596609428884}
   - component: {fileID: 3397145088579219725}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PlacePackageHere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,6 +266,8 @@ MonoBehaviour:
   packageName: 
   intendedPackageName: 
   showOutline: 0
+  packageDisappears: 0
+  printOnSuccess: 
 --- !u!33 &5820977761318047234
 MeshFilter:
   m_ObjectHideFlags: 0

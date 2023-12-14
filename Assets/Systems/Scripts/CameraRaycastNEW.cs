@@ -117,6 +117,7 @@ public class CameraRaycastNEW : MonoBehaviour
     {
         if (heldObject)
         {
+            heldObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             // Get the pitch of the camera/player view and convert it to a range between -180 and 180
             float pitch = transform.eulerAngles.x;
             if (pitch > 180f) pitch -= 360f;
@@ -150,7 +151,6 @@ public class CameraRaycastNEW : MonoBehaviour
 
 
             heldObject.GetComponent<Rigidbody>().MovePosition(moveToHeldPos);
-
 
         }
 
