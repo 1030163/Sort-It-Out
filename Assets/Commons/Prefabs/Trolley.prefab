@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 743005365491329067}
   - component: {fileID: 7197304094239149503}
   - component: {fileID: 5477075994238150078}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PackageDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -359,6 +359,7 @@ MonoBehaviour:
   - {fileID: 4309869580188445766, guid: e2c917268dc05ef4aafdb02a18019710, type: 3}
   - {fileID: 7798261103153308835, guid: 425952bfbaf42694e9ec5fc456a4200a, type: 3}
   - {fileID: 4809619018021642125, guid: b66bfec765257964f936b635a3b979b3, type: 3}
+  packageDetector: {fileID: 0}
 --- !u!1 &4901763486585458346
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,7 +677,7 @@ GameObject:
   - component: {fileID: 3757438432107038903}
   - component: {fileID: 7223964821815219600}
   - component: {fileID: 3341106136076991128}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TrolleyDettachTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

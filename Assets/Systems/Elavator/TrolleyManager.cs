@@ -6,7 +6,7 @@ public class TrolleyManager : MonoBehaviour
 {
     PackageEventManager packageEventManager;
     [SerializeField] GameObject[] packagePrefabs;
-    GameObject packageDetector;
+    [SerializeField] GameObject packageDetector;
 
     void Awake()
     {
@@ -30,11 +30,19 @@ public class TrolleyManager : MonoBehaviour
                     // Get the name of the prefab
                     string prefabName = packagePrefabs[j].name;
 
+
+                    
+
                     // Compare the names
                     if (packageName == prefabName)
                     {
                         // Spawn the object prefab at j, with positions and rotations
-                        Instantiate(packagePrefabs[j], packageEventManager.packagesToSpawnPositions[i], packageEventManager.packagesToSpawnRotations[i], packageDetector.transform);
+                        Vector3 packageDetectorPosition = packageDetector.transform.position;
+                        Vector3 packageOffset = new Vector3(0.2f, 0.2f, 0.2f);
+
+                        GameObject spawnedPackage = Instantiate(packagePrefabs[j], packageDetectorPosition, Quaternion.identity, packageDetector.transform);
+                        //spawnedPackage.transform.localScale = new Vector3(0f, 1f, 0f);
+                        
                         break; // Assuming there's only one matching prefab for each object
                     }
                 }
