@@ -44,11 +44,11 @@ public class Floor2Day2Manager : MonoBehaviour
             dialogueHandler.InitDialogueTree(dialogueTrees[2], "Wesley Stashwell", VOICE_TYPE.Masculine); //dialogue for package delivered
             wesleyPaintsDelivered = true;
         }
-        if (packageLocation1.isCorrectPackage && !bMVaseDelivered)
+     /*   if (packageLocation1.isCorrectPackage && !bMVaseDelivered)
         {
             dialogueHandler.InitDialogueTree(dialogueTrees[3], "Toney Immaculate", VOICE_TYPE.Masculine); //dialogue for package delivered
             bMVaseDelivered = true;
-        }
+        }*/
 
     }
 }
