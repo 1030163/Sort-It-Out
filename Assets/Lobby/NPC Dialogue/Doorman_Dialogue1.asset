@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e870aaa89f3b874186e5e5d9754aa96, type: 3}
+  m_Name: Doorman_Dialogue1
+  m_EditorClassIdentifier: 
+  dialogue: Hi there, what can I help you with?
+  dialogueResponse:
+  - {fileID: 11400000, guid: c28c0b5768bf14f48a0eb10382311ab4, type: 2}
+  - {fileID: 11400000, guid: 53a9f996912a214429fb5c7ae1ad1f52, type: 2}
+  - {fileID: 11400000, guid: 9f3e14dd30b295d4c88d607f8d267249, type: 2}

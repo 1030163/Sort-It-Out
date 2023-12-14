@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e870aaa89f3b874186e5e5d9754aa96, type: 3}
+  m_Name: Doorman_TheFlowers
+  m_EditorClassIdentifier: 
+  dialogue: Of course! The flowers, Nancy and Tim, moved in about a year ago with
+    their young son Timmy. They're a gorgeous little family, very kind and caring.
+    Although I think something is keeping them awake at night because they've been
+    looking quite tired recently. Anything else you'd like to know?
+  dialogueResponse:
+  - {fileID: 11400000, guid: a809110e9d0e37746a4e7e2cd937c406, type: 2}
+  - {fileID: 11400000, guid: 8617e29449683c347b0458f760ae1192, type: 2}
