@@ -39099,6 +39099,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1239743591}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1246698477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246698480}
+  - component: {fileID: 1246698479}
+  - component: {fileID: 1246698478}
+  m_Layer: 0
+  m_Name: PackageEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1246698478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246698477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cbae6e747aa9a4a9ee4bc9f962a649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1246698479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246698477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020ff6cb428fe524c865e03e889da263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day1PackageChecklist: 
+  day1AllTrue: 0
+  packagesToSpawn: []
+  packagesToSpawnPositions: []
+  packagesToSpawnRotations: []
+--- !u!4 &1246698480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246698477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.2140865, y: -1.4073601, z: -1.6772785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1252893712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50797,11 +50859,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8496649934214843450, guid: 660b4f83df3a1324cab8378aa160f55e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660b4f83df3a1324cab8378aa160f55e, type: 3}
 --- !u!1001 &1757108357
 PrefabInstance:
@@ -61090,6 +61148,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 900011894}
     m_Modifications:
+    - target: {fileID: 6639999304001409775, guid: b7340ecc039e536468cde15c7cfa614e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639999304001409775, guid: b7340ecc039e536468cde15c7cfa614e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639999304001409775, guid: b7340ecc039e536468cde15c7cfa614e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.617
+      objectReference: {fileID: 0}
+    - target: {fileID: 6639999304001409775, guid: b7340ecc039e536468cde15c7cfa614e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108280307469639130, guid: b7340ecc039e536468cde15c7cfa614e,
+        type: 3}
+      propertyPath: m_Name
+      value: Flowers_BakingSupplies
+      objectReference: {fileID: 0}
     - target: {fileID: 4235481960436158943, guid: b3b4456914dfb18449349fa1d16f9f26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61125,16 +61208,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6639999304001409775, guid: b7340ecc039e536468cde15c7cfa614e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108280307469639130, guid: b7340ecc039e536468cde15c7cfa614e,
-        type: 3}
-      propertyPath: m_Name
-      value: Flowers_BakingSupplies
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -61148,11 +61221,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 900011894}
     m_Modifications:
-    - target: {fileID: 4235481960436158943, guid: b3b4456914dfb18449349fa1d16f9f26,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 107.773
-      objectReference: {fileID: 0}
     - target: {fileID: 3878447050904300473, guid: bbf8f863e26034a448a18bede4a3995a,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -61207,6 +61275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mildred_CatFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235481960436158943, guid: b3b4456914dfb18449349fa1d16f9f26,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 107.773
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -61423,3 +61496,4 @@ SceneRoots:
   - {fileID: 1674793540}
   - {fileID: 1441516371}
   - {fileID: 1924297110}
+  - {fileID: 1246698480}

@@ -6,10 +6,16 @@ public class TrolleyManager : MonoBehaviour
 {
     PackageEventManager packageEventManager;
     [SerializeField] GameObject[] packagePrefabs;
+    GameObject packageDetector;
 
     void Awake()
     {
         packageEventManager = FindObjectOfType<PackageEventManager>();
+
+        if (packageDetector == null )
+        {
+            packageDetector = GameObject.Find("PackageDetector");
+        }
     }
 
     private void Start()
@@ -28,7 +34,7 @@ public class TrolleyManager : MonoBehaviour
                     if (packageName == prefabName)
                     {
                         // Spawn the object prefab at j, with positions and rotations
-                        Instantiate(packagePrefabs[j], packageEventManager.packagesToSpawnPositions[i], packageEventManager.packagesToSpawnRotations[i]);
+                        Instantiate(packagePrefabs[j], packageEventManager.packagesToSpawnPositions[i], packageEventManager.packagesToSpawnRotations[i], packageDetector.transform);
                         break; // Assuming there's only one matching prefab for each object
                     }
                 }
