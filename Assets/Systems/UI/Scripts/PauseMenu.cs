@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
             pausePanel.SetActive(true);
             Time.timeScale = 0;
             gameIsPaused = true;
+            UIManager.gamePaused = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && gameIsPaused)
         {
@@ -31,6 +32,8 @@ public class PauseMenu : MonoBehaviour
             settingsPanel.SetActive(false);
             Time.timeScale = 1f;
             gameIsPaused = false;
+            UIManager.gamePaused = false;
+            
         }
     }
 

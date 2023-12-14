@@ -26,11 +26,6 @@ public class PrintDialogue : MonoBehaviour {
     }
 
     public void InitDialogueText(NPCDialogue npcDialogue, string NPCName, VOICE_TYPE voiceType) {
-        if (isDialogueActive) {
-            print("Dialogue is already active!");
-            return;
-        }
-
         char[] charactersInDialogue = npcDialogue.dialogue.ToCharArray();
         NPCNameText.text = NPCName;
 

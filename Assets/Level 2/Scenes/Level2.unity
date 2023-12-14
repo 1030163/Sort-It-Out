@@ -8352,6 +8352,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2619370078496092536, guid: a40b05aaf62448f4d8b784a42dcf0641,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.229
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619370078496092536, guid: a40b05aaf62448f4d8b784a42dcf0641,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.294
+      objectReference: {fileID: 0}
     - target: {fileID: 4680320173740766349, guid: a40b05aaf62448f4d8b784a42dcf0641,
         type: 3}
       propertyPath: m_Name
@@ -13023,11 +13033,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b833f4928b9fa4c91773879bef8ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayLength: 5
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 4294967295
   excludeLayername: 
+  packageKey: 323
   openDoorKey: 101
   crosshair: {fileID: 0}
 --- !u!143 &947533838
