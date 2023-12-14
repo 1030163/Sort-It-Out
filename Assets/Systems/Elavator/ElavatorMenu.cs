@@ -24,19 +24,19 @@ public class ElavatorMenu : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.Alpha1))
             {
-                sceneLoader.LoadNewScene(3);
+                sceneLoader.LoadNewScene(1);
             }
             if (Input.GetKeyUp(KeyCode.Alpha2))
             {
-                sceneLoader.LoadNewScene(4);
+                sceneLoader.LoadNewScene(2);
             }
             if (Input.GetKeyUp(KeyCode.Alpha3))
             {
-                sceneLoader.LoadNewScene(5);
+                sceneLoader.LoadNewScene(3);
             }
             if (Input.GetKeyUp(KeyCode.Alpha4))
             {
-                sceneLoader.LoadNewScene(6);
+                sceneLoader.LoadNewScene(4);
             }
         }
 
@@ -72,31 +72,31 @@ public class ElavatorMenu : MonoBehaviour
         int sceneNumber = currentScene.buildIndex;
         string sceneName = currentScene.name;
         // Update the text of the Text component
-        if (sceneNumberText != null && sceneNumber == 3)
+        if (sceneNumberText != null && sceneNumber == 1)
         {
             sceneNumberText.text = "Current Floor: Lobby";
         }
-        if (sceneNumberText != null && sceneNumber == 4)
+        if (sceneNumberText != null && sceneNumber == 2)
         {
             sceneNumberText.text = "Current Floor: Floor1";
         }
-        if (sceneNumberText != null && sceneNumber == 5)
+        if (sceneNumberText != null && sceneNumber == 3)
         {
             sceneNumberText.text = "Current Floor: Floor2";
         }
-        if (sceneNumberText != null && sceneNumber == 6)
+        if (sceneNumberText != null && sceneNumber == 4)
         {
             sceneNumberText.text = "Current Floor: Floor3";
         }
-        if (sceneNumberText != null && sceneNumber == 7)
+        if (sceneNumberText != null && sceneNumber == 5)
         {
             sceneNumberText.text = "Current Floor: Floor1";
         }
-        if (sceneNumberText != null && sceneNumber == 9)
+        if (sceneNumberText != null && sceneNumber == 6)
         {
             sceneNumberText.text = "Current Floor: Floor2";
         }
-        if (sceneNumberText != null && sceneNumber == 10)
+        if (sceneNumberText != null && sceneNumber == 7)
         {
             sceneNumberText.text = "Current Floor: Floor3";
         }
