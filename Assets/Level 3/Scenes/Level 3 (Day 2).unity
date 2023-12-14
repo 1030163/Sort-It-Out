@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,9 +549,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc1: {fileID: 1612842959}
-  npc2: {fileID: 412334892}
   doorbell: {fileID: 554962539}
   package1Location: {fileID: 1921412307}
+  npc1DialogueHandler: {fileID: 1126381149}
+  dialogueTree:
+  - {fileID: 11400000, guid: f1f280ae0b5c7b847b05608078ecd407, type: 2}
+  - {fileID: 11400000, guid: eda0ccdf9b78c43449e8f2f18e04bd94, type: 2}
+  singularDialogue:
+  - {fileID: 11400000, guid: c9c7272483ced554fbc2e8873ed9b527, type: 2}
+  - {fileID: 11400000, guid: 3de0dc1484bdf854cb667dde9373422b, type: 2}
+  - {fileID: 11400000, guid: ab23cb2ba5fa05049a657a4cf2902a6d, type: 2}
+  - {fileID: 11400000, guid: 897ec2b1017c34c4fa91ac56dd689b1b, type: 2}
+  - {fileID: 11400000, guid: d3817eb745db0cb4fbc4acef2b83ad18, type: 2}
+  samNewPosition: {fileID: 1371506308}
+  door2: {fileID: 589083476}
 --- !u!4 &28985858
 Transform:
   m_ObjectHideFlags: 0
@@ -589,6 +600,9 @@ MonoBehaviour:
   singularDialogue:
   - {fileID: 11400000, guid: 6c10feec883804d45a3965c3b217e1a9, type: 2}
   - {fileID: 11400000, guid: 1240b28472dc90c47b21544caedd27df, type: 2}
+  dialogue1Init: 0
+  dialogue2Init: 0
+  dialogue3Init: 0
 --- !u!1001 &36658881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18295,12 +18309,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 409937138}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &412334892 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1295359657651894, guid: 32b926586df8d6f49b0136c82d26645f,
-    type: 3}
-  m_PrefabInstance: {fileID: 986821850}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &412334894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4800856644408790, guid: 32b926586df8d6f49b0136c82d26645f,
@@ -22566,6 +22574,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 586253141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &589083476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6857210261759545653, guid: 620b1f2344440444e933ad4f7d006d43,
+    type: 3}
+  m_PrefabInstance: {fileID: 1372282170}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 959b1daf1a10ca641a5095fa1cca2afe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &589117657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49089,6 +49109,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5989818817159383618, guid: 491f5626785c34c46b88ea67fe6ee448,
+        type: 3}
+      propertyPath: responseButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8496995455856313428, guid: 491f5626785c34c46b88ea67fe6ee448,
         type: 3}
       propertyPath: m_Pivot.x
@@ -56013,6 +56038,37 @@ Transform:
   - {fileID: 1155318713}
   - {fileID: 1246159155}
   m_Father: {fileID: 169383737}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1371506307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371506308}
+  m_Layer: 0
+  m_Name: Sam's new position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1371506308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371506307}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 51.106, y: 0, z: 46.97}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1372282170
 PrefabInstance:
@@ -68865,3 +68921,4 @@ SceneRoots:
   - {fileID: 1126381146}
   - {fileID: 602162226}
   - {fileID: 992390040}
+  - {fileID: 1371506308}
